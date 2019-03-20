@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2019/3/20.
 //  Copyright © 2019年 ggl. All rights reserved.
-//  数组
+//  大小固定的有序动态扩容数组
 
 import Foundation
 

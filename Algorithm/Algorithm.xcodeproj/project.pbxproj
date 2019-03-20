@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
 		EA25D3AB223F806F00C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3AA223F806F00C72AA0 /* main.swift */; };
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
 		EA25D3BD224229F500C72AA0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BC224229F500C72AA0 /* Array.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
 		EA25D3A7223F806F00C72AA0 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA25D3AA223F806F00C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA25D3B5224229C600C72AA0 /* Array */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Array; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 			children = (
 				EA25D3BC224229F500C72AA0 /* Array.swift */,
 				EA25D3B7224229C600C72AA0 /* main.swift */,
+				EA12FAF522428A7300EF6D40 /* Set.swift */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				EA25D3B8224229C600C72AA0 /* main.swift in Sources */,
 				EA25D3BD224229F500C72AA0 /* Array.swift in Sources */,
+				EA12FAF622428A7300EF6D40 /* Set.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
