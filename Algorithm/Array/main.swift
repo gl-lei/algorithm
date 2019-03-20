@@ -9,8 +9,17 @@
 import Foundation
 
 var array = DynamicExpansionArray(capcity: 10)
-array.add(num: 10)
-array.add(num: 20)
+for i in 1..<20 {
+    array.add(num: i)
+}
 array.print()
 
+array.insert(num: 30, at: 25)
+array.print()
+
+array.insert(num: 31, at: 2)
+array.print()
+
+array.remove(at: 1)
+array.print()
 

@@ -50,6 +50,7 @@ class DynamicExpansionArray {
     ///   - num: 要增加的数字
     ///   - at: 位置下标
     /// - Returns: 插入是否成功
+    @discardableResult
     func insert(num: Int, at index: Int) -> Bool {
         if index < 0 {
             Swift.print("下标位置错误")
@@ -70,6 +71,7 @@ class DynamicExpansionArray {
     ///
     /// - Parameter at: 位置下标
     /// - Returns: 是否成功
+    @discardableResult
     func remove(at index: Int) -> Bool {
         if index < 0 || index >= size {
             return false
@@ -77,6 +79,7 @@ class DynamicExpansionArray {
         for i in index..<size-1 {
             array.advanced(by: i).pointee = array.advanced(by: i+1).pointee
         }
+        size -= 1
         return true
     }
     
