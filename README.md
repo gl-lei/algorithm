@@ -1,5 +1,5 @@
 # algorithm
-#### 数据结构与算法之美代码 ， 原始代码 https://github.com/wangzheng0822/algo
+#### 数据结构与算法之美代码使用 Swift 实现 ， 原始代码 https://github.com/wangzheng0822/algo
 
 #### 数组
 - 实现一个支持动态扩容的数组
