@@ -26,7 +26,6 @@ class DynamicExpansionArray {
         size = 0
         self.capcity = capcity
         array = UnsafeMutablePointer<Int>.allocate(capacity: capcity)
-        array.initialize(to: 0)
     }
     
     /// 增加元素
@@ -40,7 +39,7 @@ class DynamicExpansionArray {
             tempArray.deallocate()
             capcity *= 2
         }
-        array.advanced(by: size).pointee = num
+        array[size] = num
         size += 1
     }
     
@@ -60,9 +59,9 @@ class DynamicExpansionArray {
         add(num: num)
         if index < size - 1 {
             //交换位置
-            let pNum = array.advanced(by: index).pointee
-            array.advanced(by: index).pointee = num
-            array.advanced(by: size-1).pointee = pNum
+            let pNum = array[index]
+            array[index] = num
+            array[size-1] = pNum
         }
         return true
     }
@@ -77,7 +76,7 @@ class DynamicExpansionArray {
             return false
         }
         for i in index..<size-1 {
-            array.advanced(by: i).pointee = array.advanced(by: i+1).pointee
+            array[i] = array[i+1]
         }
         size -= 1
         return true
@@ -88,9 +87,9 @@ class DynamicExpansionArray {
         Swift.print("[", terminator: "")
         for i in 0..<size {
             if i == size - 1 {
-                Swift.print(array.advanced(by: size-1).pointee, terminator: "]")
+                Swift.print(array[size-1], terminator: "]")
             } else {
-                Swift.print(array.advanced(by: i).pointee, terminator: " ")
+                Swift.print(array[i], terminator: " ")
             }
         }
         Swift.print("")

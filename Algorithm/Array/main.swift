@@ -40,3 +40,12 @@ set.print()
 set.add(num: 87)
 set.print()
 
+print("\n=====================================")
+let array1 = [1, 8, 9, 10, 14]
+let array2 = [4, 9, 13, 20, 25]
+let count = array1.count + array2.count
+
+let sortedArray = mergeTwoSortedArray(arrOne: array1, arrOneCount: array1.count, arrTwo: array2, arrTwoCount: array2.count)
+printArray(arr: sortedArray, count: count)
+sortedArray.deallocate()
+

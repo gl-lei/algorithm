@@ -40,8 +40,8 @@ class DynamicExpansionSet {
         }
         
         for i in 0..<capcity {
-            if array.advanced(by: i).pointee == Int.min {
-                array.advanced(by: i).pointee = num
+            if array[i] == Int.min {
+                array[i] = num
                 size += 1
                 break
             }
@@ -63,13 +63,13 @@ class DynamicExpansionSet {
             guard count < size else {
                 return false
             }
-            let element = array.advanced(by: i).pointee
+            let element = array[i]
             if element == Int.min {
                 continue
             }
             
             if num == element {
-                array.advanced(by: i).pointee = Int.min
+                array[i] = Int.min
                 size -= 1
                 return true
             }
@@ -86,7 +86,7 @@ class DynamicExpansionSet {
             guard count < size else {
                 return
             }
-            let num = array.advanced(by: i).pointee
+            let num = array[i]
             if num != Int.min {
                 
                 if count == size - 1 {
