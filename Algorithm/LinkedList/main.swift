@@ -78,6 +78,7 @@ linkedListTwo.print()
 
 let mergeList = mergeLinkedList(linkedListOne: linkedListOne, linkedListTwo: linkedListTwo)
 mergeList.print()
+
 print("=================================================")
 print("求链表的中间结点")
 let linkedList = SinglyLinkedList()
@@ -87,5 +88,13 @@ for i in 1...7 {
 linkedList.print()
 if let middleNode = linkedList.middleNode() {
     print(middleNode.data)
+}
+
+print("=================================================")
+linkedList.print()
+let lastK = 2
+print("求链表的倒数第\(lastK)个结点")
+if let lastKNode = linkedList.lastKNode(lastK: lastK) {
+    print(lastKNode.data)
 }
 

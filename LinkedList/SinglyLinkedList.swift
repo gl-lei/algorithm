@@ -117,6 +117,32 @@ class SinglyLinkedList {
         return slow
     }
     
+    /// 求链表倒数第K个结点（K大于等于1）（使用快慢指针）
+    ///
+    /// - Parameter lastK: 倒数第几个位置
+    /// - Returns: 倒数第K个结点
+    func lastKNode(lastK: Int) -> Node? {
+        if head == nil || lastK < 1 {
+            return nil
+        }
+        
+        if lastK == 1 {
+            let tailNode = self.tailNode()
+            return tailNode
+        }
+        
+        var slow = head
+        var fast = head
+        for _ in 0..<lastK-1 {
+            fast = fast?.next
+        }
+        while fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next
+        }
+        return slow
+    }
+    
     /// 打印链表
     func print() {
         var curNode = head
