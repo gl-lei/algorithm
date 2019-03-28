@@ -21,6 +21,7 @@ func mergeTwoSortedArray(arrOne: UnsafePointer<Int>, arrOneCount: Int, arrTwo: U
     
     var i = 0, j = 0
     for index in 0..<(arrOneCount + arrTwoCount) {
+        //判断i和j有没有到头
         if i > arrOneCount-1 {
             newArray[index] = arrTwo[j]
             j += 1

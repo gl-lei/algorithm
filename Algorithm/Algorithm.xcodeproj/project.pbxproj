@@ -12,6 +12,11 @@
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
 		EA25D3BD224229F500C72AA0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BC224229F500C72AA0 /* Array.swift */; };
 		EA25D3BF2243297A00C72AA0 /* MergeTwoSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */; };
+		EA3BD4A2224C683C009F4FB5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A1224C683C009F4FB5 /* main.swift */; };
+		EA3BD4A7224C6874009F4FB5 /* SinglyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A6224C6874009F4FB5 /* SinglyLinkedList.swift */; };
+		EA3BD4A9224C7504009F4FB5 /* LoopLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */; };
+		EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */; };
+		EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +38,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EA3BD49D224C683C009F4FB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +57,12 @@
 		EA25D3B7224229C600C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA25D3BC224229F500C72AA0 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Array.swift; path = ../../Array/Array.swift; sourceTree = "<group>"; };
 		EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeTwoSortedArray.swift; path = ../../Array/MergeTwoSortedArray.swift; sourceTree = "<group>"; };
+		EA3BD49F224C683C009F4FB5 /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA3BD4A1224C683C009F4FB5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA3BD4A6224C6874009F4FB5 /* SinglyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SinglyLinkedList.swift; path = ../../LinkedList/SinglyLinkedList.swift; sourceTree = "<group>"; };
+		EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopLinkedList.swift; path = ../../LinkedList/LoopLinkedList.swift; sourceTree = "<group>"; };
+		EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoublyLinkedList.swift; path = ../../LinkedList/DoublyLinkedList.swift; sourceTree = "<group>"; };
+		EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListFunc.swift; path = ../../LinkedList/LinkedListFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA3BD49C224C683C009F4FB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +95,7 @@
 			children = (
 				EA25D3A9223F806F00C72AA0 /* Algorithm */,
 				EA25D3B6224229C600C72AA0 /* Array */,
+				EA3BD4A0224C683C009F4FB5 /* LinkedList */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +105,7 @@
 			children = (
 				EA25D3A7223F806F00C72AA0 /* Algorithm */,
 				EA25D3B5224229C600C72AA0 /* Array */,
+				EA3BD49F224C683C009F4FB5 /* LinkedList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +127,18 @@
 				EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		EA3BD4A0224C683C009F4FB5 /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				EA3BD4A1224C683C009F4FB5 /* main.swift */,
+				EA3BD4A6224C6874009F4FB5 /* SinglyLinkedList.swift */,
+				EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */,
+				EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */,
+				EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */,
+			);
+			path = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +178,23 @@
 			productReference = EA25D3B5224229C600C72AA0 /* Array */;
 			productType = "com.apple.product-type.tool";
 		};
+		EA3BD49E224C683C009F4FB5 /* LinkedList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA3BD4A3224C683C009F4FB5 /* Build configuration list for PBXNativeTarget "LinkedList" */;
+			buildPhases = (
+				EA3BD49B224C683C009F4FB5 /* Sources */,
+				EA3BD49C224C683C009F4FB5 /* Frameworks */,
+				EA3BD49D224C683C009F4FB5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinkedList;
+			productName = LinkedList;
+			productReference = EA3BD49F224C683C009F4FB5 /* LinkedList */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -151,6 +209,9 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					EA25D3B4224229C600C72AA0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					EA3BD49E224C683C009F4FB5 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -169,6 +230,7 @@
 			targets = (
 				EA25D3A6223F806F00C72AA0 /* Algorithm */,
 				EA25D3B4224229C600C72AA0 /* Array */,
+				EA3BD49E224C683C009F4FB5 /* LinkedList */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +252,18 @@
 				EA25D3BD224229F500C72AA0 /* Array.swift in Sources */,
 				EA25D3BF2243297A00C72AA0 /* MergeTwoSortedArray.swift in Sources */,
 				EA12FAF622428A7300EF6D40 /* Set.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA3BD49B224C683C009F4FB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA3BD4A9224C7504009F4FB5 /* LoopLinkedList.swift in Sources */,
+				EA3BD4A7224C6874009F4FB5 /* SinglyLinkedList.swift in Sources */,
+				EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */,
+				EA3BD4A2224C683C009F4FB5 /* main.swift in Sources */,
+				EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -302,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -349,6 +423,26 @@
 			};
 			name = Release;
 		};
+		EA3BD4A4224C683C009F4FB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		EA3BD4A5224C683C009F4FB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +469,15 @@
 			buildConfigurations = (
 				EA25D3BA224229C600C72AA0 /* Debug */,
 				EA25D3BB224229C600C72AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA3BD4A3224C683C009F4FB5 /* Build configuration list for PBXNativeTarget "LinkedList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA3BD4A4224C683C009F4FB5 /* Debug */,
+				EA3BD4A5224C683C009F4FB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
