@@ -98,3 +98,13 @@ if let lastKNode = linkedList.lastKNode(lastK: lastK) {
     print(lastKNode.data)
 }
 
+print("=================================================")
+print("判断链表是否有环，以及链表环的位置")
+let ringLinkedList = RingLinkedList(count: 10, ringPos: 4)
+ringLinkedList.print()
+
+let hasRing = checkLinkedListRingNode(ringLinkedList.head)
+print("是否有环：\(hasRing ? "是" : "否")")
+let ringPos = findLinkedListRingNodePos(ringLinkedList.head)
+print("环的入口位置数据为：\(ringPos)")
+

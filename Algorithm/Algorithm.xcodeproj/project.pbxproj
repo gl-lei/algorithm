@@ -17,6 +17,7 @@
 		EA3BD4A9224C7504009F4FB5 /* LoopLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */; };
 		EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */; };
 		EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */; };
+		EA3BD4D3224CEEBC009F4FB5 /* RingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,7 @@
 		EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopLinkedList.swift; path = ../../LinkedList/LoopLinkedList.swift; sourceTree = "<group>"; };
 		EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoublyLinkedList.swift; path = ../../LinkedList/DoublyLinkedList.swift; sourceTree = "<group>"; };
 		EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListFunc.swift; path = ../../LinkedList/LinkedListFunc.swift; sourceTree = "<group>"; };
+		EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingLinkedList.swift; path = ../../LinkedList/RingLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */,
 				EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */,
 				EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */,
+				EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3BD4D3224CEEBC009F4FB5 /* RingLinkedList.swift in Sources */,
 				EA3BD4A9224C7504009F4FB5 /* LoopLinkedList.swift in Sources */,
 				EA3BD4A7224C6874009F4FB5 /* SinglyLinkedList.swift in Sources */,
 				EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */,
