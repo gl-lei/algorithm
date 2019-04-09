@@ -35,7 +35,7 @@ class DynamicExpansionArray {
         if size >= capcity {
             let tempArray = array
             array = UnsafeMutablePointer<Int>.allocate(capacity: capcity * 2)
-            array.assign(from: tempArray, count: capcity)
+            array.assign(from: tempArray, count: size)
             tempArray.deallocate()
             capcity *= 2
         }

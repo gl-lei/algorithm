@@ -12,12 +12,16 @@
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
 		EA25D3BD224229F500C72AA0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BC224229F500C72AA0 /* Array.swift */; };
 		EA25D3BF2243297A00C72AA0 /* MergeTwoSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */; };
+		EA2F3714225B04B800FF9491 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F3713225B04B800FF9491 /* main.swift */; };
+		EA2F3719225B050200FF9491 /* ArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F3718225B050200FF9491 /* ArrayStack.swift */; };
+		EA2F371B225B243A00FF9491 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F371A225B243A00FF9491 /* LinkedListStack.swift */; };
 		EA3BD4A2224C683C009F4FB5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A1224C683C009F4FB5 /* main.swift */; };
 		EA3BD4A7224C6874009F4FB5 /* SinglyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A6224C6874009F4FB5 /* SinglyLinkedList.swift */; };
 		EA3BD4A9224C7504009F4FB5 /* LoopLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4A8224C7504009F4FB5 /* LoopLinkedList.swift */; };
 		EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */; };
 		EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */; };
 		EA3BD4D3224CEEBC009F4FB5 /* RingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */; };
+		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +35,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		EA25D3B3224229C600C72AA0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		EA2F370F225B04B800FF9491 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -58,6 +71,10 @@
 		EA25D3B7224229C600C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA25D3BC224229F500C72AA0 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Array.swift; path = ../../Array/Array.swift; sourceTree = "<group>"; };
 		EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeTwoSortedArray.swift; path = ../../Array/MergeTwoSortedArray.swift; sourceTree = "<group>"; };
+		EA2F3711225B04B800FF9491 /* Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stack; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA2F3713225B04B800FF9491 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA2F3718225B050200FF9491 /* ArrayStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArrayStack.swift; path = ../../Stack/ArrayStack.swift; sourceTree = "<group>"; };
+		EA2F371A225B243A00FF9491 /* LinkedListStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListStack.swift; path = ../../Stack/LinkedListStack.swift; sourceTree = "<group>"; };
 		EA3BD49F224C683C009F4FB5 /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3BD4A1224C683C009F4FB5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA3BD4A6224C6874009F4FB5 /* SinglyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SinglyLinkedList.swift; path = ../../LinkedList/SinglyLinkedList.swift; sourceTree = "<group>"; };
@@ -65,6 +82,7 @@
 		EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoublyLinkedList.swift; path = ../../LinkedList/DoublyLinkedList.swift; sourceTree = "<group>"; };
 		EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListFunc.swift; path = ../../LinkedList/LinkedListFunc.swift; sourceTree = "<group>"; };
 		EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingLinkedList.swift; path = ../../LinkedList/RingLinkedList.swift; sourceTree = "<group>"; };
+		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EA25D3B2224229C600C72AA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA2F370E225B04B800FF9491 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,6 +123,7 @@
 				EA25D3A9223F806F00C72AA0 /* Algorithm */,
 				EA25D3B6224229C600C72AA0 /* Array */,
 				EA3BD4A0224C683C009F4FB5 /* LinkedList */,
+				EA2F3712225B04B800FF9491 /* Stack */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +134,7 @@
 				EA25D3A7223F806F00C72AA0 /* Algorithm */,
 				EA25D3B5224229C600C72AA0 /* Array */,
 				EA3BD49F224C683C009F4FB5 /* LinkedList */,
+				EA2F3711225B04B800FF9491 /* Stack */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +156,17 @@
 				EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		EA2F3712225B04B800FF9491 /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				EA2F3713225B04B800FF9491 /* main.swift */,
+				EA2F3718225B050200FF9491 /* ArrayStack.swift */,
+				EA2F371A225B243A00FF9491 /* LinkedListStack.swift */,
+				EA682A92225C8FAC0089C1DF /* Browser.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 		EA3BD4A0224C683C009F4FB5 /* LinkedList */ = {
@@ -181,6 +219,23 @@
 			productReference = EA25D3B5224229C600C72AA0 /* Array */;
 			productType = "com.apple.product-type.tool";
 		};
+		EA2F3710225B04B800FF9491 /* Stack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA2F3717225B04B800FF9491 /* Build configuration list for PBXNativeTarget "Stack" */;
+			buildPhases = (
+				EA2F370D225B04B800FF9491 /* Sources */,
+				EA2F370E225B04B800FF9491 /* Frameworks */,
+				EA2F370F225B04B800FF9491 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stack;
+			productName = Stack;
+			productReference = EA2F3711225B04B800FF9491 /* Stack */;
+			productType = "com.apple.product-type.tool";
+		};
 		EA3BD49E224C683C009F4FB5 /* LinkedList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA3BD4A3224C683C009F4FB5 /* Build configuration list for PBXNativeTarget "LinkedList" */;
@@ -214,6 +269,9 @@
 					EA25D3B4224229C600C72AA0 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					EA2F3710225B04B800FF9491 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					EA3BD49E224C683C009F4FB5 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -234,6 +292,7 @@
 				EA25D3A6223F806F00C72AA0 /* Algorithm */,
 				EA25D3B4224229C600C72AA0 /* Array */,
 				EA3BD49E224C683C009F4FB5 /* LinkedList */,
+				EA2F3710225B04B800FF9491 /* Stack */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +314,17 @@
 				EA25D3BD224229F500C72AA0 /* Array.swift in Sources */,
 				EA25D3BF2243297A00C72AA0 /* MergeTwoSortedArray.swift in Sources */,
 				EA12FAF622428A7300EF6D40 /* Set.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA2F370D225B04B800FF9491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */,
+				EA2F3719225B050200FF9491 /* ArrayStack.swift in Sources */,
+				EA2F3714225B04B800FF9491 /* main.swift in Sources */,
+				EA2F371B225B243A00FF9491 /* LinkedListStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +497,26 @@
 			};
 			name = Release;
 		};
+		EA2F3715225B04B800FF9491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		EA2F3716225B04B800FF9491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		EA3BD4A4224C683C009F4FB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,6 +563,15 @@
 			buildConfigurations = (
 				EA25D3BA224229C600C72AA0 /* Debug */,
 				EA25D3BB224229C600C72AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA2F3717225B04B800FF9491 /* Build configuration list for PBXNativeTarget "Stack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA2F3715225B04B800FF9491 /* Debug */,
+				EA2F3716225B04B800FF9491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

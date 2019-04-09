@@ -34,7 +34,7 @@ class DynamicExpansionSet {
             let tempArray = array
             array = UnsafeMutablePointer<Int>.allocate(capacity: capcity * 2)
             array.initialize(repeating: Int.min, count: capcity * 2)
-            array.assign(from: tempArray, count: capcity)
+            array.assign(from: tempArray, count: size)
             tempArray.deallocate()
             capcity *= 2
         }
