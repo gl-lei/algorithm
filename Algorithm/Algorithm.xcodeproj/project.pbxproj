@@ -21,6 +21,10 @@
 		EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */; };
 		EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */; };
 		EA3BD4D3224CEEBC009F4FB5 /* RingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */; };
+		EA55857D225D912400B31AF7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA55857C225D912400B31AF7 /* main.swift */; };
+		EA558582225D915000B31AF7 /* ArrayQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA558581225D915000B31AF7 /* ArrayQueue.swift */; };
+		EA558584225DBD1300B31AF7 /* LinkedListQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA558583225DBD1300B31AF7 /* LinkedListQueue.swift */; };
+		EA558586225DC09A00B31AF7 /* LoopQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA558585225DC09A00B31AF7 /* LoopQueue.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EA558578225D912400B31AF7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +95,11 @@
 		EA3BD4AA224C981B009F4FB5 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoublyLinkedList.swift; path = ../../LinkedList/DoublyLinkedList.swift; sourceTree = "<group>"; };
 		EA3BD4D0224CD601009F4FB5 /* LinkedListFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListFunc.swift; path = ../../LinkedList/LinkedListFunc.swift; sourceTree = "<group>"; };
 		EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RingLinkedList.swift; path = ../../LinkedList/RingLinkedList.swift; sourceTree = "<group>"; };
+		EA55857A225D912400B31AF7 /* Queue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Queue; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA55857C225D912400B31AF7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA558581225D915000B31AF7 /* ArrayQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArrayQueue.swift; path = ../../Queue/ArrayQueue.swift; sourceTree = "<group>"; };
+		EA558583225DBD1300B31AF7 /* LinkedListQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinkedListQueue.swift; path = ../../Queue/LinkedListQueue.swift; sourceTree = "<group>"; };
+		EA558585225DC09A00B31AF7 /* LoopQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopQueue.swift; path = ../../Queue/LoopQueue.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +132,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA558577225D912400B31AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -124,6 +149,7 @@
 				EA25D3B6224229C600C72AA0 /* Array */,
 				EA3BD4A0224C683C009F4FB5 /* LinkedList */,
 				EA2F3712225B04B800FF9491 /* Stack */,
+				EA55857B225D912400B31AF7 /* Queue */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,6 +161,7 @@
 				EA25D3B5224229C600C72AA0 /* Array */,
 				EA3BD49F224C683C009F4FB5 /* LinkedList */,
 				EA2F3711225B04B800FF9491 /* Stack */,
+				EA55857A225D912400B31AF7 /* Queue */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +207,17 @@
 				EA3BD4D2224CEEBC009F4FB5 /* RingLinkedList.swift */,
 			);
 			path = LinkedList;
+			sourceTree = "<group>";
+		};
+		EA55857B225D912400B31AF7 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				EA55857C225D912400B31AF7 /* main.swift */,
+				EA558581225D915000B31AF7 /* ArrayQueue.swift */,
+				EA558583225DBD1300B31AF7 /* LinkedListQueue.swift */,
+				EA558585225DC09A00B31AF7 /* LoopQueue.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +291,23 @@
 			productReference = EA3BD49F224C683C009F4FB5 /* LinkedList */;
 			productType = "com.apple.product-type.tool";
 		};
+		EA558579225D912400B31AF7 /* Queue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA558580225D912400B31AF7 /* Build configuration list for PBXNativeTarget "Queue" */;
+			buildPhases = (
+				EA558576225D912400B31AF7 /* Sources */,
+				EA558577225D912400B31AF7 /* Frameworks */,
+				EA558578225D912400B31AF7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Queue;
+			productName = Queue;
+			productReference = EA55857A225D912400B31AF7 /* Queue */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -275,6 +330,9 @@
 					EA3BD49E224C683C009F4FB5 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					EA558579225D912400B31AF7 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = EA25D3A2223F806F00C72AA0 /* Build configuration list for PBXProject "Algorithm" */;
@@ -293,6 +351,7 @@
 				EA25D3B4224229C600C72AA0 /* Array */,
 				EA3BD49E224C683C009F4FB5 /* LinkedList */,
 				EA2F3710225B04B800FF9491 /* Stack */,
+				EA558579225D912400B31AF7 /* Queue */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +397,17 @@
 				EA3BD4D1224CD601009F4FB5 /* LinkedListFunc.swift in Sources */,
 				EA3BD4A2224C683C009F4FB5 /* main.swift in Sources */,
 				EA3BD4AB224C981B009F4FB5 /* DoublyLinkedList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA558576225D912400B31AF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA55857D225D912400B31AF7 /* main.swift in Sources */,
+				EA558586225DC09A00B31AF7 /* LoopQueue.swift in Sources */,
+				EA558582225D915000B31AF7 /* ArrayQueue.swift in Sources */,
+				EA558584225DBD1300B31AF7 /* LinkedListQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +607,26 @@
 			};
 			name = Release;
 		};
+		EA55857E225D912400B31AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		EA55857F225D912400B31AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -581,6 +671,15 @@
 			buildConfigurations = (
 				EA3BD4A4224C683C009F4FB5 /* Debug */,
 				EA3BD4A5224C683C009F4FB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA558580225D912400B31AF7 /* Build configuration list for PBXNativeTarget "Queue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA55857E225D912400B31AF7 /* Debug */,
+				EA55857F225D912400B31AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
