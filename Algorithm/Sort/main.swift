@@ -8,5 +8,21 @@
 
 import Foundation
 
-print("Hello, World!")
+var randomArray = [Int]()
+for _ in 0..<10 {
+    randomArray.append(Int.random(in: 0...30))
+}
+print("原始随机数组：\(randomArray)")
+
+// 冒泡排序
+let bubbleSortArray = bubbleSort(randomArray)
+print("冒泡排序结果：\(bubbleSortArray)")
+
+// 插入排序
+let insertionSortArray = insertionSort(randomArray)
+print("插入排序结果：\(insertionSortArray)")
+
+// 选择排序
+let selectionSortArray = selectionSort(randomArray)
+print("选择排序结果：\(selectionSortArray)")
 
