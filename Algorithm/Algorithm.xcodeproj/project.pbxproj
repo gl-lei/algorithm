@@ -30,6 +30,7 @@
 		EA5585D0226592BE00B31AF7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5585CF226592BE00B31AF7 /* main.swift */; };
 		EA5585D52265939000B31AF7 /* BubbleInsertionSelectionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
+		EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +130,7 @@
 		EA5585CF226592BE00B31AF7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BubbleInsertionSelectionFunc.swift; path = ../../Sort/BubbleInsertionSelectionFunc.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
+		EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeSortFunc.swift; path = ../../Sort/MergeSortFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 			children = (
 				EA5585CF226592BE00B31AF7 /* main.swift */,
 				EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */,
+				EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5585D52265939000B31AF7 /* BubbleInsertionSelectionFunc.swift in Sources */,
+				EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */,
 				EA5585D0226592BE00B31AF7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
