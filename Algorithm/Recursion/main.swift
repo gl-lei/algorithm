@@ -14,4 +14,13 @@ let res1 = calculateStepsNoRecursion(totalStep)
 
 print(res, res1)
 
+print("=========斐波那契数列=========")
+let result = fibonacciSeries(n: 30)
+print("result: \(result)")
+
+print("=========阶乘=========")
+let n = 20
+let facRes = factorial(n: n)
+print("\(n)的阶乘是：\(facRes)")
+
 

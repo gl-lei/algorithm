@@ -8,6 +8,52 @@
 
 import Foundation
 
+// 斐波那契数列 防止重复计算，防止堆栈溢出
+var info = [Int: Int]()
+func fibonacciSeries(n: Int) -> Int {
+    if n < 0 {
+        return 0;
+    }
+    
+    let result = [0, 1]
+    if n < 2 {
+        return result[n]
+    }
+    
+    // 通过for循环来计算
+    var fibonacciOne = 0
+    var fibonacciTwo = 1
+    var fibonacciN = 0
+    for _ in 2...n {
+        fibonacciN = fibonacciOne + fibonacciTwo
+        fibonacciOne = fibonacciTwo
+        fibonacciTwo = fibonacciN
+    }
+    
+    return fibonacciN
+}
+
+/// 阶乘问题
+func factorial(n: Int) -> Double {
+    if n < 0 {
+        return 0
+    }
+    
+    if n == 0 {
+        return 1
+    }
+    
+    var result: Double = 1
+    for i in 2...n {
+        result *= Double(i)
+    }
+    
+    return result
+}
+
+/// 数据集合的全排列
+func 
+
 /*
  假如这里有 n 个台阶，每次你可以跨 1 个台阶或者 2 个台阶，请问走这 n 个台阶有多少种走法？
  */
