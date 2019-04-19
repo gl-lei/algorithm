@@ -24,7 +24,6 @@ func quickSort(_ array: [Int]) -> [Int] {
 func quickSortDecompose(_ array: inout [Int], low: Int, high: Int) {
     if low < high {
         let pivotKey = partition(&array, low: low, high: high)
-        print("array: \(array), pivot Value: \(array[pivotKey])")
         quickSortDecompose(&array, low: low, high: pivotKey-1)
         quickSortDecompose(&array, low: pivotKey+1, high: high)
     }

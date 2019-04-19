@@ -33,3 +33,8 @@ print("归并排序结果：\(mergeSortArray)")
 // 快速排序
 let quickSortArray = quickSort(randomArray)
 print("快速排序结果：\(quickSortArray)")
+
+// 查找一组数据的第K大元素
+let kth = 3
+let kNum = findKBigElement(randomArray, kth: kth)
+print("数组：\(randomArray)的第\(kth)大元素是：\(kNum)")

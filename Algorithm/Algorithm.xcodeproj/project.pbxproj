@@ -32,6 +32,7 @@
 		EA5585DF22681C1200B31AF7 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5585DE22681C1200B31AF7 /* QuickSort.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
 		EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */; };
+		EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC70693226A20DC00658BF8 /* SortFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,7 @@
 		EA5585DE22681C1200B31AF7 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuickSort.swift; path = ../../Sort/QuickSort.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
 		EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeSortFunc.swift; path = ../../Sort/MergeSortFunc.swift; sourceTree = "<group>"; };
+		EAC70693226A20DC00658BF8 /* SortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortFunc.swift; path = ../../Sort/SortFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				EA5585CF226592BE00B31AF7 /* main.swift */,
+				EAC70693226A20DC00658BF8 /* SortFunc.swift */,
 				EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */,
 				EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */,
 				EA5585DE22681C1200B31AF7 /* QuickSort.swift */,
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */,
 				EA5585D52265939000B31AF7 /* BubbleInsertionSelectionFunc.swift in Sources */,
 				EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */,
 				EA5585D0226592BE00B31AF7 /* main.swift in Sources */,
