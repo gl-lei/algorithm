@@ -52,7 +52,24 @@ func factorial(n: Int) -> Double {
 }
 
 /// 数据集合的全排列
-func 
+/// 集合的全排列定义：集合(1,2,3)的所有排列为(1,2,3)(1,3,2)(2,1,3)(2,3,1)(3,1,2)(3,2,1)
+func permutation(_ array: inout [Int], _ k: Int, _ m: Int) {
+    if k == m {
+        print(array)
+    } else {
+        for i in k...m {
+            swapArrayNum(&array, k, i)
+            permutation(&array, k+1, m)
+            swapArrayNum(&array, k, i)
+        }
+    }
+}
+
+func swapArrayNum(_ array: inout [Int], _ k: Int, _ m: Int) {
+    let temp = array[k]
+    array[k] = array[m]
+    array[m] = temp
+}
 
 /*
  假如这里有 n 个台阶，每次你可以跨 1 个台阶或者 2 个台阶，请问走这 n 个台阶有多少种走法？

@@ -23,4 +23,7 @@ let n = 20
 let facRes = factorial(n: n)
 print("\(n)的阶乘是：\(facRes)")
 
+print("=========数据集合的全排列=========")
+var array = [1, 2, 3, 4]
+permutation(&array, 0, array.count-1)
 
