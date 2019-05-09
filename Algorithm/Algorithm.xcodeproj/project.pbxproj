@@ -12,6 +12,7 @@
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
 		EA25D3BD224229F500C72AA0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BC224229F500C72AA0 /* Array.swift */; };
 		EA25D3BF2243297A00C72AA0 /* MergeTwoSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */; };
+		EA283724228144FE002AA2E7 /* LinearSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA283723228144FE002AA2E7 /* LinearSort.swift */; };
 		EA2F3714225B04B800FF9491 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F3713225B04B800FF9491 /* main.swift */; };
 		EA2F3719225B050200FF9491 /* ArrayStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F3718225B050200FF9491 /* ArrayStack.swift */; };
 		EA2F371B225B243A00FF9491 /* LinkedListStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F371A225B243A00FF9491 /* LinkedListStack.swift */; };
@@ -109,6 +110,7 @@
 		EA25D3B7224229C600C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA25D3BC224229F500C72AA0 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Array.swift; path = ../../Array/Array.swift; sourceTree = "<group>"; };
 		EA25D3BE2243297A00C72AA0 /* MergeTwoSortedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeTwoSortedArray.swift; path = ../../Array/MergeTwoSortedArray.swift; sourceTree = "<group>"; };
+		EA283723228144FE002AA2E7 /* LinearSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinearSort.swift; path = ../../Sort/LinearSort.swift; sourceTree = "<group>"; };
 		EA2F3711225B04B800FF9491 /* Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Stack; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2F3713225B04B800FF9491 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA2F3718225B050200FF9491 /* ArrayStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArrayStack.swift; path = ../../Stack/ArrayStack.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */,
 				EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */,
 				EA5585DE22681C1200B31AF7 /* QuickSort.swift */,
+				EA283723228144FE002AA2E7 /* LinearSort.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			files = (
 				EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */,
 				EA5585D52265939000B31AF7 /* BubbleInsertionSelectionFunc.swift in Sources */,
+				EA283724228144FE002AA2E7 /* LinearSort.swift in Sources */,
 				EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */,
 				EA5585D0226592BE00B31AF7 /* main.swift in Sources */,
 				EA5585DF22681C1200B31AF7 /* QuickSort.swift in Sources */,

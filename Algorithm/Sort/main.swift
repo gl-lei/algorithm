@@ -34,7 +34,16 @@ print("归并排序结果：\(mergeSortArray)")
 let quickSortArray = quickSort(randomArray)
 print("快速排序结果：\(quickSortArray)")
 
+// 桶排序
+var doubleRandomArray = [Double]()
+for _ in 0..<10 {
+    let num = Double.random(in: 0...30)
+    doubleRandomArray.append(num)
+}
+let bucketSortArray = bucketSort(doubleRandomArray)
+print("桶排序的结果：\(bucketSortArray)")
+
 // 查找一组数据的第K大元素
 let kth = 3
 let kNum = findKBigElement(randomArray, kth: kth)
-print("数组：\(randomArray)的第\(kth)大元素是：\(kNum)")
+print("数组：\(randomArray) 的第\(kth)大元素是：\(kNum)")
