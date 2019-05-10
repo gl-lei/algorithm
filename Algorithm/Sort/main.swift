@@ -43,6 +43,11 @@ for _ in 0..<10 {
 let bucketSortArray = bucketSort(doubleRandomArray)
 print("桶排序的结果：\(bucketSortArray)")
 
+// 计数排序
+let countingArray = [2, 5, 3, 0, 2, 3, 0, 3]
+let countingSortArray = countingSort(countingArray)
+print("计数排序的结果：\(countingSortArray)")
+
 // 查找一组数据的第K大元素
 let kth = 3
 let kNum = findKBigElement(randomArray, kth: kth)
