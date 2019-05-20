@@ -19,5 +19,9 @@ if index != -1 {
 
 print("=========求一个数的平方根，精确到小数点后6位=========")
 let num = 10
-let sqrtN = sqrt(num: num)
-print("\(num)的平方根为：\(sqrtN)")
+print("系统求根函数求解\(num)的平方根为：\(sqrt(Double(num)))")
+let sqrtN = sqrtWithBinarySearch(num: num)
+print("二分法求解\(num)的平方根为：\(sqrtN)")
+
+let sqrtN1 = sqrtWithCalculus(num: num)
+print("牛顿法求解\(num)的平方根为：\(sqrtN1)")
