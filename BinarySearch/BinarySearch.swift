@@ -1,5 +1,5 @@
 //
-//  BinarySearchWithSoredArray.swift
+//  BinarySearch.swift
 //  BinarySearch
 //
 //  Created by ggl on 2019/5/19.
