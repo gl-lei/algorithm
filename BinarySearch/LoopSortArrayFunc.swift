@@ -77,7 +77,6 @@ func binarySearchLoopSortArrayTwo(_ loopSortArray: [Int], value: Int) -> Int {
         let index = (i + delta) % loopSortArray.count
         sortedArray[index] = loopSortArray[i]
     }
-    print("排序后的数组：\(sortedArray)")
     
     let findIndex = binarySearchWithSortedArray(sortedArray, value: value)
     if (findIndex < 0) {
@@ -110,15 +109,18 @@ func binarySearchLoopSortArrayThree(_ loopSortArray: [Int], value: Int) -> Int {
         
         if loopSortArray[low] < loopSortArray[mid] {
             // 前半部分有序，后半部分循环有序
-            if value < loopSortArray[mid] {
+            if value == loopSortArray[low] {
+                return low
+            } else if value > loopSortArray[low] && value < loopSortArray[mid] {
                 return binarySearchWithLowHighInfo(loopSortArray, value: value, low: low, high: mid-1)
             } else {
                 low = mid + 1
             }
         } else {
             // 前半部分循环有序，后半部分有序
-            // 判断逻辑有问题，需要进行修改
-            if value > loopSortArray[mid] {
+            if value == loopSortArray[high] {
+                return high
+            } else if value < loopSortArray[high] && value > loopSortArray[mid] {
                 return binarySearchWithLowHighInfo(loopSortArray, value: value, low: mid+1, high: high)
             } else {
                 high = mid - 1

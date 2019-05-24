@@ -37,13 +37,16 @@ print("查找最后一个值等于6的元素下标为: \(lastIndex)")
 
 print("=========循环有序数组查找=========")
 let loopSortArray = [3, 4, 5, 6, 7, 8, 9, 0, 1, 2]
-let searchNum = Int.random(in: 0...10)
-let loopSearchIndex = binarySearchLoopSortArrayOne(loopSortArray, value: searchNum)
-print("循环有序数组: \(loopSortArray) 查找值为:\(searchNum) 的元素下标为: \(loopSearchIndex)")
-
-let loopSearchIndex1 = binarySearchLoopSortArrayTwo(loopSortArray, value: searchNum)
-print("循环有序数组: \(loopSortArray) 查找值为:\(searchNum) 的元素下标为: \(loopSearchIndex1)")
-
-let loopSearchIndex2 = binarySearchLoopSortArrayThree(loopSortArray, value: 8)
-print("循环有序数组: \(loopSortArray) 查找值为:\(8) 的元素下标为: \(loopSearchIndex2)")
+for _ in 1...100 {
+    let searchNum = Int.random(in: 0...10)
+    let loopSearchIndex = binarySearchLoopSortArrayOne(loopSortArray, value: searchNum)
+    print("循环有序数组: \(loopSortArray) 查找值为:\(searchNum) 的元素下标为: \(loopSearchIndex)")
+    
+    let loopSearchIndex1 = binarySearchLoopSortArrayTwo(loopSortArray, value: searchNum)
+    print("循环有序数组: \(loopSortArray) 查找值为:\(searchNum) 的元素下标为: \(loopSearchIndex1)")
+    
+    let loopSearchIndex2 = binarySearchLoopSortArrayThree(loopSortArray, value: searchNum)
+    print("循环有序数组: \(loopSortArray) 查找值为:\(searchNum) 的元素下标为: \(loopSearchIndex2)")
+    print("\n\n")
+}
 
