@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA122BAE2293B8240009EBF7 /* VagueBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */; };
+		EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */; };
 		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
 		EA25D3AB223F806F00C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3AA223F806F00C72AA0 /* main.swift */; };
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
@@ -117,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VagueBinarySearch.swift; path = ../../BinarySearch/VagueBinarySearch.swift; sourceTree = "<group>"; };
+		EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopSortArrayFunc.swift; path = ../../BinarySearch/LoopSortArrayFunc.swift; sourceTree = "<group>"; };
 		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
 		EA25D3A7223F806F00C72AA0 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA25D3AA223F806F00C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				EA3DA8482291A90200F43AEA /* BinarySearch.swift */,
 				EA3DA84A2291B09400F43AEA /* SqrtFunc.swift */,
 				EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */,
+				EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */,
 			);
 			path = BinarySearch;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				EA122BAE2293B8240009EBF7 /* VagueBinarySearch.swift in Sources */,
 				EA3DA84B2291B09400F43AEA /* SqrtFunc.swift in Sources */,
 				EA3DA8442291A89100F43AEA /* main.swift in Sources */,
+				EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
