@@ -130,4 +130,3 @@ func binarySearchLoopSortArrayThree(_ loopSortArray: [Int], value: Int) -> Int {
     
     return -1
 }
-
