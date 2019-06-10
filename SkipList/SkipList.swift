@@ -75,12 +75,16 @@ class SkipList {
         
         // 遍历跳表的0~level-1层，找到需要插入位置的结点
         var p = head
-        for i in (0..<level).reversed() {
+        for i in (0..<levelCount).reversed() {
             // 遍历当前i层，找到合适的插入结点的位置，放入update数组中
             while p.forwards[i] != nil && p.forwards[i]!.data < value {
                 p = p.forwards[i]!
             }
-            update[i] = p
+            
+            // 更新要插入的结点位置
+            if i < level {
+                update[i] = p
+            }
         }
         
         // 将新结点插入到跳表中
@@ -104,20 +108,24 @@ class SkipList {
     func delete(value: Int) {
         var p: Node? = head
         
+        var update = [Node?](repeating: nil, count: levelCount)
+        
         // 从最高层开始查找
         for i in (0..<levelCount).reversed() {
             while p?.forwards[i] != nil && p!.forwards[i]!.data < value {
                 p = p?.forwards[i]
             }
             
-            // 如果下一个结点是需要删除的结点
-            if p?.forwards[i] != nil && p!.forwards[i]!.data == value {
-                // 删除结点
-                p!.forwards[i] = p!.forwards[i]!.forwards[i]
+            update[i] = p
+        }
+        
+        // 判断原链表是否存在需要删除的值
+        if update[0]?.forwards[0] != nil && update[0]!.forwards[0]!.data == value {
+            for (i, node) in update.enumerated().reversed() {
+                if node?.forwards[i] != nil && node!.forwards[i]!.data == value {
+                    node?.forwards[i] = node?.forwards[i]?.forwards[i]
+                }
             }
-            
-            // 继续往下一层查找
-            p = head
         }
     }
     
