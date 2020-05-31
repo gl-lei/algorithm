@@ -47,9 +47,14 @@ class HashTable<K: Hashable, V> {
     /// 散列表容量大小
     private(set) var capacity: Int = 0
     
-    init() {
-        table = [Node<K,V>?](repeating: nil, count: DefaultInitialCapacity)
-        capacity = DefaultInitialCapacity
+    convenience init() {
+        self.init(capacity: 16)
+    }
+    
+    init(capacity: Int) {
+        let cap: Int = capacity < DefaultInitialCapacity ? DefaultInitialCapacity : Int(pow(2, ceil(log2(Double(capacity)))))
+        table = [Node<K,V>?](repeating: nil, count: cap)
+        self.capacity = cap
     }
     
     /// 下标便捷操作
@@ -57,7 +62,6 @@ class HashTable<K: Hashable, V> {
         get {
             return value(for: key)
         }
-        
         set {
             if let value = newValue {
                 update(value, for: key)
