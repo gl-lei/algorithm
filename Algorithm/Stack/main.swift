@@ -48,10 +48,3 @@ browser.goForward()
 print(browser.curPage)
 
 //考虑一下使用UnsafeMutablePointer<String>来实现底层栈结构？目前还不会写
-
-
-
-
-
-
-
