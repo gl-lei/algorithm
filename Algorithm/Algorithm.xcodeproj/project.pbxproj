@@ -213,6 +213,7 @@
 		EA89B92D248CBBFB003B8A57 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA89B92F248CBBFB003B8A57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA89B93A248CD8C7003B8A57 /* 001.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 001.swift; path = "../../LeetCode/001-两数之和/001.swift"; sourceTree = "<group>"; };
+		EA89B93D248CDF30003B8A57 /* LeetCode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = LeetCode.md; path = ../LeetCode/LeetCode.md; sourceTree = "<group>"; };
 		EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeSortFunc.swift; path = ../../Sort/MergeSortFunc.swift; sourceTree = "<group>"; };
 		EA99B85D229ED82700A6AAF8 /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99B85F229ED82700A6AAF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -311,6 +312,7 @@
 		EA25D39E223F806F00C72AA0 = {
 			isa = PBXGroup;
 			children = (
+				EA89B93D248CDF30003B8A57 /* LeetCode.md */,
 				EA0042382482041F00AC74A2 /* README.md */,
 				EA25D3A9223F806F00C72AA0 /* Algorithm */,
 				EA25D3B6224229C600C72AA0 /* Array */,
