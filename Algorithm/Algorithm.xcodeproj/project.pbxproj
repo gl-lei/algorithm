@@ -43,6 +43,8 @@
 		EA89B92124894F51003B8A57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92024894F51003B8A57 /* main.swift */; };
 		EA89B92624894F8A003B8A57 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92524894F8A003B8A57 /* BinaryTree.swift */; };
 		EA89B928248BE6BA003B8A57 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B927248BE6BA003B8A57 /* BinarySearchTree.swift */; };
+		EA89B930248CBBFB003B8A57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92F248CBBFB003B8A57 /* main.swift */; };
+		EA89B93B248CD8C7003B8A57 /* 001.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B93A248CD8C7003B8A57 /* 001.swift */; };
 		EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */; };
 		EA99B860229ED82700A6AAF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99B85F229ED82700A6AAF8 /* main.swift */; };
 		EA99B865229ED83F00A6AAF8 /* SkipList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99B864229ED83F00A6AAF8 /* SkipList.swift */; };
@@ -140,6 +142,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EA89B92B248CBBFB003B8A57 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		EA99B85B229ED82700A6AAF8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +210,10 @@
 		EA89B92024894F51003B8A57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA89B92524894F8A003B8A57 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BinaryTree.swift; path = ../../BinaryTree/BinaryTree.swift; sourceTree = "<group>"; };
 		EA89B927248BE6BA003B8A57 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BinarySearchTree.swift; path = ../../BinaryTree/BinarySearchTree.swift; sourceTree = "<group>"; };
+		EA89B92D248CBBFB003B8A57 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA89B92F248CBBFB003B8A57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA89B934248CBC0A003B8A57 /* LeetCode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = LeetCode.md; path = ../LeetCode.md; sourceTree = "<group>"; };
+		EA89B93A248CD8C7003B8A57 /* 001.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 001.swift; path = "../../LeetCode/001-两数之和/001.swift"; sourceTree = "<group>"; };
 		EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeSortFunc.swift; path = ../../Sort/MergeSortFunc.swift; sourceTree = "<group>"; };
 		EA99B85D229ED82700A6AAF8 /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99B85F229ED82700A6AAF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -277,6 +292,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA89B92A248CBBFB003B8A57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA99B85A229ED82700A6AAF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +312,7 @@
 		EA25D39E223F806F00C72AA0 = {
 			isa = PBXGroup;
 			children = (
+				EA89B934248CBC0A003B8A57 /* LeetCode.md */,
 				EA0042382482041F00AC74A2 /* README.md */,
 				EA25D3A9223F806F00C72AA0 /* Algorithm */,
 				EA25D3B6224229C600C72AA0 /* Array */,
@@ -302,6 +325,7 @@
 				EA99B85E229ED82700A6AAF8 /* SkipList */,
 				EA61153023478A6800991B01 /* HashTable */,
 				EA89B91F24894F51003B8A57 /* BinaryTree */,
+				EA89B92E248CBBFB003B8A57 /* LeetCode */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -320,6 +344,7 @@
 				EA99B85D229ED82700A6AAF8 /* SkipList */,
 				EA61152F23478A6800991B01 /* HashTable */,
 				EA89B91E24894F51003B8A57 /* BinaryTree */,
+				EA89B92D248CBBFB003B8A57 /* LeetCode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,6 +455,15 @@
 				EA89B927248BE6BA003B8A57 /* BinarySearchTree.swift */,
 			);
 			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		EA89B92E248CBBFB003B8A57 /* LeetCode */ = {
+			isa = PBXGroup;
+			children = (
+				EA89B93A248CD8C7003B8A57 /* 001.swift */,
+				EA89B92F248CBBFB003B8A57 /* main.swift */,
+			);
+			path = LeetCode;
 			sourceTree = "<group>";
 		};
 		EA99B85E229ED82700A6AAF8 /* SkipList */ = {
@@ -614,6 +648,23 @@
 			productReference = EA89B91E24894F51003B8A57 /* BinaryTree */;
 			productType = "com.apple.product-type.tool";
 		};
+		EA89B92C248CBBFB003B8A57 /* LeetCode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA89B933248CBBFB003B8A57 /* Build configuration list for PBXNativeTarget "LeetCode" */;
+			buildPhases = (
+				EA89B929248CBBFB003B8A57 /* Sources */,
+				EA89B92A248CBBFB003B8A57 /* Frameworks */,
+				EA89B92B248CBBFB003B8A57 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeetCode;
+			productName = LeetCode;
+			productReference = EA89B92D248CBBFB003B8A57 /* LeetCode */;
+			productType = "com.apple.product-type.tool";
+		};
 		EA99B85C229ED82700A6AAF8 /* SkipList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA99B863229ED82700A6AAF8 /* Build configuration list for PBXNativeTarget "SkipList" */;
@@ -671,6 +722,9 @@
 					EA89B91D24894F51003B8A57 = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					EA89B92C248CBBFB003B8A57 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					EA99B85C229ED82700A6AAF8 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -700,6 +754,7 @@
 				EA99B85C229ED82700A6AAF8 /* SkipList */,
 				EA61152E23478A6800991B01 /* HashTable */,
 				EA89B91D24894F51003B8A57 /* BinaryTree */,
+				EA89B92C248CBBFB003B8A57 /* LeetCode */,
 			);
 		};
 /* End PBXProject section */
@@ -810,6 +865,15 @@
 				EA89B92624894F8A003B8A57 /* BinaryTree.swift in Sources */,
 				EA89B92124894F51003B8A57 /* main.swift in Sources */,
 				EA89B928248BE6BA003B8A57 /* BinarySearchTree.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA89B929248CBBFB003B8A57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA89B930248CBBFB003B8A57 /* main.swift in Sources */,
+				EA89B93B248CD8C7003B8A57 /* 001.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1138,6 +1202,26 @@
 			};
 			name = Release;
 		};
+		EA89B931248CBBFB003B8A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EA89B932248CBBFB003B8A57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EA99B861229ED82700A6AAF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1256,6 +1340,15 @@
 			buildConfigurations = (
 				EA89B92224894F51003B8A57 /* Debug */,
 				EA89B92324894F51003B8A57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA89B933248CBBFB003B8A57 /* Build configuration list for PBXNativeTarget "LeetCode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA89B931248CBBFB003B8A57 /* Debug */,
+				EA89B932248CBBFB003B8A57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
