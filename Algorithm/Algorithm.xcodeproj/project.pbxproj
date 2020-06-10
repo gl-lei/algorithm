@@ -38,6 +38,8 @@
 		EA5585D52265939000B31AF7 /* BubbleInsertionSelectionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5585D42265939000B31AF7 /* BubbleInsertionSelectionFunc.swift */; };
 		EA5585DF22681C1200B31AF7 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5585DE22681C1200B31AF7 /* QuickSort.swift */; };
 		EA61153723478A7D00991B01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61153623478A7D00991B01 /* main.swift */; };
+		EA61BAD2249131BF00F4DD18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BAD1249131BF00F4DD18 /* main.swift */; };
+		EA61BAD72491349300F4DD18 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BAD62491349300F4DD18 /* Heap.swift */; };
 		EA626BF324838A4E00F384D1 /* LRUBaseHashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
 		EA89B92124894F51003B8A57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92024894F51003B8A57 /* main.swift */; };
@@ -133,6 +135,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EA61BACD249131BF00F4DD18 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		EA89B91C24894F51003B8A57 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +215,9 @@
 		EA5585DE22681C1200B31AF7 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuickSort.swift; path = ../../Sort/QuickSort.swift; sourceTree = "<group>"; };
 		EA61152F23478A6800991B01 /* HashTable */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HashTable; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61153623478A7D00991B01 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA61BACF249131BF00F4DD18 /* Heap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Heap; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA61BAD1249131BF00F4DD18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EA61BAD62491349300F4DD18 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Heap.swift; path = ../../Heap/Heap.swift; sourceTree = "<group>"; };
 		EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LRUBaseHashTable.swift; path = ../../HashTable/LRUBaseHashTable.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
 		EA89B91E24894F51003B8A57 /* BinaryTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +299,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA61BACC249131BF00F4DD18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA89B91B24894F51003B8A57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +347,7 @@
 				EA61153023478A6800991B01 /* HashTable */,
 				EA89B91F24894F51003B8A57 /* BinaryTree */,
 				EA89B92E248CBBFB003B8A57 /* LeetCode */,
+				EA61BAD0249131BF00F4DD18 /* Heap */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -345,6 +367,7 @@
 				EA61152F23478A6800991B01 /* HashTable */,
 				EA89B91E24894F51003B8A57 /* BinaryTree */,
 				EA89B92D248CBBFB003B8A57 /* LeetCode */,
+				EA61BACF249131BF00F4DD18 /* Heap */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -445,6 +468,15 @@
 				EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */,
 			);
 			path = HashTable;
+			sourceTree = "<group>";
+		};
+		EA61BAD0249131BF00F4DD18 /* Heap */ = {
+			isa = PBXGroup;
+			children = (
+				EA61BAD1249131BF00F4DD18 /* main.swift */,
+				EA61BAD62491349300F4DD18 /* Heap.swift */,
+			);
+			path = Heap;
 			sourceTree = "<group>";
 		};
 		EA89B91F24894F51003B8A57 /* BinaryTree */ = {
@@ -631,6 +663,23 @@
 			productReference = EA61152F23478A6800991B01 /* HashTable */;
 			productType = "com.apple.product-type.tool";
 		};
+		EA61BACE249131BF00F4DD18 /* Heap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA61BAD5249131BF00F4DD18 /* Build configuration list for PBXNativeTarget "Heap" */;
+			buildPhases = (
+				EA61BACB249131BF00F4DD18 /* Sources */,
+				EA61BACC249131BF00F4DD18 /* Frameworks */,
+				EA61BACD249131BF00F4DD18 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Heap;
+			productName = Heap;
+			productReference = EA61BACF249131BF00F4DD18 /* Heap */;
+			productType = "com.apple.product-type.tool";
+		};
 		EA89B91D24894F51003B8A57 /* BinaryTree */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA89B92424894F51003B8A57 /* Build configuration list for PBXNativeTarget "BinaryTree" */;
@@ -719,6 +768,9 @@
 					EA61152E23478A6800991B01 = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					EA61BACE249131BF00F4DD18 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					EA89B91D24894F51003B8A57 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -754,6 +806,7 @@
 				EA99B85C229ED82700A6AAF8 /* SkipList */,
 				EA61152E23478A6800991B01 /* HashTable */,
 				EA89B91D24894F51003B8A57 /* BinaryTree */,
+				EA61BACE249131BF00F4DD18 /* Heap */,
 				EA89B92C248CBBFB003B8A57 /* LeetCode */,
 			);
 		};
@@ -855,6 +908,15 @@
 				EA626BF324838A4E00F384D1 /* LRUBaseHashTable.swift in Sources */,
 				EA00423C2482059500AC74A2 /* HashTable.swift in Sources */,
 				EA61153723478A7D00991B01 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA61BACB249131BF00F4DD18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA61BAD2249131BF00F4DD18 /* main.swift in Sources */,
+				EA61BAD72491349300F4DD18 /* Heap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1182,6 +1244,26 @@
 			};
 			name = Release;
 		};
+		EA61BAD3249131BF00F4DD18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EA61BAD4249131BF00F4DD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EA89B92224894F51003B8A57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1331,6 +1413,15 @@
 			buildConfigurations = (
 				EA61153423478A6800991B01 /* Debug */,
 				EA61153523478A6800991B01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA61BAD5249131BF00F4DD18 /* Build configuration list for PBXNativeTarget "Heap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA61BAD3249131BF00F4DD18 /* Debug */,
+				EA61BAD4249131BF00F4DD18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
