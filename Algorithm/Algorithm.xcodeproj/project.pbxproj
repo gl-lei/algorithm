@@ -40,6 +40,7 @@
 		EA61153723478A7D00991B01 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61153623478A7D00991B01 /* main.swift */; };
 		EA61BAD2249131BF00F4DD18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BAD1249131BF00F4DD18 /* main.swift */; };
 		EA61BAD72491349300F4DD18 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BAD62491349300F4DD18 /* Heap.swift */; };
+		EA61BAD92492728600F4DD18 /* HeapSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BAD82492728600F4DD18 /* HeapSort.swift */; };
 		EA626BF324838A4E00F384D1 /* LRUBaseHashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
 		EA89B92124894F51003B8A57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92024894F51003B8A57 /* main.swift */; };
@@ -218,6 +219,7 @@
 		EA61BACF249131BF00F4DD18 /* Heap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Heap; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA61BAD1249131BF00F4DD18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA61BAD62491349300F4DD18 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Heap.swift; path = ../../Heap/Heap.swift; sourceTree = "<group>"; };
+		EA61BAD82492728600F4DD18 /* HeapSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeapSort.swift; path = ../../Heap/HeapSort.swift; sourceTree = "<group>"; };
 		EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LRUBaseHashTable.swift; path = ../../HashTable/LRUBaseHashTable.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
 		EA89B91E24894F51003B8A57 /* BinaryTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,6 +477,7 @@
 			children = (
 				EA61BAD1249131BF00F4DD18 /* main.swift */,
 				EA61BAD62491349300F4DD18 /* Heap.swift */,
+				EA61BAD82492728600F4DD18 /* HeapSort.swift */,
 			);
 			path = Heap;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA61BAD2249131BF00F4DD18 /* main.swift in Sources */,
+				EA61BAD92492728600F4DD18 /* HeapSort.swift in Sources */,
 				EA61BAD72491349300F4DD18 /* Heap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
