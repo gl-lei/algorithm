@@ -1,5 +1,5 @@
 # algorithm
-## 使用 Swift 语言实现数据结构与算法之美专栏代码 ，在原有基础上扩增了一些内容，并增加 LeetCode 题解，原始代码 https://github.com/wangzheng0822/algo
+### 使用 Swift 语言实现数据结构与算法之美专栏代码 ，在原有基础上扩增了一些内容，并增加 LeetCode 题解，原始代码 https://github.com/wangzheng0822/algo
 
 ### 数组
 - 实现一个支持动态扩容的数组
@@ -62,4 +62,4 @@
  - 利用优先级队列合并K个有序数组
  - 求一组动态数据集合的最大Top K
  
- # 未完待续...
+ ## 未完待续...
