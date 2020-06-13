@@ -7,7 +7,7 @@
 - [实现两个有序数组合并为一个有序数组](./Array/MergeTwoSortedArray.swift)
 
 ### [链表](./Algorithm/LinkedList/main.swift)
-- 实现[单链表](./LinkedList/SinglyLinkedList.swift)、[循环链表]((./LinkedList/LoopLinkedList.swift))、[双向链表]((./LinkedList/DoublyLinkedList.swift))，支持增删操作
+- 实现[单链表](./LinkedList/SinglyLinkedList.swift)、[循环链表](./LinkedList/LoopLinkedList.swift)、[双向链表](./LinkedList/DoublyLinkedList.swift)，支持增删操作
 - [实现单链表反转](./LinkedList/SinglyLinkedList.swift)
 - [实现两个有序的链表合并为一个有序链表](./LinkedList/LinkedListFunc.swift)
 - [实现求链表的中间结点](./LinkedList/SinglyLinkedList.swift)
@@ -60,7 +60,7 @@
  - [实现一个小顶堆、大顶堆、优先级队列](./Heap/Heap.swift)
  - [实现堆排序](./Heap/HeapSort.swift)
  - [利用优先级队列合并K个有序数组](./Heap/MergeKSortedArray.swift)
- - [求一组动态数据集合的最大Top K](./Heap/Heap.sort)
+ - [求一组动态数据集合的最大Top K](./Heap/HeapSort.swift)
  
  ### [LeetCode题解](./LeetCode/LeetCode.md)
  
