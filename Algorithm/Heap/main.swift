@@ -47,3 +47,27 @@ for i in maxHeapArr {
     print("\(i) ", terminator: "")
 }
 print("\n")
+
+print("\n============合并K个有序数组==============")
+
+var arr = [[Int]]()
+for _ in 0..<10 {
+    var arr1 = [Int]()
+    for _ in 5...10 {
+        arr1.append(Int.random(in: 0...100))
+    }
+    arr1.sort(by: <)
+    arr.append(arr1)
+}
+print("未合并之前的数据：\(arr)\n")
+let resultArr = mergeKSortedArray(arr)
+print("\n合并K个有序数组后排序结果：\(resultArr)")
+
+
+print("\n============求一组动态数据集合的最大Top K==============")
+let dynHeap = Heap<Int>(type: .min, capacity: 10)
+for i in arr.flatMap({ $0 }) {
+    dynHeap.insert(i)
+}
+print("动态数据数据集合的最大Top K结果(插入的数据)")
+dynHeap.print()
