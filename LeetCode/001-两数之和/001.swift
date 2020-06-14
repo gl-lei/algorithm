@@ -9,7 +9,7 @@
 import Foundation
 
 /*
- * 1. Two Sum
+ * 1. 两数之和
  * 题意：返回数组中和为给定数的下标
  * 难度：Easy
  * 分类：Array, HashTable
