@@ -31,11 +31,15 @@ class ListNode<T: Equatable & CustomStringConvertible> {
     /// 在顶点数组中所处的下标
     var index: Int
     
-    init(value: T, next: ListNode? = nil, weighted: Int = 0, index: Int = -1) {
+    /// 最短搜索路径中使用，表示从所求起始顶点到此顶点的最短距离
+    var distance: Int
+    
+    init(value: T, next: ListNode? = nil, weighted: Int = 0, index: Int = -1, distance: Int = Int.max) {
         self.value = value
         self.next = next
         self.weighted = weighted
         self.index = index
+        self.distance = distance
     }
 }
 
@@ -72,7 +76,7 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
     
     /// 查找顶点对应的下标
     /// - Parameter vertex: 顶点
-    func indexOf(_ vertex: T) -> Int? {
+    private func indexOf(_ vertex: T) -> Int? {
         return vertexArr.firstIndex { $0.value == vertex }
     }
     
@@ -209,6 +213,83 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
         }
     }
     
+    /// 迪杰斯特拉算法
+    /// 参考链接：https://www.cnblogs.com/skywang12345/p/3711512.html
+    /// - Parameter from: 起始顶点
+    func dijkstra(from: T) {
+        guard let f = indexOf(from) else {
+            return
+        }
+        
+        /// dis数组记录已求出最短路径的顶点以及该顶点到起始顶点的最短路径距离信息
+        var dis = [ListNode<T>]()
+        /// unDis数组记录还未求出最短路径的顶点以及该顶点到起始顶点的距离信息
+        var unDis = [ListNode<T>]()
+        /// 顶点是否已访问
+        var visited = [Bool](repeating: false, count: count)
+        
+        // 初始化数组，将起始顶点加入到dis中，最短距离设置为0
+        unDis.append(contentsOf: vertexArr)
+        let fromNode = unDis.remove(at: f)
+        fromNode.distance = 0
+        dis.append(fromNode)
+        
+        // 设置起始顶点已被访问
+        visited[f] = true
+        
+        // 开始遍历查找最短路径
+        while !unDis.isEmpty {
+            let preNode = dis.last!
+            var nextNode = preNode.next
+            
+            // 更新unDis数组中的距离信息
+            while nextNode != nil {
+                let index = nextNode!.index
+                let curNode = unDis.first { $0.index == index }
+                
+                // 在unDis中查找到顶点，并且顶点没有被访问过，才需要更新
+                if curNode != nil && !visited[index] {
+                    // 最短距离为：前面顶点的 distance + 下一顶点的 weighted，需要和当前值进行比较
+                    let distance = preNode.distance + nextNode!.weighted
+                    if distance < curNode!.distance {
+                        // 更新unDis数组中对应顶点的最短距离信息
+                        curNode!.distance = distance
+                    }
+                }
+                nextNode = nextNode?.next
+            }
+            
+            // 查找最小距离顶点，将其加入到dis数组中，同时将unDis数组中对应位置设置为无穷大
+            var minIndex = 0
+            var minDis = unDis.first!.distance
+            for (i, node) in unDis.enumerated() {
+                if node.distance < minDis {
+                    minDis = node.distance
+                    minIndex = i
+                }
+            }
+            
+            // 将最小距离顶点加入到dis数组中
+            let minNode = unDis.remove(at: minIndex)
+            dis.append(minNode)
+            visited[minIndex] = true
+        }
+        
+        // 打印最短路径
+        printDijkstraPath(from: from, dis: &dis)
+    }
+    
+    /// 打印 Dijkstra 最短路径
+    /// - Parameter dis: 最短路径数组
+    private func printDijkstraPath(from: T, dis: inout [ListNode<T>]) {
+        Swift.print("从顶点【\(from)】到图中所有顶点的最短路径为：", terminator: "")
+        for node in dis {
+            let distance = node.distance == Int.max ? "∞" : node.distance.description
+            Swift.print("\(node.value)(\(distance)) ", terminator: "")
+        }
+        Swift.print("")
+    }
+    
     /// 递归打印指定起始顶点到目的顶点的搜索路径
     /// - Parameters:
     ///   - prev: 搜索路径索引数组
@@ -227,6 +308,13 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
         for i in 0..<count {
             Swift.print("\(vertexArr[i].value): ", terminator: "")
             var p = vertexArr[i].next
+            // 没有指向的顶点
+            if p == nil {
+                Swift.print("无")
+                continue
+            }
+            
+            // 遍历顶点
             while p != nil {
                 Swift.print("-> (权重:\(p!.weighted))\(p!.value)", terminator: " ")
                 p = p?.next
