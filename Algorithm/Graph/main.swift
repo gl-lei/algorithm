@@ -171,3 +171,40 @@ udListGraph1.print()
 
 print("")
 udListGraph1.dijkstra(from: "D")
+
+print("\n============拓扑排序Kahn算法==============")
+// 示例图参考： https://blog.csdn.net/qinzhaokun/article/details/48541117
+let kahnGraph = ListGraph<Int>(type: .Directed)
+kahnGraph.addVertex(0).addVertex(1).addVertex(2).addVertex(3).addVertex(4)
+kahnGraph.addVertex(5).addVertex(6).addVertex(7).addVertex(8).addVertex(9)
+kahnGraph.addVertex(10).addVertex(11).addVertex(12)
+kahnGraph.addEdge(from: 0, to: 1)
+kahnGraph.addEdge(from: 0, to: 5)
+kahnGraph.addEdge(from: 0, to: 6)
+kahnGraph.addEdge(from: 2, to: 0)
+kahnGraph.addEdge(from: 2, to: 3)
+kahnGraph.addEdge(from: 3, to: 5)
+kahnGraph.addEdge(from: 5, to: 4)
+kahnGraph.addEdge(from: 6, to: 4)
+kahnGraph.addEdge(from: 6, to: 9)
+kahnGraph.addEdge(from: 7, to: 6)
+kahnGraph.addEdge(from: 8, to: 7)
+kahnGraph.addEdge(from: 9, to: 10)
+kahnGraph.addEdge(from: 9, to: 11)
+kahnGraph.addEdge(from: 9, to: 12)
+kahnGraph.addEdge(from: 11, to: 12)
+// 加上下面这行代码是有环图
+kahnGraph.addEdge(from: 12, to: 9)
+kahnGraph.print()
+
+if let result = kahnTopologicalSort(directedGraph: kahnGraph) {
+    print("拓扑排序kahn算法结果：\(result)")
+} else {
+    print("拓扑排序kahn算法结果：图中有环")
+}
+
+if let result = topologicalSortBasedDfs(directedGraph: kahnGraph) {
+    print("基于DFS拓扑排序结果：\(result)")
+} else {
+    print("基于DFS拓扑排序结果：图中有环")
+}

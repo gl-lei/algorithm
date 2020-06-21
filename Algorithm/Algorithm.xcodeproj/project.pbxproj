@@ -54,6 +54,7 @@
 		EA8FB7B622677A79004C6761 /* MergeSortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8FB7B522677A79004C6761 /* MergeSortFunc.swift */; };
 		EA99B860229ED82700A6AAF8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99B85F229ED82700A6AAF8 /* main.swift */; };
 		EA99B865229ED83F00A6AAF8 /* SkipList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99B864229ED83F00A6AAF8 /* SkipList.swift */; };
+		EAAEB93B249F68C000A0CCF3 /* TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEB93A249F68C000A0CCF3 /* TopologicalSort.swift */; };
 		EAB5B67A249A05F300D3F146 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B679249A05F300D3F146 /* main.swift */; };
 		EAB5B67F249A073000D3F146 /* MatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B67E249A073000D3F146 /* MatrixGraph.swift */; };
 		EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC70693226A20DC00658BF8 /* SortFunc.swift */; };
@@ -251,6 +252,7 @@
 		EA99B85D229ED82700A6AAF8 /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99B85F229ED82700A6AAF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA99B864229ED83F00A6AAF8 /* SkipList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkipList.swift; path = ../../SkipList/SkipList.swift; sourceTree = "<group>"; };
+		EAAEB93A249F68C000A0CCF3 /* TopologicalSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopologicalSort.swift; path = ../../Graph/TopologicalSort.swift; sourceTree = "<group>"; };
 		EAB5B677249A05F300D3F146 /* Graph */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graph; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB5B679249A05F300D3F146 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAB5B67E249A073000D3F146 /* MatrixGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatrixGraph.swift; path = ../../Graph/MatrixGraph.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		EAB5B678249A05F300D3F146 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				EAAEB93A249F68C000A0CCF3 /* TopologicalSort.swift */,
 				EAB5B679249A05F300D3F146 /* main.swift */,
 				EAB5B67E249A073000D3F146 /* MatrixGraph.swift */,
 				EA85209D249AF941003968C8 /* ListGraph.swift */,
@@ -1021,6 +1024,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA85209E249AF941003968C8 /* ListGraph.swift in Sources */,
+				EAAEB93B249F68C000A0CCF3 /* TopologicalSort.swift in Sources */,
 				EAB5B67F249A073000D3F146 /* MatrixGraph.swift in Sources */,
 				EAB5B67A249A05F300D3F146 /* main.swift in Sources */,
 			);

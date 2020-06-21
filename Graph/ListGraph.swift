@@ -49,7 +49,7 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
     private(set) var count: Int
     
     /// 顶点数组，用来存储顶点
-    private var vertexArr: [ListNode<T>]
+    private(set) var vertexArr: [ListNode<T>]
     
     /// 邻接表类型
     private let type: ListGraphType
@@ -180,6 +180,7 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
             Swift.print("从顶点\(from)到顶点\(to)的访问路径(深度优先搜索)：", terminator: "")
             print(prev: &prev, from: f, to: t)
             Swift.print("")
+            found = false
         }
     }
     

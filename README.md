@@ -66,7 +66,7 @@
  - 实现有向图、无向图、有权图、无权图的[邻接矩阵](./Graph/MatrixGraph.swift)和[邻接表](./Graph/ListGraph.swift)表示方法
  - 实现图的[深度优先搜索](./Graph/MatrixGraph.swift)、[广度优先搜索](./Graph/ListGraph.swift)
  - 实现 [Dijkstra](./Graph/ListGraph.swift) 算法、A*算法
- - 实现拓扑排序的 Kahn 算法、DFS 算法
+ - 实现拓扑排序的 [Kahn 算法](./Graph/TopologicalSort.swift)、[DFS 算法](./Graph/TopologicalSort.swift)
  
  ### [LeetCode题解](./LeetCode/LeetCode.md)
  

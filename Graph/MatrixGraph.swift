@@ -153,6 +153,7 @@ class MatrixGraph<T: Equatable & CustomStringConvertible> {
             Swift.print("从顶点\(from)到顶点\(to)的访问路径(深度优先搜索)：", terminator: "")
             print(prev: &prev, from: f, to: t)
             Swift.print("")
+            found = false
         }
     }
     
