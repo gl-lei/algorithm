@@ -194,7 +194,7 @@ kahnGraph.addEdge(from: 9, to: 11)
 kahnGraph.addEdge(from: 9, to: 12)
 kahnGraph.addEdge(from: 11, to: 12)
 // 加上下面这行代码是有环图
-kahnGraph.addEdge(from: 12, to: 9)
+//kahnGraph.addEdge(from: 12, to: 9)
 kahnGraph.print()
 
 if let result = kahnTopologicalSort(directedGraph: kahnGraph) {
