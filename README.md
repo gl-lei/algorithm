@@ -3,6 +3,7 @@
 
 ## 一、目录结构
 #### 源代码在第一级目录所对应的文件夹下，测试工程以及测试代码在 [Algorithm](./Algorithm) 目录下，可以直接使用 Xcode 打开工程文件 `Algorithm.xcodeproj`，选择对应的 Target 运行测试代码
+![代码组织结构](./demo.png)
 
 ## 二、数据结构内容
 
