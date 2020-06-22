@@ -38,7 +38,7 @@
 - [台阶总共多少走法问题](./Recursion/RecursionFunc.swift)
 - [递归常见问题](./Recursion/RecursionFunc.swift)
 
-### 排序算法]
+### 排序算法
 - [冒泡排序、插入排序、选择排序](./Sort/BubbleInsertionSelectionFunc.swift)
 - [归并排序](./Sort/MergeSortFunc.swift)、[快速排序](./Sort/QuickSort.swift)
 - [桶排序、计数排序、基数排序（未实现）](./Sort/LinearSort.swift)
