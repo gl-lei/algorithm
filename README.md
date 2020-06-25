@@ -74,6 +74,10 @@
  - 实现 [Dijkstra](./Graph/ListGraph.swift) 算法、A*算法
  - 实现拓扑排序的 [Kahn 算法](./Graph/TopologicalSort.swift)、[DFS 算法](./Graph/TopologicalSort.swift)
  
+ ### 字符串
+  - 实现[朴素的字符串匹配算法](./String/String.swift)
+ - 实现一个字符集，只包含a~z这26个英文字母的Trie树
+ 
  ## 三、LeetCode题解
  ### [目录链接](./LeetCode/LeetCode.md)
  
