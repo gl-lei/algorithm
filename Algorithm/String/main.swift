@@ -24,3 +24,9 @@ if let result = rkSearch(subString: subString, mainString: mainString) {
     print("RK: not found \"\(subString)\" in \"\(mainString)\".")
 }
 
+print("\n============字符串匹配BM算法==============")
+if let result = bmSearch(subString: subString, mainString: mainString) {
+    print("BM: found \"\(subString)\" in \"\(mainString)\" at index: \(result).")
+} else {
+    print("BM: not found \"\(subString)\" in \"\(mainString)\".")
+}
