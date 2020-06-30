@@ -32,6 +32,8 @@ func bmSearch(subString: String, mainString: String) -> Int? {
     // 生成模式串字符对应下标信息
     let bcHash = generateBC(pattern: subString)
     let (suffix, prefix) = generateGS(pattern: subString)
+    
+    // i的取值范围mainString[0...msCount-ssCount]
     var i = 0
     while i <= msCount - ssCount  {
         // 坏字符以及坏字符在模式串中所对应的下标
@@ -76,33 +78,6 @@ func bmSearch(subString: String, mainString: String) -> Int? {
         i = i + max(x, y)
     }
     return -1
-}
-
-/// 计算好后缀规则需要滑动的位数
-/// - Parameters:
-///   - bcIndex: 坏字符所在模式串中的下标
-///   - patternCount: 模式串的长度
-///   - suffix: 好后缀在模式串匹配的子串的信息
-///   - prefix: 好后缀的后缀子串在模式串匹配的前缀子串的信息
-/// - Returns: 滑动的位数
-private func moveByGS(bcIndex: Int, patternCount: Int, suffix: [Int], prefix: [Bool]) -> Int {
-    // 好后缀的长度
-    let k = patternCount - 1 - bcIndex
-    if suffix[k] != -1 {
-        // 表示有搜索到的匹配子串
-        return bcIndex - suffix[k] + 1
-    }
-    
-    // 好后缀的后缀子串pattern[r, patternCount-1]，其中r的取值范围为：bcIndex+2到m-1
-    for r in bcIndex+2..<patternCount {
-        // 好后缀后缀子串的长度
-        let suffixCount = patternCount - r
-        if prefix[suffixCount] {
-            // 表示长度为suffixCount的子串，有匹配的前缀子串
-            return r
-        }
-    }
-    return patternCount
 }
 
 /// 生成模式串中的所有字符作为Key，对应下标作为value的哈希表，用来求坏字符在模式串中的位置
@@ -156,3 +131,31 @@ private func generateGS(pattern: String) -> (suffix: [Int], prefix: [Bool]) {
     }
     return (suffix, prefix)
 }
+
+/// 计算好后缀规则需要滑动的位数
+/// - Parameters:
+///   - bcIndex: 坏字符所在模式串中的下标，用来计算好后缀的长度
+///   - patternCount: 模式串的长度
+///   - suffix: 好后缀在模式串匹配的子串的信息
+///   - prefix: 好后缀的后缀子串在模式串匹配的前缀子串的信息
+/// - Returns: 滑动的位数
+private func moveByGS(bcIndex: Int, patternCount: Int, suffix: [Int], prefix: [Bool]) -> Int {
+    // 好后缀的长度
+    let k = patternCount - 1 - bcIndex
+    if suffix[k] != -1 {
+        // 表示有搜索到的匹配子串
+        return bcIndex - suffix[k] + 1
+    }
+    
+    // 好后缀的后缀子串pattern[r, patternCount-1]，其中r的取值范围为：bcIndex+2到m-1
+    for r in bcIndex+2..<patternCount {
+        // 好后缀后缀子串的长度
+        let suffixCount = patternCount - r
+        if prefix[suffixCount] {
+            // 表示长度为suffixCount的子串，有匹配的前缀子串
+            return r
+        }
+    }
+    return patternCount
+}
+
