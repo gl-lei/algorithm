@@ -27,23 +27,34 @@ func bfSearch(subString: String, mainString: String) -> Int? {
     
     // 在Swift中，由于不同的字符占用不同的存储空间，为了确定字符的位置，必须要遍历整个字符串
     // 所以，Swift中的String类型不能直接通过整型的下标来进行表示
-    for i in 0..<(mainLength-subLength+1) {
-        let startIndex = mainString.index(mainString.startIndex, offsetBy: i)
-        let endIndex = mainString.index(startIndex, offsetBy: subLength-1)
-        let str = mainString[startIndex...endIndex]
-        
-        // 比较子串是否一样
-        if str == subString {
-            return i
+    // i指向主串指针，j指向模式串指针
+    var i = 0, j = 0
+    while i < mainLength && j < subLength {
+        if mainString[i] == subString[j] {
+            // 如果匹配成功，i++,j++
+            i += 1
+            j += 1
+        } else {
+            // i回溯并往前移动一位,j=0
+            i = i - j + 1
+            j = 0
         }
     }
     
-    return nil
+    // 判断是否匹配成功
+    if j == subLength {
+        // 匹配成功
+        return i - j
+    } else {
+        // 未匹配成功
+        return nil
+    }
 }
 
 /// 使用RK算法在主串中搜索模式串，我们假设字符串只包含a~z这26个小写字母，模式串的长度不超过12
 /// RK算法主要巧妙的设计在于哈希算法的设计，假设字符串只包含a~z这26个小写字母，则可以用二十六进制来表示一个字符串，相邻串的哈希值存在
 /// 一定的规律，可以借助此规律来提高计算哈希值的效率
+/// RK算法的整体时间复杂度为O(n)
 /// - Parameters:
 ///   - subString: 模式串，长度小于主串
 ///   - mainString: 主串
@@ -55,6 +66,7 @@ func rkSearch(subString: String, mainString: String) -> Int? {
     guard subLength > 0, mainLength > 0, subLength < mainLength else {
         return nil
     }
+    
     // 首先对比第一个子串
     let subStrRKHash = subString.rkHashValue
     print("subStrRKHash: \(subStrRKHash)")
@@ -101,6 +113,11 @@ extension String {
             value += (Int(pow(26.0, Double(i))) * Int(v))
         }
         return value
+    }
+    
+    /// 添加下标快捷操作方法
+    subscript(index: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
 }
 

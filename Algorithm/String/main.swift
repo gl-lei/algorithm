@@ -30,3 +30,10 @@ if let result = bmSearch(subString: subString, mainString: mainString) {
 } else {
     print("BM: not found \"\(subString)\" in \"\(mainString)\".")
 }
+
+print("\n============字符串匹配KMP算法==============")
+if let result = kmpSearch(subString: subString, mainString: mainString) {
+    print("KMP: found \"\(subString)\" in \"\(mainString)\" at index: \(result).")
+} else {
+    print("KMP: not found \"\(subString)\" in \"\(mainString)\".")
+}

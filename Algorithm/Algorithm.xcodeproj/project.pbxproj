@@ -58,6 +58,7 @@
 		EAAEB95624A480FD00A0CCF3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEB95524A480FD00A0CCF3 /* main.swift */; };
 		EAAEB95B24A4814600A0CCF3 /* BFRKSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEB95A24A4814600A0CCF3 /* BFRKSearch.swift */; };
 		EAAEB95F24A828B300A0CCF3 /* BMSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEB95E24A828B300A0CCF3 /* BMSearch.swift */; };
+		EAAEB96124AEC6C600A0CCF3 /* KMPSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEB96024AEC6C600A0CCF3 /* KMPSearch.swift */; };
 		EAB5B67A249A05F300D3F146 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B679249A05F300D3F146 /* main.swift */; };
 		EAB5B67F249A073000D3F146 /* MatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B67E249A073000D3F146 /* MatrixGraph.swift */; };
 		EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC70693226A20DC00658BF8 /* SortFunc.swift */; };
@@ -269,6 +270,7 @@
 		EAAEB95524A480FD00A0CCF3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAAEB95A24A4814600A0CCF3 /* BFRKSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BFRKSearch.swift; path = ../../String/BFRKSearch.swift; sourceTree = "<group>"; };
 		EAAEB95E24A828B300A0CCF3 /* BMSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BMSearch.swift; path = ../../String/BMSearch.swift; sourceTree = "<group>"; };
+		EAAEB96024AEC6C600A0CCF3 /* KMPSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KMPSearch.swift; path = ../../String/KMPSearch.swift; sourceTree = "<group>"; };
 		EAB5B677249A05F300D3F146 /* Graph */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graph; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB5B679249A05F300D3F146 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAB5B67E249A073000D3F146 /* MatrixGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatrixGraph.swift; path = ../../Graph/MatrixGraph.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 				EAAEB95524A480FD00A0CCF3 /* main.swift */,
 				EAAEB95A24A4814600A0CCF3 /* BFRKSearch.swift */,
 				EAAEB95E24A828B300A0CCF3 /* BMSearch.swift */,
+				EAAEB96024AEC6C600A0CCF3 /* KMPSearch.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -1079,6 +1082,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAEB96124AEC6C600A0CCF3 /* KMPSearch.swift in Sources */,
 				EAAEB95F24A828B300A0CCF3 /* BMSearch.swift in Sources */,
 				EAAEB95B24A4814600A0CCF3 /* BFRKSearch.swift in Sources */,
 				EAAEB95624A480FD00A0CCF3 /* main.swift in Sources */,
