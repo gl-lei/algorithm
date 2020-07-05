@@ -50,10 +50,10 @@ trie.insert(data: "sow")
 trie.print()
 
 let findString = "so"
-print("\n============查找\(findString)是否存在trie树中是完整路径==============")
+print("\n============查找\(findString)是否存在trie树中存在==============")
 let result = trie.find(data: findString)
 if result {
-    print("\(findString)在trie树中是完整路径")
+    print("\(findString)在trie树中存在")
 } else {
-    print("\(findString)在trie树中不是完整路径")
+    print("\(findString)在trie树中不存在")
 }

@@ -50,7 +50,6 @@ class Trie {
             
             // 指向子节点
             p = p.children[index]!
-            p.isEndingChar = false
         }
         p.isEndingChar = true
     }
