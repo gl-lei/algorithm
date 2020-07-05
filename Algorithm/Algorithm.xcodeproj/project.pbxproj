@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA00423C2482059500AC74A2 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00423B2482059500AC74A2 /* HashTable.swift */; };
+		EA04CF7024B156B200592C46 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04CF6F24B156B200592C46 /* Trie.swift */; };
 		EA122BAE2293B8240009EBF7 /* VagueBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */; };
 		EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */; };
 		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
@@ -205,6 +206,7 @@
 /* Begin PBXFileReference section */
 		EA0042382482041F00AC74A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EA00423B2482059500AC74A2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashTable.swift; path = ../../HashTable/HashTable.swift; sourceTree = "<group>"; };
+		EA04CF6F24B156B200592C46 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trie.swift; path = ../../String/Trie.swift; sourceTree = "<group>"; };
 		EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VagueBinarySearch.swift; path = ../../BinarySearch/VagueBinarySearch.swift; sourceTree = "<group>"; };
 		EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopSortArrayFunc.swift; path = ../../BinarySearch/LoopSortArrayFunc.swift; sourceTree = "<group>"; };
 		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				EAAEB95A24A4814600A0CCF3 /* BFRKSearch.swift */,
 				EAAEB95E24A828B300A0CCF3 /* BMSearch.swift */,
 				EAAEB96024AEC6C600A0CCF3 /* KMPSearch.swift */,
+				EA04CF6F24B156B200592C46 /* Trie.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA04CF7024B156B200592C46 /* Trie.swift in Sources */,
 				EAAEB96124AEC6C600A0CCF3 /* KMPSearch.swift in Sources */,
 				EAAEB95F24A828B300A0CCF3 /* BMSearch.swift in Sources */,
 				EAAEB95B24A4814600A0CCF3 /* BFRKSearch.swift in Sources */,

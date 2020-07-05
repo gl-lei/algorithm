@@ -78,7 +78,7 @@
   - 实现[朴素的字符串匹配算法](./String/BFRKSearch.swift)
   - 实现[BM算法](./String/BMSearch.swift)
   - 实现[KMP算法](./String/KMPSearch.swift)
- - 实现一个字符集，只包含a~z这26个英文字母的Trie树
+ - 实现一个字符集，只包含a~z这26个英文字母的[Trie树](./String/Trie.swift)
  
  ## 三、LeetCode题解
  ### [目录链接](./LeetCode/LeetCode.md)

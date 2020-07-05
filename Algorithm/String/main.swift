@@ -37,3 +37,23 @@ if let result = kmpSearch(subString: subString, mainString: mainString) {
 } else {
     print("KMP: not found \"\(subString)\" in \"\(mainString)\".")
 }
+
+print("\n============Trie树==============")
+var trie = Trie()
+trie.insert(data: "hello")
+trie.insert(data: "her")
+trie.insert(data: "hi")
+trie.insert(data: "how")
+trie.insert(data: "so")
+trie.insert(data: "see")
+trie.insert(data: "sow")
+trie.print()
+
+let findString = "so"
+print("\n============查找\(findString)是否存在trie树中是完整路径==============")
+let result = trie.find(data: findString)
+if result {
+    print("\(findString)在trie树中是完整路径")
+} else {
+    print("\(findString)在trie树中不是完整路径")
+}
