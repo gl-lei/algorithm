@@ -16,13 +16,15 @@ import Foundation
  * 算法：题目说明了数组中一定有解，且解唯一，所以用哈希表记录已遍历的元素即可
  */
 
-func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-    var maps = [Int: Int]()
-    for (i, num) in nums.enumerated() {
-        if let index = maps[target - num] {
-            return [i, index]
+class Solution001 {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var maps = [Int: Int]()
+        for (i, num) in nums.enumerated() {
+            if let index = maps[target - num] {
+                return [i, index]
+            }
+            maps[num] = i
         }
-        maps[num] = i
+        return []
     }
-    return []
 }

@@ -27,11 +27,21 @@ import Foundation
  *     }
  * }
  */
-class Solution {
+class Solution002 {
+    // 结点结构
+    class ListNode {
+        var val: Int
+        var next: ListNode?
+        init(_ val: Int) {
+            self.val = val
+            self.next = nil
+        }
+    }
+    
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var l1 = l1, l2 = l2
         // 哨兵结点
-        var headNode: ListNode? = ListNode(0)
+        let headNode: ListNode? = ListNode(0)
         var p = headNode
         
         // 是否进位标识

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA00423C2482059500AC74A2 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA00423B2482059500AC74A2 /* HashTable.swift */; };
 		EA04CF7024B156B200592C46 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04CF6F24B156B200592C46 /* Trie.swift */; };
+		EA04CF7224B1CE8500592C46 /* 003.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA04CF7124B1CE8500592C46 /* 003.swift */; };
 		EA122BAE2293B8240009EBF7 /* VagueBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */; };
 		EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */; };
 		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
@@ -207,6 +208,7 @@
 		EA0042382482041F00AC74A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EA00423B2482059500AC74A2 /* HashTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashTable.swift; path = ../../HashTable/HashTable.swift; sourceTree = "<group>"; };
 		EA04CF6F24B156B200592C46 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trie.swift; path = ../../String/Trie.swift; sourceTree = "<group>"; };
+		EA04CF7124B1CE8500592C46 /* 003.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 003.swift; path = "../../LeetCode/003-无重复字符的最长子串/003.swift"; sourceTree = "<group>"; };
 		EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VagueBinarySearch.swift; path = ../../BinarySearch/VagueBinarySearch.swift; sourceTree = "<group>"; };
 		EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopSortArrayFunc.swift; path = ../../BinarySearch/LoopSortArrayFunc.swift; sourceTree = "<group>"; };
 		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 			children = (
 				EA89B93A248CD8C7003B8A57 /* 001.swift */,
 				EA2227F82495B59400BDDEFF /* 002.swift */,
+				EA04CF7124B1CE8500592C46 /* 003.swift */,
 				EA89B92F248CBBFB003B8A57 /* main.swift */,
 			);
 			path = LeetCode;
@@ -1069,6 +1072,7 @@
 				EA2227F92495B59400BDDEFF /* 002.swift in Sources */,
 				EA89B930248CBBFB003B8A57 /* main.swift in Sources */,
 				EA89B93B248CD8C7003B8A57 /* 001.swift in Sources */,
+				EA04CF7224B1CE8500592C46 /* 003.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

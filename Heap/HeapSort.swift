@@ -32,8 +32,9 @@ func heapSort(_ arr: inout [Int]) {
 /// 采用自上往下堆化
 /// - maxIndex: 数组最大下标
 func buildHeap(_ arr: inout [Int], _ maxIndex: Int) {
-    // 从倒数非叶子结点开始调整，n-1/2
-    for i in (0...(maxIndex-1)/2).reversed() {
+    // 从倒数非叶子结点开始调整，小于等于 (maxIndex - 1) / 2
+    // 或者是小于 (maxIndex+1)/2
+    for i in (0..<(maxIndex+1)/2).reversed() {
         heapify(&arr, maxIndex, i)
     }
 }
