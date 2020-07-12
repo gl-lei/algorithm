@@ -80,6 +80,12 @@
   - 实现[KMP算法](./String/KMPSearch.swift)
  - 实现一个字符集，只包含a~z这26个英文字母的[Trie树](./String/Trie.swift)
  
+ ### 贪心算法
+ - 分糖果、钱币找零、区间覆盖
+ - 霍夫曼编码问题
+ - [非负整数中，移除K个数字，让剩下的数字值最小](./Greedy/Greedy.swift)
+ - n个人等待服务问题，如何安排被服务的先后顺序，使 n 个人总的等待时间最短
+ 
  ## 三、LeetCode题解
  ### [目录链接](./LeetCode/LeetCode.md)
  
