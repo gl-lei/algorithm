@@ -86,6 +86,9 @@
  - [非负整数中，移除K个数字，让剩下的数字值最小](./Greedy/Greedy.swift)
  - n个人等待服务问题，如何安排被服务的先后顺序，使 n 个人总的等待时间最短
  
+ ### 分治算法
+ - [求一组数据的逆序对个数](./DivideAndConquer/DivideAndConquer.swift)
+ 
  ## 三、LeetCode题解
  ### [目录链接](./LeetCode/LeetCode.md)
  

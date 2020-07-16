@@ -9,9 +9,13 @@
 import Foundation
 
 print("============贪心算法==============")
-let result = findMinimum(num: 4556847594546, removeCount: 5)
-print("result = \(result)")
+var num: UInt = 4556847594546
+var removeCount: UInt = 5
+let result = findMinimum(num: num, removeCount: removeCount)
+print("求解 \(num) 任意移除 \(removeCount) 位数字之后的最小值为: \(result)")
 
-let result1 = findMinimum(num: 7639428, removeCount: 3)
-print("result = \(result1)")
+num = 7639428
+removeCount = 3
+let result1 = findMinimum(num: num, removeCount: removeCount)
+print("求解 \(num) 任意移除 \(removeCount) 位数字之后的最小值为: \(result1)")
 
