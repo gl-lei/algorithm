@@ -119,6 +119,28 @@ udListGraph.dfs(from: "A", to: "F")
 dListGraph.bfs(from: 1, to: 5)
 dListGraph.dfs(from: 1, to: 5)
 
+print("\n============Kruskal(克鲁斯卡尔)最小生成树算法==============")
+// 图例地址：https://www.cnblogs.com/skywang12345/p/3711496.html
+let kruskalUDGraph = ListGraph<String>(type: .Undirected)
+kruskalUDGraph.addVertex("A").addVertex("B").addVertex("C")
+kruskalUDGraph.addVertex("D").addVertex("E").addVertex("F")
+kruskalUDGraph.addVertex("G")
+kruskalUDGraph.addEdge(from: "A", to: "B", weighted: 12)
+kruskalUDGraph.addEdge(from: "A", to: "F", weighted: 16)
+kruskalUDGraph.addEdge(from: "A", to: "G", weighted: 14)
+kruskalUDGraph.addEdge(from: "B", to: "C", weighted: 10)
+kruskalUDGraph.addEdge(from: "B", to: "F", weighted: 7)
+kruskalUDGraph.addEdge(from: "C", to: "D", weighted: 3)
+kruskalUDGraph.addEdge(from: "C", to: "E", weighted: 5)
+kruskalUDGraph.addEdge(from: "C", to: "F", weighted: 6)
+kruskalUDGraph.addEdge(from: "D", to: "E", weighted: 4)
+kruskalUDGraph.addEdge(from: "E", to: "F", weighted: 2)
+kruskalUDGraph.addEdge(from: "E", to: "G", weighted: 8)
+kruskalUDGraph.addEdge(from: "F", to: "G", weighted: 9)
+kruskalUDGraph.print()
+
+print("")
+kruskalUDGraph.kruskal()
 
 print("\n============Dijkstra(迪杰斯特拉)算法==============")
 /**

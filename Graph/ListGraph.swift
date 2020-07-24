@@ -43,6 +43,32 @@ class ListNode<T: Equatable & CustomStringConvertible> {
     }
 }
 
+/// 邻接表边结构
+class ListEdge<T: Equatable & CustomStringConvertible> {
+    /// 边的起点
+    var start: T
+    
+    /// 边的终点
+    var end: T
+    
+    /// 边的起点所对应的定点下标
+    var startIndex: Int
+    
+    /// 边的终点所对应的定点下标
+    var endIndex: Int
+    
+    /// 边的权重
+    var weight: Int
+    
+    init(start: T, end: T, startIndex: Int, endIndex: Int, weight: Int = 0) {
+        self.start = start
+        self.end = end
+        self.startIndex = startIndex
+        self.endIndex = endIndex
+        self.weight = weight
+    }
+}
+
 /// 邻接表
 class ListGraph<T: Equatable & CustomStringConvertible> {
     /// 存储的元素个数
@@ -105,6 +131,30 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
         return true
     }
     
+    /// 打印图
+    func print() {
+        Swift.print("\(type == .Directed ? "邻接表有向图" : "邻接表无向图") =》")
+        for i in 0..<count {
+            Swift.print("\(vertexArr[i].value): ", terminator: "")
+            var p = vertexArr[i].next
+            // 没有指向的顶点
+            if p == nil {
+                Swift.print("无")
+                continue
+            }
+            
+            // 遍历顶点
+            while p != nil {
+                Swift.print("-> (权重:\(p!.weighted))\(p!.value)", terminator: " ")
+                p = p?.next
+            }
+            Swift.print("")
+        }
+    }
+}
+
+// MARK: - 图的搜索算法：BFS和DFS
+extension ListGraph {
     /// 广度优先搜索，打印搜索路径
     /// 时间复杂度为O(V+E)，V表示顶点个数，E表示边的个数。对于连通图来说，因为边的个数大于等于V-1
     /// 所以，广度优先搜索的时间复杂度简写为O(E)
@@ -137,7 +187,7 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
                 // 如果结点没被访问过，记录路径
                 if !visited[i] {
                     prev[i] = index
-
+                    
                     // 检测是否访问到目的顶点
                     if i == t {
                         Swift.print("从顶点\(from)到顶点\(to)的访问路径(广度优先搜索)：", terminator: "")
@@ -214,6 +264,103 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
         }
     }
     
+    /// 递归打印指定起始顶点到目的顶点的搜索路径
+    /// - Parameters:
+    ///   - prev: 搜索路径索引数组
+    ///   - from: 起始顶点索引
+    ///   - to: 目标顶点索引
+    func print(prev: inout [Int], from: Int, to: Int) {
+        if prev[to] != -1 && to != from {
+            print(prev: &prev, from: from, to: prev[to])
+        }
+        Swift.print("\(vertexArr[to].value) ", terminator: "")
+    }
+}
+
+// MARK: - 最小生成树算法
+extension ListGraph {
+    /// 克鲁斯卡尔（Kruskal）最小生成树
+    /// 基本思想：按照权值从小到大的顺序选择n-1条边，并保证这n-1条边不构成回路
+    /// 需要解决两个问题：
+    /// 1.对图的所有边按照权值大小进行排序
+    /// 2.将边添加到最小生成树中时，怎么判断是否形成了回路
+    /// 问题一采用排序算法解决；
+    /// 问题二记录顶点在最小生成树中的终点，顶底的终点是"是在最小生成树中与它连通的最大顶点"
+    func kruskal() {
+        // 保存"已有最小生成树"中每个顶点在该最小s树种的终点
+        var vends = [Int](repeating: 0, count: count)
+        // 结果数组，保存kruskal最小生成树的边
+        var resultEdges = [ListEdge<T>]()
+        
+        // 获取排序好的图的所有的边
+        let allEdges = getSortedGraphEdges()
+        
+        for i in 0..<allEdges.count {
+            // 边的起始点在当前最小生成树中的终点
+            let endM = getEndVertexIndex(vendes: &vends, from: allEdges[i].startIndex)
+            // 边的终点在当前最小生成树种的终点
+            let endN = getEndVertexIndex(vendes: &vends, from: allEdges[i].endIndex)
+            
+            // 如果不相等，则说明没有形成闭环
+            if endM != endN {
+                vends[endM] = endN
+                resultEdges.append(allEdges[i])
+            }
+        }
+        
+        // 打印结果
+        printKruskalMST(edges: resultEdges)
+    }
+    
+    /// 获取排序好的边结构数组（按照权重从小到大）
+    ///
+    /// - Returns: 边结构数组
+    private func getSortedGraphEdges() -> [ListEdge<T>] {
+        // 边结构数组
+        var edges = [ListEdge<T>]()
+        for i in 0..<count {
+            let vertex = vertexArr[i]
+            var node = vertex.next
+            while node != nil {
+                let edge = ListEdge(start: vertex.value, end: node!.value, startIndex: i, endIndex: node!.index, weight: node!.weighted)
+                edges.append(edge)
+                node = node!.next
+            }
+        }
+        
+        // 对数组按照权值大小进行排序
+        edges.sort {
+            return $0.weight < $1.weight
+        }
+        return edges
+    }
+    
+    /// 获取顶点在当前最小生成树中的终点下标
+    ///
+    /// - Parameter from: 顶点下标
+    /// - Returns: 在当前最小生成树的终点下标
+    private func getEndVertexIndex(vendes: inout [Int], from: Int) -> Int {
+        var end = from
+        while vendes[end] != 0 {
+            end = vendes[end]
+        }
+        return end
+    }
+    
+    /// 打印Kruskal算法生成的最小生成树
+    ///
+    /// - Parameter edges: 边数组
+    private func printKruskalMST(edges: [ListEdge<T>]) {
+        Swift.print("Kruskal算法最小生成树结果: ", terminator: "")
+        for listEdge in edges {
+            Swift.print("<\(listEdge.start),\(listEdge.end)>(\(listEdge.weight)) ", terminator: "")
+        }
+        Swift.print("")
+    }
+}
+
+// MARK: - 最短路径：迪杰斯特拉算法
+extension ListGraph {
     /// 迪杰斯特拉算法
     /// 参考链接：https://www.cnblogs.com/skywang12345/p/3711512.html
     /// - Parameter from: 起始顶点
@@ -289,38 +436,5 @@ class ListGraph<T: Equatable & CustomStringConvertible> {
             Swift.print("\(node.value)(\(distance)) ", terminator: "")
         }
         Swift.print("")
-    }
-    
-    /// 递归打印指定起始顶点到目的顶点的搜索路径
-    /// - Parameters:
-    ///   - prev: 搜索路径索引数组
-    ///   - from: 起始顶点索引
-    ///   - to: 目标顶点索引
-    func print(prev: inout [Int], from: Int, to: Int) {
-        if prev[to] != -1 && to != from {
-            print(prev: &prev, from: from, to: prev[to])
-        }
-        Swift.print("\(vertexArr[to].value) ", terminator: "")
-    }
-    
-    /// 打印图
-    func print() {
-        Swift.print("\(type == .Directed ? "邻接表有向图" : "邻接表无向图") =》")
-        for i in 0..<count {
-            Swift.print("\(vertexArr[i].value): ", terminator: "")
-            var p = vertexArr[i].next
-            // 没有指向的顶点
-            if p == nil {
-                Swift.print("无")
-                continue
-            }
-            
-            // 遍历顶点
-            while p != nil {
-                Swift.print("-> (权重:\(p!.weighted))\(p!.value)", terminator: " ")
-                p = p?.next
-            }
-            Swift.print("")
-        }
     }
 }
