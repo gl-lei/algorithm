@@ -278,6 +278,8 @@ extension ListGraph {
 }
 
 // MARK: - 最小生成树算法
+// 最小生成树是求连通无向图中一颗权值最小的生成树
+// 假设给定的无向图一共有n个顶点，那么最小生成树一定会有n-1条边
 extension ListGraph {
     /// 克鲁斯卡尔（Kruskal）最小生成树
     /// 基本思想：按照权值从小到大的顺序选择n-1条边，并保证这n-1条边不构成回路
@@ -287,7 +289,7 @@ extension ListGraph {
     /// 问题一采用排序算法解决；
     /// 问题二记录顶点在最小生成树中的终点，顶底的终点是"是在最小生成树中与它连通的最大顶点"
     func kruskal() {
-        // 保存"已有最小生成树"中每个顶点在该最小s树种的终点
+        // 保存"已有最小生成树"中每个顶点在该最小生成树中的终点
         var vends = [Int](repeating: 0, count: count)
         // 结果数组，保存kruskal最小生成树的边
         var resultEdges = [ListEdge<T>]()
@@ -352,6 +354,107 @@ extension ListGraph {
     /// - Parameter edges: 边数组
     private func printKruskalMST(edges: [ListEdge<T>]) {
         Swift.print("Kruskal算法最小生成树结果: ", terminator: "")
+        for listEdge in edges {
+            Swift.print("<\(listEdge.start),\(listEdge.end)>(\(listEdge.weight)) ", terminator: "")
+        }
+        Swift.print("")
+    }
+}
+
+extension ListGraph {
+    /// 普里姆(Prim)算法
+    /// 基本思想：对于图G而言，V是所有顶点的集合；现在设置两个新的集合U和T，其中U用于存放G的最小生成树中的顶点，T存放G的最小生成树中的边。
+    /// 从所有uЄU，vЄ(V-U) (V-U表示除去U的所有顶点)的边中，选取权值最小的边(u,v)，将顶点v加入集合U中，将边(u,v)加入集合T中，如此重复，
+    /// 直到U=V为止，最小生成树构造完毕，这时集合T中包含了最小生成树中的所有的边。
+    /// - Parameter start: 起始点下标
+    func prim(start: Int) {
+        guard start >= 0, start < count else {
+            Swift.print("Prim算法指定的起始点下标不合法")
+            return
+        }
+        // 结果数组，保存Prim最小生成树的边
+        var resultEdges = [ListEdge<T>]()
+        // 顶点间的边的另一顶点下标和边的权值
+        var weights = [(from: Int, weight: Int)](repeating: (from: 0, weight: 0), count: count)
+        
+        // 初始化顶点的权值数组
+        // 将每个顶点的权值初始化为start顶点到该顶点的权值
+        for i in 0..<count {
+            let weight = getWeight(start: start, end: i)
+            weights[i] = (from: start, weight: weight)
+        }
+        
+        // 循环遍历查找权值最小的顶点
+        for i in 0..<count {
+            if i == start {
+                continue
+            }
+            
+            // 最小权值
+            var min = Int.max
+            // 最小权值对应的下标
+            var minIndex = 0
+            for j in 0..<count {
+                let weightInfo = weights[j]
+                // weightInfo.weight == 0 意味着这个结点已经被排序过（或者已经加入了最小生成树中）
+                if weightInfo.weight != 0 && weightInfo.weight < min {
+                    min = weightInfo.weight
+                    minIndex = j
+                }
+            }
+            // 经过上面的处理，在未被加入到最小生成树的顶点中，权值最小的顶点minIndex顶点
+            // 生成边信息，加入到结果数组中
+            let weightInfo = weights[minIndex]
+            let listEdge = ListEdge(start: vertexArr[weightInfo.from].value, end: vertexArr[minIndex].value, startIndex: weightInfo.from, endIndex: minIndex, weight: weightInfo.weight)
+            resultEdges.append(listEdge)
+            
+            // 将minIndex顶点的权值标记为0，表示minIndex顶点已经排序过了（或者已经加入到了最小树结果中）
+            weights[minIndex].weight = 0
+            // 更新其他顶点的权值
+            for j in 0..<count {
+                let tmpWeight = getWeight(start: minIndex, end: j)
+                // 当j顶点没有被处理，并且需要更新，更新weights数组信息
+                if weights[j].weight != 0 && tmpWeight < weights[j].weight {
+                    weights[j].from = minIndex
+                    weights[j].weight = tmpWeight
+                }
+            }
+        }
+        
+        // 打印结果
+        printPrimMST(edges: resultEdges)
+    }
+    
+    /// 返回start与end顶点的权值
+    ///
+    /// - Parameters:
+    ///   - start: 起始点下标
+    ///   - end: 终止点下标
+    /// - Returns: 起始点和终止点之间的权值
+    private func getWeight(start: Int, end: Int) -> Int {
+        guard start >= 0, end >= 0, start < count, end < count else {
+            return 0
+        }
+        // start与end相等，则返回
+        if start == end {
+            return 0;
+        }
+        var node = vertexArr[start].next
+        while node != nil {
+            if end == node!.index {
+                return node!.weighted
+            }
+            node = node!.next
+        }
+        // 返回无穷大
+        return Int.max
+    }
+    
+    /// 打印Prim算法生成的最小生成树
+    ///
+    /// - Parameter edges: 边数组
+    private func printPrimMST(edges: [ListEdge<T>]) {
+        Swift.print("Prim算法最小生成树结果: ", terminator: "")
         for listEdge in edges {
             Swift.print("<\(listEdge.start),\(listEdge.end)>(\(listEdge.weight)) ", terminator: "")
         }
