@@ -18,10 +18,7 @@ func bubbleSort(_ array: [Int]) -> [Int] {
         var flag = false
         for j in 0..<sortArray.count - i - 1 {
             if sortArray[j] > sortArray[j+1] {
-                let temp = sortArray[j]
-                sortArray[j] = sortArray[j+1]
-                sortArray[j+1] = temp
-                
+                sortArray.swapAt(j, j+1)
                 flag = true
             }
         }
@@ -37,12 +34,15 @@ func bubbleSort(_ array: [Int]) -> [Int] {
 func insertionSort(_ array: [Int]) -> [Int] {
     var sortArray = array
     for i in 1..<sortArray.count {
+        // 要插入的数据(要排序的数据)
         let temp = sortArray[i]
         
         var index = i
         for j in (1...i).reversed() {
+            // 如果数大于要插入的数据，则往后挪动
             if temp < sortArray[j-1] {
                 sortArray[j] = sortArray[j-1]
+                // 记录要插入的位置
                 index = j-1
                 continue
             }
@@ -68,9 +68,7 @@ func selectionSort(_ array: [Int]) -> [Int] {
         
         // 交换数据
         if minIndex != i {
-            let temp = sortArray[i]
-            sortArray[i] = sortArray[minIndex]
-            sortArray[minIndex] = temp
+            sortArray.swapAt(i, minIndex)
         }
     }
     return sortArray
