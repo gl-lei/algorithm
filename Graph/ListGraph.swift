@@ -287,10 +287,10 @@ extension ListGraph {
     /// 1.对图的所有边按照权值大小进行排序
     /// 2.将边添加到最小生成树中时，怎么判断是否形成了回路
     /// 问题一采用排序算法解决；
-    /// 问题二记录顶点在最小生成树中的终点，顶底的终点是"是在最小生成树中与它连通的最大顶点"
+    /// 问题二记录顶点在最小生成树中的终点，顶点的终点是"在最小生成树中与它连通的最大顶点"
     func kruskal() {
         // 保存"已有最小生成树"中每个顶点在该最小生成树中的终点
-        var vends = [Int](repeating: 0, count: count)
+        var vends = [Int](repeating: -1, count: count)
         // 结果数组，保存kruskal最小生成树的边
         var resultEdges = [ListEdge<T>]()
         
@@ -324,6 +324,7 @@ extension ListGraph {
             let vertex = vertexArr[i]
             var node = vertex.next
             while node != nil {
+                // 构造边结构
                 let edge = ListEdge(start: vertex.value, end: node!.value, startIndex: i, endIndex: node!.index, weight: node!.weighted)
                 edges.append(edge)
                 node = node!.next
@@ -343,7 +344,7 @@ extension ListGraph {
     /// - Returns: 在当前最小生成树的终点下标
     private func getEndVertexIndex(vendes: inout [Int], from: Int) -> Int {
         var end = from
-        while vendes[end] != 0 {
+        while vendes[end] != -1 {
             end = vendes[end]
         }
         return end
@@ -510,7 +511,7 @@ extension ListGraph {
                 nextNode = nextNode?.next
             }
             
-            // 查找最小距离顶点，将其加入到dis数组中，同时将unDis数组中对应位置设置为无穷大
+            // 查找最小距离顶点，将其加入到dis数组中，同时从unDis数组中移除(或者在unDis数组中对应的位置距离设置为无穷大)
             var minIndex = 0
             var minDis = unDis.first!.distance
             for (i, node) in unDis.enumerated() {
@@ -541,3 +542,11 @@ extension ListGraph {
         Swift.print("")
     }
 }
+
+/// Prim算法和Dijkstra算法的异同
+/**
+ * 1.Prim是计算最小生成树的算法，比如为N个村庄修路，怎么修花销最少；Dijkstra是计算最短路径的算法，比如从a村庄走到其他任意村庄的距离；
+ * 2.Prim算法中有一个统计len的变量，每次都要把下一点的距离加到len中；Dijkstra算法中没有，只需要把下一点的距离加到顶点数组即可；
+ * 3.Prim算法更新操作是更新已访问集合中的各个顶点到未访问集合中各个顶点的最短距离(边)；Dijkstra算法更新操作是更新源点到未访问集合中各点的距离，已访问过的
+ * 相当于已经找到源点到它的最短距离了；
+ */

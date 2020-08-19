@@ -53,9 +53,10 @@ class MatrixGraph<T: Equatable & CustomStringConvertible> {
         vertexArr.append(vertex)
         for i in 0..<count {
             if i == count - 1 {
+                // 添加新数组
                 adj.append([Int](repeating: 0, count: count))
             } else {
-                // 补齐矩阵
+                // 原有数组上面，添加0元素来补齐矩阵
                 adj[i].append(0)
             }
         }
@@ -100,7 +101,7 @@ class MatrixGraph<T: Equatable & CustomStringConvertible> {
         
         // 记录顶点是否已被访问数组
         var visited = [Bool](repeating: false, count: count)
-        // 记录钉钉访问路径
+        // 记录顶点访问路径
         var prev = [Int](repeating: -1, count: count)
         // 层级遍历队列
         var queue = [Int]()
