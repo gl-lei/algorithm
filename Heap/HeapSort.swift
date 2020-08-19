@@ -14,7 +14,7 @@ func heapSort(_ arr: inout [Int]) {
     if arr.isEmpty || arr.count == 1 {
         return
     }
-    buildHeap(&arr, arr.count - 1)
+    buildHeap(&arr)
     
     // 表示数组元素的最大下标
     var maxIndex = arr.count-1
@@ -24,26 +24,33 @@ func heapSort(_ arr: inout [Int]) {
         maxIndex -= 1
         
         // 对剩余的元素继续进行堆化
-        heapify(&arr, maxIndex, 0)
+        heapify(&arr, start: 0, end: maxIndex)
     }
 }
 
 /// 建堆
 /// 采用自上往下堆化
-/// - maxIndex: 数组最大下标
-func buildHeap(_ arr: inout [Int], _ maxIndex: Int) {
-    // 从倒数非叶子结点开始调整，小于等于 (maxIndex - 1) / 2
-    // 或者是小于 (maxIndex+1)/2
-    for i in (0..<(maxIndex+1)/2).reversed() {
-        heapify(&arr, maxIndex, i)
+/// 在第一个元素为0的情形中，有三个性质：
+/// 性质一：索引为i的左孩子的索引是 2*i+1
+/// 性质二：索引为i的右孩子的索引是 2*i+2
+/// 性质三：索引为I的父节点的索引是floor((i-1)/2)
+func buildHeap(_ arr: inout [Int]) {
+    // 从倒数非叶子结点开始调整，小于等于arr.count/2 - 1，或者是小于 arr.count/2
+    let index = arr.count/2 - 1
+    for i in (0...index).reversed() {
+        heapify(&arr, start: i, end: arr.count-1)
     }
 }
 
 /// 对元素进行堆化（大根堆）
-/// - maxIndex: 数组的最大下标
-/// - index: 需要堆化的数组下标
-func heapify(_ arr: inout [Int], _ maxIndex: Int, _ index: Int) {
-    var index = index
+///
+/// - Parameters:
+///   - arr: 需要进行排序的数组
+///   - start: 起始下标
+///   - end: 终止下标
+func heapify(_ arr: inout [Int], start: Int, end: Int) {
+    var index = start
+    let maxIndex = end
     while true {
         var maxPos = index
         // 对比左子结点

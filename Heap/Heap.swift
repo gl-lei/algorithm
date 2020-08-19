@@ -15,6 +15,7 @@ import Foundation
 /// 完全二叉树的性质：叶子结点数 = (n + 1)/2 （n表示二叉树的结点总数）
 /// 结点计算需要注意：
 /// 如果堆中的数据都是从下标1开始存储的，则叶子结点范围为：n/2 + 1 ~ n（n表示结点总数 子结点下标为: 2i和2i+1 父结点下标为: i/2
+/// 如果堆中的数据都是从下标0开始存储的，则叶子结点范围为：n/2 ~ n-1（n表示结点总数 子结点下标为：2i+1和2i+2 父结点下标为：(i-1)/2）
 
 enum HeapType {
     /// 大顶堆
@@ -25,7 +26,7 @@ enum HeapType {
 }
 
 class Heap<T: Comparable> {
-    /// 数组，从下标1开始存储数据
+    /// 数组，从下标0开始存储数据
     private var arr: [T?]
     
     /// 容量
@@ -44,8 +45,7 @@ class Heap<T: Comparable> {
         self.type = type
         self.capacity = capacity
         count = 0
-        // 由于下标从1开始，所以会浪费一个空间
-        arr = [T?](repeating: nil, count: capacity+1)
+        arr = [T?](repeating: nil, count: capacity)
     }
     
     /// 插入数据
@@ -59,42 +59,48 @@ class Heap<T: Comparable> {
             switch type {
             case .max:
                 // 大顶堆，如果插入的数据比堆顶数据小，则插入到堆中
-                if data < arr[1]! {
+                if data < arr[0]! {
                     // 将首元素替换掉，然后进行堆化
-                    arr[1] = data
-                    heapify(index: 1)
+                    arr[0] = data
+                    heapify(index: 0)
                     return true
                 }
             case .min:
                 // 小顶堆，如果插入的数据比堆顶数据大，则插入到堆中
-                if data > arr[1]! {
+                if data > arr[0]! {
                     // 将首元素替换掉，然后进行堆化
-                    arr[1] = data
-                    heapify(index: 1)
+                    arr[0] = data
+                    heapify(index: 0)
                     return true
                 }
             }
             return false
         }
         
-        count += 1
         arr[count] = data
+        count += 1
         
-        var i = count
+        // 当前结点索引
+        var i = count-1
+        // 父结点索引
+        var pIndex = (i - 1) / 2
         switch type {
         case .max:
             /// 大顶堆
-            while i/2 > 0 && arr[i]! > arr[i/2]! {
+            while pIndex >= 0 && arr[i]! > arr[pIndex]! {
                 // 交换结点位置
-                arr.swapAt(i, i/2)
+                arr.swapAt(i, pIndex)
+                
                 // 继续对比父节点
-                i = i / 2
+                i = pIndex
+                pIndex = (i - 1) / 2
             }
         case .min:
             // 小顶堆
-            while i/2 > 0 && arr[i]! < arr[i/2]! {
-                arr.swapAt(i, i/2)
-                i = i / 2
+            while pIndex >= 0 && arr[i]! < arr[pIndex]! {
+                arr.swapAt(i, pIndex)
+                i = pIndex
+                pIndex = (i - 1) / 2
             }
         }
         return true
@@ -108,17 +114,17 @@ class Heap<T: Comparable> {
         }
         
         // 将最后一个元素移动到堆顶
-        let res = arr[1]
-        arr[1] = arr[count]
+        let res = arr[0]
+        arr[0] = arr[count-1]
         count -= 1
         
         // 对第一个元素重新堆化
-        heapify(index: 1)
+        heapify(index: 0)
         return res
     }
     
     /// 堆化
-    /// - index: 需要堆化的元素的下标（从1开始）
+    /// - index: 需要堆化的元素的下标
     func heapify(index: Int) {
         var index = index
         heapifyLoop: while true {
@@ -128,12 +134,12 @@ class Heap<T: Comparable> {
                 var maxPos = index
                 
                 // 判断左、右子结点与根结点的大小关系
-                if index * 2 <= count && arr[index]! < arr[index * 2]! {
-                    maxPos = index * 2
+                if index * 2 + 1 < count && arr[index]! < arr[index * 2 + 1]! {
+                    maxPos = index * 2 + 1
                 }
                 
-                if index * 2 + 1 <= count && arr[maxPos]! < arr[index * 2 + 1]! {
-                    maxPos = index * 2 + 1
+                if index * 2 + 2 < count && arr[maxPos]! < arr[index * 2 + 2]! {
+                    maxPos = index * 2 + 2
                 }
                 
                 // 如果根节点最大，则结束
@@ -148,12 +154,12 @@ class Heap<T: Comparable> {
                 var minPos = index
                 
                 // 判断左、右子结点与根结点的大小关系
-                if index * 2 <= count && arr[index]! > arr[index * 2]! {
-                    minPos = index * 2
+                if index * 2 + 1 < count && arr[index]! > arr[index * 2 + 1]! {
+                    minPos = index * 2 + 1
                 }
                 
-                if index * 2 + 1 <= count && arr[minPos]! > arr[index * 2 + 1]! {
-                    minPos = index * 2 + 1
+                if index * 2 + 2 < count && arr[minPos]! > arr[index * 2 + 2]! {
+                    minPos = index * 2 + 2
                 }
                 
                 // 如果根节点最小，则结束循环
@@ -170,7 +176,7 @@ class Heap<T: Comparable> {
     func print() {
         Swift.print("堆的序列：", terminator: "")
         for i in 0..<count {
-            Swift.print("\(arr[i+1]!) ", terminator: "")
+            Swift.print("\(arr[i]!) ", terminator: "")
         }
         Swift.print("")
     }
