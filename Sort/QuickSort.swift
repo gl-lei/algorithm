@@ -9,6 +9,10 @@
 import Foundation
 
 /// 快速排序
+/// 最坏时间复杂度O(N^2)，平均时间复杂度O(N*logN)
+/// 假设被排序的数据有N个数，遍历一次的时间复杂度是O(N),需要遍历多少次呢？至少log(N+1)次，最多N次
+/// 快速排序是采用分治法进行遍历的，我们将其比作一棵二叉树，它需要遍历的次数就是二叉树的深度。根据二叉树的定义，它的深度至少是log(N+1)，最大是N
+/// 快速排序不是稳定的排序算法
 func quickSort(_ array: [Int]) -> [Int] {
     var sortArray = array
     quickSortDecompose(&sortArray, low: 0, high: sortArray.count-1)

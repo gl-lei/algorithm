@@ -63,6 +63,7 @@ func heapify(_ arr: inout [Int], start: Int, end: Int) {
             maxPos = index * 2 + 2
         }
         
+        // 满足堆的条件，不需要再进行调整
         if index == maxPos {
             break
         }
