@@ -1,5 +1,5 @@
 # algorithm
-#### 使用 Swift 语言实现数据结构与算法之美专栏代码 ，在原有基础上扩增了一些内容，并增加 LeetCode 题解，原始代码 https://github.com/wangzheng0822/algo
+#### 使用 Swift 语言实现数据结构与算法之美专栏代码 ，在原有基础上扩增了一些内容，原始代码 https://github.com/wangzheng0822/algo
 
 ## 一、目录结构
 #### 源代码在第一级目录所对应的文件夹下，测试工程以及测试代码在 [Algorithm](./Algorithm) 目录下，可以直接使用 Xcode 打开工程文件 `Algorithm.xcodeproj`，选择对应的 Target 运行测试代码
@@ -91,10 +91,7 @@
  - [求一组数据的逆序对个数](./DivideAndConquer/DivideAndConquer.swift)
  
  ### 回溯算法
- - [八皇后问题](./Backtrack/Queens.swift)
- - [0-1背包问题](./Backtrack/Package.swift)
- 
- ## 三、LeetCode题解
- ### [目录链接](./LeetCode/LeetCode.md)
+ - [利用回溯算法求解八皇后问题](./Backtrack/Queens.swift)
+ - [利用回溯算法求解0-1背包问题](./Backtrack/Package.swift)
  
  ## 未完待续...
