@@ -90,6 +90,10 @@
  ### 分治算法
  - [求一组数据的逆序对个数](./DivideAndConquer/DivideAndConquer.swift)
  
+ ### 回溯算法
+ - [八皇后问题](./Backtrack/Queens.swift)
+ - [0-1背包问题](./Backtrack/Package.swift)
+ 
  ## 三、LeetCode题解
  ### [目录链接](./LeetCode/LeetCode.md)
  
