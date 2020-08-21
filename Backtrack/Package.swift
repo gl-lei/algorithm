@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2020/8/21.
 //  Copyright © 2020 ggl. All rights reserved.
-//  0-1背包问题
+//  0-1背包问题(回溯算法)
 
 import Foundation
 /** 问题描述

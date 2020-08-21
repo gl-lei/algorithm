@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2020/8/19.
 //  Copyright © 2020 ggl. All rights reserved.
-//  八皇后问题
+//  八皇后问题(回溯算法)
 
 import Foundation
 
