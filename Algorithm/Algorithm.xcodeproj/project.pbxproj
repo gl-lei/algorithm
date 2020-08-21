@@ -69,6 +69,9 @@
 		EAB5B67A249A05F300D3F146 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B679249A05F300D3F146 /* main.swift */; };
 		EAB5B67F249A073000D3F146 /* MatrixGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5B67E249A073000D3F146 /* MatrixGraph.swift */; };
 		EAC70694226A20DC00658BF8 /* SortFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC70693226A20DC00658BF8 /* SortFunc.swift */; };
+		EADDE97624EFADB50073E87A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97524EFADB50073E87A /* main.swift */; };
+		EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97A24EFADF90073E87A /* PackageOptimize.swift */; };
+		EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97C24EFB69D0073E87A /* PackageDP.swift */; };
 		EAE13A7324BB3E21004555AF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7224BB3E21004555AF /* main.swift */; };
 		EAE13A7824BB3E59004555AF /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7724BB3E59004555AF /* Greedy.swift */; };
 /* End PBXBuildFile section */
@@ -227,6 +230,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EADDE97124EFADB50073E87A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		EAE13A6E24BB3E21004555AF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +331,10 @@
 		EAB5B679249A05F300D3F146 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAB5B67E249A073000D3F146 /* MatrixGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatrixGraph.swift; path = ../../Graph/MatrixGraph.swift; sourceTree = "<group>"; };
 		EAC70693226A20DC00658BF8 /* SortFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortFunc.swift; path = ../../Sort/SortFunc.swift; sourceTree = "<group>"; };
+		EADDE97324EFADB50073E87A /* DynamicProgramming */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DynamicProgramming; sourceTree = BUILT_PRODUCTS_DIR; };
+		EADDE97524EFADB50073E87A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EADDE97A24EFADF90073E87A /* PackageOptimize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PackageOptimize.swift; path = ../../DynamicProgramming/PackageOptimize.swift; sourceTree = "<group>"; };
+		EADDE97C24EFB69D0073E87A /* PackageDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PackageDP.swift; path = ../../DynamicProgramming/PackageDP.swift; sourceTree = "<group>"; };
 		EAE13A7024BB3E21004555AF /* Greedy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Greedy; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE13A7224BB3E21004555AF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAE13A7724BB3E59004555AF /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Greedy.swift; path = ../../Greedy/Greedy.swift; sourceTree = "<group>"; };
@@ -444,6 +460,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EADDE97024EFADB50073E87A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAE13A6D24BB3E21004555AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +508,7 @@
 				EAE13A7124BB3E21004555AF /* Greedy */,
 				EAAC7F4524C08BD30099FBF4 /* DivideAndConquer */,
 				EA07CF0624ED7511000875EE /* Backtrack */,
+				EADDE97424EFADB50073E87A /* DynamicProgramming */,
 				EA89B92E248CBBFB003B8A57 /* LeetCode */,
 				EA25D3A8223F806F00C72AA0 /* Products */,
 			);
@@ -511,6 +535,7 @@
 				EAE13A7024BB3E21004555AF /* Greedy */,
 				EAAC7F4424C08BD30099FBF4 /* DivideAndConquer */,
 				EA07CF0524ED7511000875EE /* Backtrack */,
+				EADDE97324EFADB50073E87A /* DynamicProgramming */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -684,6 +709,16 @@
 				EA85209D249AF941003968C8 /* ListGraph.swift */,
 			);
 			path = Graph;
+			sourceTree = "<group>";
+		};
+		EADDE97424EFADB50073E87A /* DynamicProgramming */ = {
+			isa = PBXGroup;
+			children = (
+				EADDE97524EFADB50073E87A /* main.swift */,
+				EADDE97A24EFADF90073E87A /* PackageOptimize.swift */,
+				EADDE97C24EFB69D0073E87A /* PackageDP.swift */,
+			);
+			path = DynamicProgramming;
 			sourceTree = "<group>";
 		};
 		EAE13A7124BB3E21004555AF /* Greedy */ = {
@@ -987,6 +1022,23 @@
 			productReference = EAB5B677249A05F300D3F146 /* Graph */;
 			productType = "com.apple.product-type.tool";
 		};
+		EADDE97224EFADB50073E87A /* DynamicProgramming */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EADDE97724EFADB50073E87A /* Build configuration list for PBXNativeTarget "DynamicProgramming" */;
+			buildPhases = (
+				EADDE96F24EFADB50073E87A /* Sources */,
+				EADDE97024EFADB50073E87A /* Frameworks */,
+				EADDE97124EFADB50073E87A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicProgramming;
+			productName = DynamicProgramming;
+			productReference = EADDE97324EFADB50073E87A /* DynamicProgramming */;
+			productType = "com.apple.product-type.tool";
+		};
 		EAE13A6F24BB3E21004555AF /* Greedy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAE13A7624BB3E21004555AF /* Build configuration list for PBXNativeTarget "Greedy" */;
@@ -1065,6 +1117,9 @@
 					EAB5B676249A05F300D3F146 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
+					EADDE97224EFADB50073E87A = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					EAE13A6F24BB3E21004555AF = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -1100,6 +1155,7 @@
 				EAE13A6F24BB3E21004555AF /* Greedy */,
 				EAAC7F4324C08BD30099FBF4 /* DivideAndConquer */,
 				EA07CF0424ED7511000875EE /* Backtrack */,
+				EADDE97224EFADB50073E87A /* DynamicProgramming */,
 				EA89B92C248CBBFB003B8A57 /* LeetCode */,
 			);
 		};
@@ -1284,6 +1340,16 @@
 				EAAEB93B249F68C000A0CCF3 /* TopologicalSort.swift in Sources */,
 				EAB5B67F249A073000D3F146 /* MatrixGraph.swift in Sources */,
 				EAB5B67A249A05F300D3F146 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EADDE96F24EFADB50073E87A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */,
+				EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */,
+				EADDE97624EFADB50073E87A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1752,6 +1818,26 @@
 			};
 			name = Release;
 		};
+		EADDE97824EFADB50073E87A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EADDE97924EFADB50073E87A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EAE13A7424BB3E21004555AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1933,6 +2019,15 @@
 			buildConfigurations = (
 				EAB5B67B249A05F300D3F146 /* Debug */,
 				EAB5B67C249A05F300D3F146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EADDE97724EFADB50073E87A /* Build configuration list for PBXNativeTarget "DynamicProgramming" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADDE97824EFADB50073E87A /* Debug */,
+				EADDE97924EFADB50073E87A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -39,7 +39,7 @@
 - [递归常见问题](./Recursion/RecursionFunc.swift)
 
 ### 排序算法
-- [冒泡排序、插入排序、选择排序](./Sort/BubbleInsertionSelectionFunc.swift)
+- [冒泡排序、插入排序、希尔排序、选择排序](./Sort/BubbleInsertionSelectionFunc.swift)
 - [归并排序](./Sort/MergeSortFunc.swift)、[快速排序](./Sort/QuickSort.swift)
 - [桶排序、计数排序、基数排序（未实现）](./Sort/LinearSort.swift)
 - [编程实现O(n)时间复杂度内找到一组数据的第K大元素](./Sort/SortFunc.swift)
@@ -93,5 +93,12 @@
  ### 回溯算法
  - [利用回溯算法求解八皇后问题](./Backtrack/Queens.swift)
  - [利用回溯算法求解0-1背包问题](./Backtrack/Package.swift)
+ 
+ ### 动态规划
+ - [0-1背包问题](./DynamicProgramming/PackageDP.swift)
+ - 最小路径和
+ - 编程实现莱文斯坦最短编辑距离
+ - 编程实现查找两个字符串的最长公共子序列
+ - 编程实现一个数据序列的最长递增子序列
  
  ## 未完待续...
