@@ -41,7 +41,25 @@ print("物品: \(items)，背包承重: \(loadBearing), 最大可放入物品总
 
 print("\n============动态规划0-1背包问题，动态规划方式，背包问题升级，输出最大价值==============")
 let (weight, maxValue) = knapsack3(items: items, values: values, loadBearing: loadBearing)
-print("物品: \(items), 价值: \(values), 背包承重: \(loadBearing), 重量: \(weight), 最大可放入物品总重量价值为: \(maxValue), ")
+print("物品: \(items), 价值: \(values), 背包承重: \(loadBearing), 重量: \(weight), 最大可放入物品总重量价值为: \(maxValue)")
 
+print("\n============动态规划0-1背包问题，双11购物车问题，输出合适的价格范围==============")
 
+// 购物车商品价格
+var shoppingPrices = [Int]()
+for _ in 0..<5 {
+    let price = Int.random(in: 0...100)
+    shoppingPrices.append(price)
+}
+// 特殊示例，求解可能会产生问题
+// shoppingPrices = [68, 64, 32, 41, 88]
 
+// 200元优惠券
+let coupon = 200
+
+// 结果
+let shoppingResult = shoppingCart(items: shoppingPrices, coupon: coupon)
+print("购物车商品价格: \(shoppingPrices), 优惠券价值: \(coupon), 可使用优惠券购买最优惠价格范围为: \(shoppingResult.price)")
+for i in 0..<shoppingResult.price.count {
+    print("可使用优惠券购买最优惠价格范围为: \(shoppingResult.price[i]), 对应购买的商品清单为: \(shoppingResult.items[i])(\(shoppingResult.items[i].reduce(0) { $0 + $1 }))")
+}

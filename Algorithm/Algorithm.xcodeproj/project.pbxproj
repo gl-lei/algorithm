@@ -72,6 +72,7 @@
 		EADDE97624EFADB50073E87A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97524EFADB50073E87A /* main.swift */; };
 		EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97A24EFADF90073E87A /* PackageOptimize.swift */; };
 		EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97C24EFB69D0073E87A /* PackageDP.swift */; };
+		EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */; };
 		EAE13A7324BB3E21004555AF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7224BB3E21004555AF /* main.swift */; };
 		EAE13A7824BB3E59004555AF /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7724BB3E59004555AF /* Greedy.swift */; };
 /* End PBXBuildFile section */
@@ -335,6 +336,7 @@
 		EADDE97524EFADB50073E87A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EADDE97A24EFADF90073E87A /* PackageOptimize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PackageOptimize.swift; path = ../../DynamicProgramming/PackageOptimize.swift; sourceTree = "<group>"; };
 		EADDE97C24EFB69D0073E87A /* PackageDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PackageDP.swift; path = ../../DynamicProgramming/PackageDP.swift; sourceTree = "<group>"; };
+		EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingCart.swift; path = ../../DynamicProgramming/ShoppingCart.swift; sourceTree = "<group>"; };
 		EAE13A7024BB3E21004555AF /* Greedy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Greedy; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE13A7224BB3E21004555AF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAE13A7724BB3E59004555AF /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Greedy.swift; path = ../../Greedy/Greedy.swift; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 				EADDE97524EFADB50073E87A /* main.swift */,
 				EADDE97A24EFADF90073E87A /* PackageOptimize.swift */,
 				EADDE97C24EFB69D0073E87A /* PackageDP.swift */,
+				EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */,
 			);
 			path = DynamicProgramming;
 			sourceTree = "<group>";
@@ -1350,6 +1353,7 @@
 				EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */,
 				EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */,
 				EADDE97624EFADB50073E87A /* main.swift in Sources */,
+				EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
