@@ -73,3 +73,27 @@ print("动态规划求解最短路径为: \(resultPath)")
 let resultPath1 = yanghuiTriangleShortestPath2(triangleItems: triangleItems)
 print("回溯算法求解最短路径为: \(resultPath1)")
 
+print("\n============动态规划棋盘问题==============")
+let chessboardItems = [
+    [1, 2, 5, 6],
+    [3, 1, 2, 8],
+    [5, 3, 6, 4],
+    [9, 4, 7, 3],
+]
+print("棋盘数据: ")
+for i in 0..<chessboardItems.count {
+    for j in 0..<chessboardItems.count {
+        print("\(chessboardItems[j][i]) ", terminator: "")
+    }
+    print("")
+}
+print("")
+
+let shortestDist = chessboardMinDist(chessboard: chessboardItems)
+print("回溯算法求解棋盘最短路径为: \(shortestDist)")
+
+let shortestDist1 = chessboardMinDistDP(chessboard: chessboardItems)
+print("动态规划通过状态转移表求解棋盘最短路径为: \(shortestDist1)")
+
+let shortestDist2 = chessboardMinDistDP1(chessboard: chessboardItems)
+print("动态规划通过状态转移方程求解棋盘最短路径为: \(shortestDist2)")

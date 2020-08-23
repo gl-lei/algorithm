@@ -74,6 +74,7 @@
 		EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97C24EFB69D0073E87A /* PackageDP.swift */; };
 		EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */; };
 		EADDE98124F1601E0073E87A /* TriangleShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */; };
+		EADDE98324F2481F0073E87A /* ChessboardDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98224F2481F0073E87A /* ChessboardDP.swift */; };
 		EAE13A7324BB3E21004555AF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7224BB3E21004555AF /* main.swift */; };
 		EAE13A7824BB3E59004555AF /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7724BB3E59004555AF /* Greedy.swift */; };
 /* End PBXBuildFile section */
@@ -339,6 +340,7 @@
 		EADDE97C24EFB69D0073E87A /* PackageDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PackageDP.swift; path = ../../DynamicProgramming/PackageDP.swift; sourceTree = "<group>"; };
 		EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingCart.swift; path = ../../DynamicProgramming/ShoppingCart.swift; sourceTree = "<group>"; };
 		EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriangleShortestPath.swift; path = ../../DynamicProgramming/TriangleShortestPath.swift; sourceTree = "<group>"; };
+		EADDE98224F2481F0073E87A /* ChessboardDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChessboardDP.swift; path = ../../DynamicProgramming/ChessboardDP.swift; sourceTree = "<group>"; };
 		EAE13A7024BB3E21004555AF /* Greedy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Greedy; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE13A7224BB3E21004555AF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAE13A7724BB3E59004555AF /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Greedy.swift; path = ../../Greedy/Greedy.swift; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 				EADDE97C24EFB69D0073E87A /* PackageDP.swift */,
 				EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */,
 				EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */,
+				EADDE98224F2481F0073E87A /* ChessboardDP.swift */,
 			);
 			path = DynamicProgramming;
 			sourceTree = "<group>";
@@ -1358,6 +1361,7 @@
 				EADDE97624EFADB50073E87A /* main.swift in Sources */,
 				EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */,
 				EADDE98124F1601E0073E87A /* TriangleShortestPath.swift in Sources */,
+				EADDE98324F2481F0073E87A /* ChessboardDP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
