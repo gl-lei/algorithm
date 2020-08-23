@@ -97,3 +97,12 @@ print("动态规划通过状态转移表求解棋盘最短路径为: \(shortestD
 
 let shortestDist2 = chessboardMinDistDP1(chessboard: chessboardItems)
 print("动态规划通过状态转移方程求解棋盘最短路径为: \(shortestDist2)")
+
+
+print("\n============动态规划硬币找零问题==============")
+let coinItems = [1, 3, 5]
+let totalPaty = 9
+let finalCoinCount = coinChange(coinItems: coinItems, totalPay: totalPaty)
+let finalCoinCount1 = coinChangeRecursion(coinItems: coinItems, totalPay: totalPaty)
+print("\n动态规划方式硬币数组: \(coinItems), 需要支付: \(totalPaty)元, 最少需要硬币个数: \(finalCoinCount)")
+print("回溯算法方式硬币数组: \(coinItems), 需要支付: \(totalPaty)元, 最少需要硬币个数: \(finalCoinCount1)")
