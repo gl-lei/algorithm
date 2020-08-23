@@ -14,10 +14,13 @@ import Foundation
 /// - Parameter triangleItems: 杨辉三角数据数组
 /// - Returns: 求解的最短路径
 func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
-    // 求解最后一个元素所在的行，也就是有几个元素
+    // 求解最后一个元素所在的行有几个元素，就申请多大的空间
     let maxCount = triangleRow(from: triangleItems.count-1)
+    let endRowStartIndex = maxCount * (maxCount - 1) / 2
+    let trueCount = triangleItems.count - endRowStartIndex
+    
     // 状态数组，存储当前行所有结点的最短路径长度
-    var states = [Int](repeating: 0, count: maxCount)
+    var states = [Int](repeating: 0, count: trueCount)
     
     // 设置第一行结点的最短路径
     states[0] = triangleItems[0]
@@ -28,8 +31,11 @@ func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
         let startIndex = row * (row - 1) / 2
         let endIndex = startIndex + row - 1
         
+        // 防止杨辉三角不满的情况出现，只需要计算最后一行最大的元素个数最短路径即可
+        let tureIndex = Swift.min(endIndex, startIndex + trueCount - 1)
+        
         // 计算最短路径，一定要注意是逆序计算，否则会导致重复计算
-        for i in (startIndex...endIndex).reversed() {
+        for i in (startIndex...tureIndex).reversed() {
             if i == startIndex {
                 // 如果是起始结点
                 states[i-startIndex] = states[0] + triangleItems[i]
@@ -55,12 +61,14 @@ func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
     
     // 返回最短路径
     var shortestPath = states[0]
-    for i in 1..<maxCount {
+    
+    // 防止数组不满，需要注意最后一行中的结点个数
+    print("最后一行各个结点的最短路径: \(states[0..<trueCount])")
+    for i in 1..<trueCount {
         if states[i] < shortestPath {
             shortestPath = states[i]
         }
     }
-    print("最后一行各个结点的最短路径: \(states)")
     return shortestPath
 }
 
@@ -71,11 +79,19 @@ func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
 // 最短路径
 private var recurShortestPath = Int.max
 
+// 杨辉三角最后一行的最大下标，防止出现不满的情况
+private var endRowMaxEndIndex = 0
+
 /// 利用回溯算法求解杨辉三角最短路径问题
 ///
 /// - Parameter triangleItems: 杨辉三角数据数组
 /// - Returns: 最短路径
 func yanghuiTriangleShortestPath2(triangleItems: [Int]) -> Int {
+    // 最后一行的行数，从1开始
+    let rowNum = triangleRow(from: triangleItems.count-1)
+    endRowMaxEndIndex = rowNum * (rowNum - 1) / 2 + rowNum - 1
+    
+    // 递归计算
     recurPath(items: triangleItems, curIndex: 0, length: 0)
     return recurShortestPath
 }
@@ -89,7 +105,7 @@ func yanghuiTriangleShortestPath2(triangleItems: [Int]) -> Int {
 private func recurPath(items:[Int], curIndex: Int, length: Int) {
     // 已达到最终位置
     if curIndex >= items.count {
-        if length < recurShortestPath {
+        if length < recurShortestPath && curIndex > endRowMaxEndIndex {
             recurShortestPath = length
         }
         return
