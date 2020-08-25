@@ -98,7 +98,7 @@
  - [0-1背包问题](./DynamicProgramming/PackageDP.swift)
  - [最小路径和](./DynamicProgramming/Chessboard.swift)
  - [编程实现莱文斯坦最短编辑距离](./DynamicProgramming/LevenshteinDistance.swift)
- - 编程实现查找两个字符串的最长公共子序列
+ - [编程实现查找两个字符串的最长公共子序列](./DynamicProgramming/LongestCommonSubsequence.swift)
  - 编程实现一个数据序列的最长递增子序列
  
  ## 未完待续...

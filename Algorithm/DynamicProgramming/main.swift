@@ -114,3 +114,11 @@ let minLstDistance = lstDistanceDP(aString: aString, bString: bString)
 let minLstDistance1 = lstDistance(aString: aString, bString: bString)
 print("\n动态规划方式计算字符串: \(aString)，字符串: \(bString) 莱文斯坦距离: \(minLstDistance)")
 print("回溯算法计算字符串: \(aString)，字符串: \(bString) 莱文斯坦距离: \(minLstDistance1)")
+
+print("\n============动态规划最长公共子串长度==============")
+var aString1 = "mitcmu", bString1 = "mtacnu"
+
+let maxLcsDistance = lcsDistanceDP(aString: aString1, bString: bString1)
+let maxLcsDistance1 = lcsDistance(aString: aString1, bString: bString1)
+print("\n动态规划方式计算字符串: \(aString1)，字符串: \(bString1) 最长公共子串长度: \(maxLcsDistance)")
+print("回溯算法计算字符串: \(aString)，字符串: \(bString) 最长公共子串长度: \(maxLcsDistance1)")
