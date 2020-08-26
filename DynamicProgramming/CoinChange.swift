@@ -30,7 +30,7 @@ func coinChange(coinItems: [Int], totalPay: Int) -> Int {
         maxCoinCount = Int(ceil(Double(totalPay) / Double(minValue)))
     }
     
-    // 状态数组，横轴存储支付的总金额(0~totalPay)，纵轴存储硬币个数，范围为(0~maxCoinCount-1)
+    // 状态数组，横轴存储支付的总金额(0~totalPay)，纵轴表示第几阶段(存储硬币个数，范围为(0~maxCoinCount-1))
     var states = [[Bool]](repeating: [Bool](repeating: false, count: totalPay + 1), count: maxCoinCount)
     
     // 初始化硬币个数为1的数据(下标为0)
@@ -46,7 +46,6 @@ func coinChange(coinItems: [Int], totalPay: Int) -> Int {
         for j in 1...totalPay {
             // 判断已使用硬币数状态
             if states[i-1][j] {
-                
                 // 遍历所有硬币，将状态设置为true
                 for coin in coinItems {
                     if j + coin <= totalPay {

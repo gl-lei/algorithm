@@ -19,6 +19,7 @@ import Foundation
  */
 
 /// 动态规划求解0-1背包问题
+/// 时间复杂度为O(n*w), n表示物品个数，w表示背包可以承载的总重量
 ///
 /// - Parameters:
 ///   - items: 物品数组
@@ -64,6 +65,7 @@ func knapsack(items: [Int], loadBearing: Int) -> Int {
 }
 
 /// 动态规划求解0-1背包问题，空间进行优化，使用一维数组实现
+/// 时间复杂度O(n*w)，空间复杂度为O(w)
 ///
 /// - Parameters:
 ///   - items: 物品数组

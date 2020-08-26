@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2020/8/22.
 //  Copyright © 2020 ggl. All rights reserved.
-//  最短路径
+//  杨辉三角最短路径
 
 import Foundation
 
@@ -21,9 +21,12 @@ import Foundation
 /// - Parameter triangleItems: 杨辉三角数据数组
 /// - Returns: 求解的最短路径
 func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
-    // 求解最后一个元素所在的行有几个元素，就申请多大的空间
+    // 求解最后一个元素所在的行有几个元素，就申请多大的空间，注意可能个数会不满
+    // 最后一行的最大结点个数，也代表总共有几行
     let maxCount = triangleRow(from: triangleItems.count-1)
+    // 最后一行的第一个结点下标(从0开始)
     let endRowStartIndex = maxCount * (maxCount - 1) / 2
+    // 最后一行的结点个数
     let trueCount = triangleItems.count - endRowStartIndex
     
     // 状态数组，存储当前行所有结点的最短路径长度
@@ -38,7 +41,7 @@ func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
         let startIndex = row * (row - 1) / 2
         let endIndex = startIndex + row - 1
         
-        // 防止杨辉三角不满的情况出现，只需要计算最后一行最大的元素个数最短路径即可
+        // 防止杨辉三角不满的情况出现，只需要计算最后一行最大的元素个数的最短路径即可
         let tureIndex = Swift.min(endIndex, startIndex + trueCount - 1)
         
         // 计算最短路径，一定要注意是逆序计算，否则会导致重复计算
@@ -70,7 +73,7 @@ func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
     var shortestPath = states[0]
     
     // 防止数组不满，需要注意最后一行中的结点个数
-    print("最后一行各个结点的最短路径: \(states[0..<trueCount])")
+    print("最后一行各个结点的最短路径: \(states)")
     for i in 1..<trueCount {
         if states[i] < shortestPath {
             shortestPath = states[i]
@@ -107,11 +110,12 @@ func yanghuiTriangleShortestPath2(triangleItems: [Int]) -> Int {
 ///
 /// - Parameters:
 ///   - items: 杨辉三角数据数组
-///   - curIndex: 当前路径结点下标
-///   - length: 当前路径长度
+///   - curIndex: 当前路径结点在杨辉三角数组中的下标
+///   - length: 当前结点路径长度
 private func recurPath(items:[Int], curIndex: Int, length: Int) {
     // 已达到最终位置
     if curIndex >= items.count {
+        // 结点下标必须要大于最后一行结点全满时的最大下标才可以
         if length < recurShortestPath && curIndex > endRowMaxEndIndex {
             recurShortestPath = length
         }
@@ -134,7 +138,7 @@ private func recurPath(items:[Int], curIndex: Int, length: Int) {
 /// - Parameter index: 元素位置索引
 /// - Returns: 当前元素所在的行数(从1开始)
 private func triangleRow(from index: Int) -> Int {
-    // 根据 n*(n+1)/2 规律来求解出当前下标元素所在的行，
+    // 根据 n*(n-1)/2(n表示结点的下标，从0开始) 规律来求解出当前下标元素所在的行，
     // 则相邻的下面两个元素则是 index+n 和 index+n+1
     // 上面的元素是 index-n 和 index-n+1
     var i = 1
@@ -143,7 +147,3 @@ private func triangleRow(from index: Int) -> Int {
     }
     return i - 1
 }
-
-
-
-

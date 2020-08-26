@@ -75,9 +75,9 @@
 		EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */; };
 		EADDE98124F1601E0073E87A /* TriangleShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */; };
 		EADDE98324F2481F0073E87A /* Chessboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98224F2481F0073E87A /* Chessboard.swift */; };
-		EADDE98524F265B00073E87A /* CoinChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98424F265B00073E87A /* CoinChange.swift */; };
 		EADDE98724F41CBB0073E87A /* LevenshteinDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98624F41CBB0073E87A /* LevenshteinDistance.swift */; };
 		EADDE98924F559A00073E87A /* LongestCommonSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98824F559A00073E87A /* LongestCommonSubsequence.swift */; };
+		EADDE98B24F6A6100073E87A /* CoinChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADDE98A24F6A6100073E87A /* CoinChange.swift */; };
 		EAE13A7324BB3E21004555AF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7224BB3E21004555AF /* main.swift */; };
 		EAE13A7824BB3E59004555AF /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE13A7724BB3E59004555AF /* Greedy.swift */; };
 /* End PBXBuildFile section */
@@ -344,9 +344,9 @@
 		EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingCart.swift; path = ../../DynamicProgramming/ShoppingCart.swift; sourceTree = "<group>"; };
 		EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriangleShortestPath.swift; path = ../../DynamicProgramming/TriangleShortestPath.swift; sourceTree = "<group>"; };
 		EADDE98224F2481F0073E87A /* Chessboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chessboard.swift; path = ../../DynamicProgramming/Chessboard.swift; sourceTree = "<group>"; };
-		EADDE98424F265B00073E87A /* CoinChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChange.swift; sourceTree = "<group>"; };
 		EADDE98624F41CBB0073E87A /* LevenshteinDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LevenshteinDistance.swift; path = ../../DynamicProgramming/LevenshteinDistance.swift; sourceTree = "<group>"; };
 		EADDE98824F559A00073E87A /* LongestCommonSubsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LongestCommonSubsequence.swift; path = ../../DynamicProgramming/LongestCommonSubsequence.swift; sourceTree = "<group>"; };
+		EADDE98A24F6A6100073E87A /* CoinChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoinChange.swift; path = ../../DynamicProgramming/CoinChange.swift; sourceTree = "<group>"; };
 		EAE13A7024BB3E21004555AF /* Greedy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Greedy; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE13A7224BB3E21004555AF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAE13A7724BB3E59004555AF /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Greedy.swift; path = ../../Greedy/Greedy.swift; sourceTree = "<group>"; };
@@ -732,7 +732,7 @@
 				EADDE97E24F0E73F0073E87A /* ShoppingCart.swift */,
 				EADDE98024F1601E0073E87A /* TriangleShortestPath.swift */,
 				EADDE98224F2481F0073E87A /* Chessboard.swift */,
-				EADDE98424F265B00073E87A /* CoinChange.swift */,
+				EADDE98A24F6A6100073E87A /* CoinChange.swift */,
 				EADDE98624F41CBB0073E87A /* LevenshteinDistance.swift */,
 				EADDE98824F559A00073E87A /* LongestCommonSubsequence.swift */,
 			);
@@ -1368,9 +1368,9 @@
 				EADDE97D24EFB69D0073E87A /* PackageDP.swift in Sources */,
 				EADDE98924F559A00073E87A /* LongestCommonSubsequence.swift in Sources */,
 				EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */,
-				EADDE98524F265B00073E87A /* CoinChange.swift in Sources */,
 				EADDE97624EFADB50073E87A /* main.swift in Sources */,
 				EADDE98724F41CBB0073E87A /* LevenshteinDistance.swift in Sources */,
+				EADDE98B24F6A6100073E87A /* CoinChange.swift in Sources */,
 				EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */,
 				EADDE98124F1601E0073E87A /* TriangleShortestPath.swift in Sources */,
 				EADDE98324F2481F0073E87A /* Chessboard.swift in Sources */,

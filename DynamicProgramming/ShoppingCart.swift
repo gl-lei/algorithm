@@ -41,8 +41,10 @@ func shoppingCart(items: [Int], coupon: Int) -> (price: [Int], items: [[Int]]) {
     var states = [Bool](repeating: false, count: loadBearingPrice+1)
     
     // 第一件商品状态特殊处理
+    // 不购买第一件商品
     states[0] = true
     if items[0] <= loadBearingPrice {
+        // 购买第一件商品
         states[items[0]] = true
     }
     
