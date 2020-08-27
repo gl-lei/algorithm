@@ -15,6 +15,58 @@ import Foundation
  * 最少需要 3 个硬币（3 个 3 元的硬币）
  */
 
+// 支付备忘录，防止重复计算，使用支付钱数作为Key，需要的硬币数作为Value
+private var coinPayInfo = [Int: Int]()
+
+/// 动态规划状态转移方程
+/// f(n) = 1 + min(f(n-1), f(n-3), f(n-5))，n代表总共支付的钱数，f(n)代表支付n元需要的硬币个数
+///
+/// - Parameters:
+///   - coinItems: 不同硬币类别数组(例如：1元、3元、5元就传 [1,3,5])
+///   - curPay: 总共需要支付多少钱，例如9元
+/// - Returns: 支付钱数所用到的最少硬币个数
+func recurMinCoinChange(coinItems: [Int], curPay: Int) -> Int {
+    // 需要支付0元，则直接返回
+    if (curPay == 0) {
+        return 0
+    }
+    
+    // 如果需要支付的钱数小于0，表示没有硬币面值可以正好支付，返回无穷大
+    if curPay < 0 {
+        return Int.max
+    }
+    
+    // 防止重复计算
+    if let coinCount = coinPayInfo[curPay] {
+        return coinCount
+    }
+    
+    // 如果需要支付的钱数与硬币面值一致，则返回1
+    for coin in coinItems {
+        if coin == curPay {
+            coinPayInfo[curPay] = 1
+            return 1
+        }
+    }
+    
+    // 根据递推公式查找最小的硬币数
+    var minCoinCount = [Int]()
+    for coin in coinItems {
+        let coinCount = recurMinCoinChange(coinItems: coinItems, curPay: curPay - coin)
+        minCoinCount.append(coinCount)
+    }
+    
+    if let min = minCoinCount.min(), min != Int.max {
+        coinPayInfo[curPay] = 1 + min
+        return 1 + min
+    }
+    
+    coinPayInfo[curPay] = Int.max
+    return Int.max
+}
+
+// 下面的求解方式不推荐，没有进行相应优化，相当于穷举方式
+
 /// 动态规划求解硬币找零问题
 /// 钱币个数 + 金额作为状态
 ///
@@ -79,10 +131,7 @@ func coinChange(coinItems: [Int], totalPay: Int) -> Int {
 /// 最少硬币个数
 private var minCoinCount = Int.max
 
-// 硬币状态映射，以钱币个数 + 金额作为Key
-private var coinStateMap = [String: Bool](minimumCapacity: 10)
-
-/// 回溯算法求解硬币找零问题
+/// 回溯算法求解硬币找零问题，没有进行相应的优化
 ///
 /// - Parameters:
 ///   - coinItems: 硬币数组

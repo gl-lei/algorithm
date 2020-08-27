@@ -104,8 +104,10 @@ let coinItems = [1, 3, 5]
 let totalPaty = 9
 let finalCoinCount = coinChange(coinItems: coinItems, totalPay: totalPaty)
 let finalCoinCount1 = coinChangeRecursion(coinItems: coinItems, totalPay: totalPaty)
+let finalCoinCount2 = recurMinCoinChange(coinItems: coinItems, curPay: totalPaty)
 print("\n动态规划方式硬币数组: \(coinItems), 需要支付: \(totalPaty)元, 最少需要硬币个数: \(finalCoinCount)")
 print("回溯算法方式硬币数组: \(coinItems), 需要支付: \(totalPaty)元, 最少需要硬币个数: \(finalCoinCount1)")
+print("动态规划状态转移方程硬币数组: \(coinItems), 需要支付: \(totalPaty)元, 最少需要硬币个数: \(finalCoinCount2)")
 
 print("\n============动态规划莱文斯坦距离==============")
 var aString = "mitcmu", bString = "mtacnu"
