@@ -65,73 +65,64 @@ func recurMinCoinChange(coinItems: [Int], curPay: Int) -> Int {
     return Int.max
 }
 
-// 下面的求解方式不推荐，没有进行相应优化，相当于穷举方式
-
 /// 动态规划求解硬币找零问题
 /// 钱币个数 + 金额作为状态
 ///
 /// - Parameters:
 ///   - coinItems: 不同硬币类别数组(例如：1元、3元、5元就传 [1,3,5])
 ///   - totalPay: 总共需要支付多少钱，例如9元
-/// - Returns: 至少需要多个硬币
+/// - Returns: 至少需要多个硬币，如果无法完整支付，则返回无穷大
 func coinChange(coinItems: [Int], totalPay: Int) -> Int {
-    // 最大硬币个数，默认值为支付的金额
-    var maxCoinCount = totalPay
-    if let minValue = coinItems.min() {
-        // 硬币个数为需要支付的金额除以最小硬币数，向上取整
-        maxCoinCount = Int(ceil(Double(totalPay) / Double(minValue)))
-    }
-    
-    // 状态数组，横轴存储支付的总金额(0~totalPay)，纵轴表示第几阶段(存储硬币个数，范围为(0~maxCoinCount-1))
-    var states = [[Bool]](repeating: [Bool](repeating: false, count: totalPay + 1), count: maxCoinCount)
+    // 状态数组，以存储支付的总金额(0~totalPay)作为下标，值表示当前使用到的最低硬币数。
+    // 初始化为无穷大，表示无法完整支付
+    var states = [Int](repeating: Int.max, count: totalPay+1)
     
     // 初始化硬币个数为1的数据(下标为0)
     for coin in coinItems {
         if coin > totalPay {
             continue
         }
-        states[0][coin] = true
+        states[coin] = 1
     }
     
-    // 构建其他结点数值
-    for i in 1..<maxCoinCount {
-        for j in 1...totalPay {
-            // 判断已使用硬币数状态
-            if states[i-1][j] {
-                // 遍历所有硬币，将状态设置为true
-                for coin in coinItems {
-                    if j + coin <= totalPay {
-                        states[i][j+coin] = true
-                    }
+    // 构建其他支付钱数数值
+    for i in 1...totalPay {
+        if states[i] == 1 {
+            continue
+        }
+        
+        // 根据递推公式来进行计算，比如硬币数组为1，3，5，f(n)表示支付n元需要的硬币数，n表示需要支付的钱数，n需要大于0
+        // f(n) = 1 + min(f(n-1), f(n-3), f(n-5))
+        var countArray = [Int]()
+        for coin in coinItems {
+            if i - coin > 0 {
+                var coinCount = states[i-coin]
+                
+                // 判断是否可以完整支付
+                if coinCount != Int.max {
+                    coinCount += 1
                 }
+                countArray.append(coinCount)
             }
         }
-    }
-    
-    print("硬币状态数组=>")
-    for i in 0..<maxCoinCount {
-        for j in 0...totalPay {
-            print(states[i][j] ? "1": "0", terminator: " ")
-        }
-        print("")
-    }
-    
-    
-    // 返回支付金额为totalPay，同时使用硬币最少的硬币个数
-    for i in 0..<maxCoinCount {
-        if states[i][totalPay] {
-            return i+1
+        
+        // 给当前的钱数设置使用最少的金币数
+        if let min = countArray.min() {
+            states[i] = min
+        } else {
+            states[i] = Int.max
         }
     }
     
-    return 0
+    print("硬币状态数组: \(states)")
+    return states[totalPay]
 }
 
 
 /// 最少硬币个数
 private var minCoinCount = Int.max
 
-/// 回溯算法求解硬币找零问题，没有进行相应的优化
+/// 回溯算法求解硬币找零问题，进行穷举，没有进行相应的优化
 ///
 /// - Parameters:
 ///   - coinItems: 硬币数组
