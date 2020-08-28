@@ -66,7 +66,7 @@ func recurMinCoinChange(coinItems: [Int], curPay: Int) -> Int {
 }
 
 /// 动态规划求解硬币找零问题
-/// 钱币个数 + 金额作为状态
+/// 支付金额作为状态
 ///
 /// - Parameters:
 ///   - coinItems: 不同硬币类别数组(例如：1元、3元、5元就传 [1,3,5])
