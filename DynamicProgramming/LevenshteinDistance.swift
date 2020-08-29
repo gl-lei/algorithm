@@ -72,9 +72,7 @@ func lstDistanceDP(aString: String, bString: String) -> Int {
             let jIndex = bString.index(bString.startIndex, offsetBy: j)
             
             if aString[iIndex] == bString[jIndex] {
-                // 如果值相等，则等于前一阶段的编辑距离
-                // states[i][j] = min(states[i-1][j]+1, states[i][j-1]+1, states[i-1][j-1])
-                states[i][j] = states[i-1][j-1]
+                states[i][j] = min(states[i-1][j]+1, states[i][j-1]+1, states[i-1][j-1])
             } else {
                 states[i][j] = min(states[i-1][j]+1, states[i][j-1]+1, states[i-1][j-1]+1)
             }
