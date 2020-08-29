@@ -37,7 +37,7 @@ private func maxPrice(coupon: Int) -> Int {
 func shoppingCart(items: [Int], coupon: Int) -> (price: [Int], items: [[Int]]) {
     // 最终可忍受价格
     let loadBearingPrice = maxPrice(coupon: coupon)
-    // 状态数组
+    // 状态转移数组
     var states = [Bool](repeating: false, count: loadBearingPrice+1)
     
     // 第一件商品状态特殊处理

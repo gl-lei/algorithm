@@ -8,6 +8,18 @@
 
 import Foundation
 
+/**
+ * 动态规划，总共有八道练习题
+ * 1.0-1背包问题
+ * 2.双11淘宝购物车优惠券问题
+ * 3.杨辉三角最短路径长度问题
+ * 4.棋盘最短路径长度问题
+ * 5.硬币找零问题
+ * 6.莱文斯坦距离问题
+ * 7.最长公共子序列问题
+ * 8.最长递增子序列问题
+ */
+
 var items = [Int]()
 var values = [Int]()
 
@@ -123,4 +135,12 @@ var aString1 = "mitcmu", bString1 = "mtacnu"
 let maxLcsDistance = lcsDistanceDP(aString: aString1, bString: bString1)
 let maxLcsDistance1 = lcsDistance(aString: aString1, bString: bString1)
 print("\n动态规划方式计算字符串: \(aString1)，字符串: \(bString1) 最长公共子串长度: \(maxLcsDistance)")
-print("回溯算法计算字符串: \(aString)，字符串: \(bString) 最长公共子串长度: \(maxLcsDistance1)")
+print("回溯算法计算字符串: \(aString1)，字符串: \(bString1) 最长公共子串长度: \(maxLcsDistance1)")
+
+print("\n============动态规划最长递增子序列长度==============")
+let nums = [2, 9, 3, 6, 5, 1, 7]
+
+let maxLisDistance = lisDistanceDP(nums: nums)
+let maxLisDistance1 = lisDistance(nums: nums)
+print("\n动态规划方式计算数字序列: \(nums)，最长递增子序列的长度: \(maxLisDistance)")
+print("回溯法计算数字序列: \(nums)，最长递增子序列的长度: \(maxLisDistance1)")

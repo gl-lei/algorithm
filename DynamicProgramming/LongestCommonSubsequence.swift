@@ -31,14 +31,12 @@ func lcsDistanceDP(aString: String, bString: String) -> Int {
         let iIndex = aString.startIndex
         let jIndex = bString.index(bString.startIndex, offsetBy: j)
         
-        if j == 0 {
-            if aString[iIndex] == bString[jIndex] {
-                states[0][0] = 1
-            } else {
-                states[0][0] = 0
-            }
+        if aString[iIndex] == bString[jIndex] {
+            states[0][j] = 1
+        } else if j == 0 {
+            states[0][0] = 0
         } else {
-            states[0][j] = states[0][0]
+            states[0][j] = states[0][j-1]
         }
     }
     
@@ -47,14 +45,12 @@ func lcsDistanceDP(aString: String, bString: String) -> Int {
         let iIndex = aString.index(aString.startIndex, offsetBy: i)
         let jIndex = bString.startIndex
         
-        if i == 0 {
-            if aString[iIndex] == bString[jIndex] {
-                states[0][0] = 1
-            } else {
-                states[0][0] = 0
-            }
+        if aString[iIndex] == bString[jIndex] {
+            states[i][0] = 1
+        } else if i == 0 {
+            states[0][0] = 0
         } else {
-            states[i][0] = states[0][0]
+            states[i][0] = states[i-1][0]
         }
     }
     

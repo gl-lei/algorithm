@@ -21,7 +21,7 @@ import Foundation
 /// - Parameter chessboard: 棋盘数据
 /// - Returns: 最短路径
 func chessboardMinDistDP(chessboard: [[Int]]) -> Int {
-    // 状态二维数组，用来存储每个结点的最短路径长度
+    // 状态二维数组，用来存储每个结点的最短路径长度，x表示棋盘横轴，y表示棋盘纵轴
     var states = [[Int]](repeating: [Int](repeating:0 , count: chessboard.count), count: chessboard.count)
     
     // 初始化第一行数据
@@ -118,8 +118,8 @@ func chessboardMinDist(chessboard: [[Int]]) -> Int {
 ///
 /// - Parameters:
 ///   - chessboard: 棋盘数据
-///   - x: 当前结点的x坐标
-///   - y: 当前结点的y坐标
+///   - x: 棋盘当前结点的横轴坐标，以右上角为原点
+///   - y: 棋盘当前结点的纵轴坐标，以右上角为原点
 ///   - dist: 当前结点的最短路径(不包括当前结点的值)
 private func recurMinDist(chessboard: [[Int]], x: Int, y: Int, dist: Int) {
     // 到达了棋盘终点，计算最短路径

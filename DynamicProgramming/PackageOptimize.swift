@@ -73,7 +73,7 @@ private func recurFind(curIndex: Int, items: [Int], curW: Int, loadBearing: Int)
         recurFind(curIndex: curIndex+1, items: items, curW: curW+items[curIndex], loadBearing: loadBearing)
     }
     
-    // 加入背包的情况走完了，再走不加入背包的情况，注意不能加else，否则会漏掉很多情况
+    // 加入背包的情况走完了，再走不加入背包的情况
     resultItems[curIndex] = 0
     recurFind(curIndex: curIndex+1, items: items, curW: curW, loadBearing: loadBearing)
 }

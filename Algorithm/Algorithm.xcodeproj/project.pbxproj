@@ -50,6 +50,7 @@
 		EA61BADB2494E12800F4DD18 /* MergeKSortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA61BADA2494E12800F4DD18 /* MergeKSortedArray.swift */; };
 		EA626BF324838A4E00F384D1 /* LRUBaseHashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */; };
 		EA682A93225C8FAC0089C1DF /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA682A92225C8FAC0089C1DF /* Browser.swift */; };
+		EA6D132A24FA1D41006AB848 /* LongestIncreasingSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6D132924FA1D41006AB848 /* LongestIncreasingSubsequence.swift */; };
 		EA85209E249AF941003968C8 /* ListGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA85209D249AF941003968C8 /* ListGraph.swift */; };
 		EA89B92124894F51003B8A57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92024894F51003B8A57 /* main.swift */; };
 		EA89B92624894F8A003B8A57 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA89B92524894F8A003B8A57 /* BinaryTree.swift */; };
@@ -312,6 +313,7 @@
 		EA61BADA2494E12800F4DD18 /* MergeKSortedArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MergeKSortedArray.swift; path = ../../Heap/MergeKSortedArray.swift; sourceTree = "<group>"; };
 		EA626BF224838A4E00F384D1 /* LRUBaseHashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LRUBaseHashTable.swift; path = ../../HashTable/LRUBaseHashTable.swift; sourceTree = "<group>"; };
 		EA682A92225C8FAC0089C1DF /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = ../../Stack/Browser.swift; sourceTree = "<group>"; };
+		EA6D132924FA1D41006AB848 /* LongestIncreasingSubsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LongestIncreasingSubsequence.swift; path = ../../DynamicProgramming/LongestIncreasingSubsequence.swift; sourceTree = "<group>"; };
 		EA85209D249AF941003968C8 /* ListGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListGraph.swift; path = ../../Graph/ListGraph.swift; sourceTree = "<group>"; };
 		EA89B91E24894F51003B8A57 /* BinaryTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA89B92024894F51003B8A57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				EADDE98A24F6A6100073E87A /* CoinChange.swift */,
 				EADDE98624F41CBB0073E87A /* LevenshteinDistance.swift */,
 				EADDE98824F559A00073E87A /* LongestCommonSubsequence.swift */,
+				EA6D132924FA1D41006AB848 /* LongestIncreasingSubsequence.swift */,
 			);
 			path = DynamicProgramming;
 			sourceTree = "<group>";
@@ -1370,6 +1373,7 @@
 				EADDE97B24EFADF90073E87A /* PackageOptimize.swift in Sources */,
 				EADDE97624EFADB50073E87A /* main.swift in Sources */,
 				EADDE98724F41CBB0073E87A /* LevenshteinDistance.swift in Sources */,
+				EA6D132A24FA1D41006AB848 /* LongestIncreasingSubsequence.swift in Sources */,
 				EADDE98B24F6A6100073E87A /* CoinChange.swift in Sources */,
 				EADDE97F24F0E73F0073E87A /* ShoppingCart.swift in Sources */,
 				EADDE98124F1601E0073E87A /* TriangleShortestPath.swift in Sources */,
