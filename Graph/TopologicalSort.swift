@@ -34,13 +34,15 @@ import Foundation
  **/
 
 /// Kahn算法
+/// 时间复杂度 O(V+E)(V表示顶点个数，E表示边的个数)，每个顶点被访问了一次，每个边也被访问了一次
+///
 /// - Parameter directedGraph: 有向无环图
 /// - Returns: 拓扑序列，如果有环则返回nil
 func kahnTopologicalSort<T>(directedGraph: ListGraph<T>) -> [T]? {
     guard directedGraph.count != 0 else {
         return nil
     }
-    // 顶点的入度
+    // 存储所有顶点的入度
     var indegressArr = [Int](repeating: 0, count: directedGraph.count)
     // 存储入度为0的顶点下标
     var zeroIndegreeQueue = [Int]()
@@ -122,7 +124,8 @@ var circle = false
 var checkCircleArr = [Int]()
 
 /// 基于DFS的拓扑排序
-/// 使用邻接表
+/// 使用邻接表，时间复杂度 O(V+E)，每个顶点被访问两次，每条边被访问一次
+///
 /// - Parameter directedGraph: 有向无环图
 /// - Returns: 拓扑序列，如果有环则返回nil
 func topologicalSortBasedDfs<T>(directedGraph: ListGraph<T>) -> [T]? {
