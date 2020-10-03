@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2020/6/14.
 //  Copyright © 2020 ggl. All rights reserved.
-//  两数相加
+//  002两数相加
 
 import Foundation
 
@@ -71,6 +71,20 @@ class Solution002 {
             p?.next = ListNode(flag)
         }
         return headNode?.next
+    }
+    
+    func print(node: ListNode?) {
+        if node == nil {
+            return
+        }
+        
+        var p = node
+        Swift.print("\(p!.val)", terminator: "")
+        while p?.next != nil {
+            Swift.print(" -> \(p!.next!.val)", terminator: "")
+            p = p?.next
+        }
+        Swift.print("")
     }
 }
 
