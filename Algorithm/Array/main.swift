@@ -8,6 +8,7 @@
 
 import Foundation
 
+print("==================动态扩容数组===================")
 var array = DynamicExpansionArray(capcity: 10)
 for i in 1..<20 {
     array.add(num: i)
@@ -23,8 +24,7 @@ array.print()
 array.remove(at: 1)
 array.print()
 
-print("\n=====================================")
-
+print("\n=================动态扩容集合Set====================")
 var set = DynamicExpansionSet(capcity: 10)
 for i in 1..<20 {
     set.add(num: i)
@@ -40,7 +40,7 @@ set.print()
 set.add(num: 87)
 set.print()
 
-print("\n=====================================")
+print("\n=================合并两个有序数组====================")
 let array1 = [1, 8, 9, 10, 14]
 let array2 = [4, 9, 13, 20, 25]
 let count = array1.count + array2.count

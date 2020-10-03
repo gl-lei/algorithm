@@ -100,11 +100,11 @@ class SinglyLinkedList {
         head = p
     }
     
-    /// 求链表的中间结点
+    /// 求链表的中间结点(快慢指针)
     ///
     /// - Returns: 链表的中间结点
     func middleNode() -> Node? {
-        if head == nil {
+        if head == nil || head?.next == nil {
             return nil
         }
         

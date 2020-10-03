@@ -84,12 +84,14 @@ func findLinkedListRingNodePos(_ head: Node?) -> Int {
     var slow = head
     var fast = head?.next
     while fast != nil {
+        // 首先找到相遇点
         if slow?.data != fast?.data {
             slow = slow?.next
             fast = fast?.next?.next
             continue
         }
         
+        // 再从头开始遍历，直到两个指针相遇
         fast = head
         slow = slow?.next
         while fast?.data != slow?.data {
