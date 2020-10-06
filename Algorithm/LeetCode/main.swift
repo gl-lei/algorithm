@@ -58,6 +58,15 @@ let solution015_1 = Solution015_1()
 let result1 = solution015_1.threeSum(testNums015)
 print(result1)
 
+print("\n============LeetCode041==============")
+let testNums041 = [[1, 2, 0], [3, 4, -1, 1], [7, 8, 9, 11, 12]]
+let solution041 = Solution041()
+let solution041_1 = Solution041_1()
+for nums in testNums041 {
+    print(solution041.firstMissingPositive(nums))
+    print(solution041_1.firstMissingPositive(nums));
+}
+
 print("\n============LeetCode169==============")
 let testNums169 = [[3, 2, 3], [2, 2, 1, 1, 1, 2, 2]]
 let solution169 = Solution169()
