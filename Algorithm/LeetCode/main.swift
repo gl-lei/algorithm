@@ -67,6 +67,31 @@ for nums in testNums041 {
     print(solution041_1.firstMissingPositive(nums));
 }
 
+print("\n============LeetCode141==============")
+// 循环链表 3 -> 2 -> 0 -> -4
+let testLinkNode141 = Solution141.ListNode(3)
+testLinkNode141.next = Solution141.ListNode(2)
+testLinkNode141.next?.next = Solution141.ListNode(0)
+testLinkNode141.next?.next?.next = Solution141.ListNode(-4)
+testLinkNode141.next?.next?.next?.next = testLinkNode141.next
+
+// 循环链表 1 -> 2
+let testLinkNode141_1 = Solution141.ListNode(1)
+testLinkNode141_1.next = Solution141.ListNode(2)
+testLinkNode141_1.next?.next = testLinkNode141
+
+// 单链表 1
+let testLinkNode141_2 = Solution141.ListNode(1)
+
+let testArr141 = [testLinkNode141, testLinkNode141_1, testLinkNode141_2]
+let solution141 = Solution141()
+let solution141_1 = Solution141_1()
+let solution141_2 = Solution141_2()
+
+for linkNode in testArr141 {
+    print(solution141.hasCycle(linkNode), solution141_1.hasCycle(linkNode), solution141_2.hasCycle(linkNode))
+}
+
 print("\n============LeetCode169==============")
 let testNums169 = [[3, 2, 3], [2, 2, 1, 1, 1, 2, 2]]
 let solution169 = Solution169()

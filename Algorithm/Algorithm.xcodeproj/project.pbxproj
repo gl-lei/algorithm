@@ -17,6 +17,7 @@
 		EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */; };
 		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
 		EA19989F252CA86F005D04E6 /* 041.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19989E252CA86F005D04E6 /* 041.swift */; };
+		EA1998A1252DA495005D04E6 /* 141.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1998A0252DA495005D04E6 /* 141.swift */; };
 		EA2227F92495B59400BDDEFF /* 002.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2227F82495B59400BDDEFF /* 002.swift */; };
 		EA25D3AB223F806F00C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3AA223F806F00C72AA0 /* main.swift */; };
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
@@ -273,6 +274,7 @@
 		EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopSortArrayFunc.swift; path = ../../BinarySearch/LoopSortArrayFunc.swift; sourceTree = "<group>"; };
 		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
 		EA19989E252CA86F005D04E6 /* 041.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 041.swift; path = "../../LeetCode/041-缺失的第一个正数/041.swift"; sourceTree = "<group>"; };
+		EA1998A0252DA495005D04E6 /* 141.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 141.swift; path = "../../LeetCode/141-环形链表/141.swift"; sourceTree = "<group>"; };
 		EA2227F82495B59400BDDEFF /* 002.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = 002.swift; path = "../../LeetCode/002-两数相加/002.swift"; sourceTree = "<group>"; };
 		EA25D3A7223F806F00C72AA0 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA25D3AA223F806F00C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				EA04CF7124B1CE8500592C46 /* 003.swift */,
 				EAAB57742528631C006A59F1 /* 015.swift */,
 				EA19989E252CA86F005D04E6 /* 041.swift */,
+				EA1998A0252DA495005D04E6 /* 141.swift */,
 				EAAB57762528632F006A59F1 /* 169.swift */,
 				EA89B92F248CBBFB003B8A57 /* main.swift */,
 			);
@@ -1329,6 +1332,7 @@
 			files = (
 				EAAB57772528632F006A59F1 /* 169.swift in Sources */,
 				EA19989F252CA86F005D04E6 /* 041.swift in Sources */,
+				EA1998A1252DA495005D04E6 /* 141.swift in Sources */,
 				EA2227F92495B59400BDDEFF /* 002.swift in Sources */,
 				EA89B930248CBBFB003B8A57 /* main.swift in Sources */,
 				EA89B93B248CD8C7003B8A57 /* 001.swift in Sources */,

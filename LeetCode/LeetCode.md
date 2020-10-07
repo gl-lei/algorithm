@@ -8,4 +8,5 @@
 |003        |[无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)|中等|[Swift](./003-无重复字符的最长子串/003.swift)
 |015        |[三数之和](https://leetcode-cn.com/problems/3sum)|中等|[Swift](./015-三数之和/015.swift)
 |041        |[缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)|困难|[Swift](./041-缺失的第一个正数/041.swift)
+|141        |[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)|简单|[Swift](./141-环形链表/141.swift)
 |169        |[多数元素](https://leetcode-cn.com/problems/majority-element)|简单|[Swift](./169-多数元素/169.swift)
