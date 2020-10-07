@@ -58,6 +58,31 @@ let solution015_1 = Solution015_1()
 let result1 = solution015_1.threeSum(testNums015)
 print(result1)
 
+print("\n============LeetCode023==============")
+let testLinkNode023 = Solution023.ListNode(1)
+testLinkNode023.next = Solution023.ListNode(4)
+testLinkNode023.next?.next = Solution023.ListNode(5)
+
+let testLinkNode023_1 = Solution023.ListNode(1)
+testLinkNode023_1.next = Solution023.ListNode(3)
+testLinkNode023_1.next?.next = Solution023.ListNode(4)
+
+let testLinkNode023_2 = Solution023.ListNode(2)
+testLinkNode023_2.next = Solution023.ListNode(6)
+
+let testArr023 = [testLinkNode023, testLinkNode023_1, testLinkNode023_2]
+let solution023 = Solution023()
+var linkNode = solution023.mergeKLists(testArr023)
+if linkNode != nil {
+    print(linkNode!.val, terminator: "")
+    linkNode = linkNode?.next
+}
+while linkNode != nil {
+    print(" -> \(linkNode!.val)", terminator: "")
+    linkNode = linkNode?.next
+}
+print("")
+
 print("\n============LeetCode041==============")
 let testNums041 = [[1, 2, 0], [3, 4, -1, 1], [7, 8, 9, 11, 12]]
 let solution041 = Solution041()

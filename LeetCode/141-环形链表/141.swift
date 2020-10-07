@@ -94,6 +94,3 @@ class Solution141_2 {
         return hasCycle(nextNode)
     }
 }
-
-
-
