@@ -4,7 +4,7 @@
 //
 //  Created by ggl on 2019/4/15.
 //  Copyright © 2019年 ggl. All rights reserved.
-//
+//  递归
 
 import Foundation
 
@@ -51,24 +51,29 @@ func factorial(n: Int) -> Double {
     return result
 }
 
-/// 数据集合的全排列
+/// 数据集合从k到m位置的全排列
+/// 具体解读：https://blog.csdn.net/qq_42119136/article/details/104641424
 /// 集合的全排列定义：集合(1,2,3)的所有排列为(1,2,3)(1,3,2)(2,1,3)(2,3,1)(3,1,2)(3,2,1)
+/// - Parameters:
+///   - array: 数据集合
+///   - k: 移动起始位置
+///   - m: 移动终止位置
 func permutation(_ array: inout [Int], _ k: Int, _ m: Int) {
     if k == m {
+        // 元素全部都处于非移动区，打印集合
         print(array)
     } else {
         for i in k...m {
-            swapArrayNum(&array, k, i)
+            // 依次让i指向的元素与k指向的元素交换位置，然后i指向下一个元素，k指向元素再与之交换
+            array.swapAt(k, i)
+            
+            // 向移动区移动，求k+1位置的全排列组合
             permutation(&array, k+1, m)
-            swapArrayNum(&array, k, i)
+            
+            // 数据还原回初始状态
+            array.swapAt(k, i)
         }
     }
-}
-
-func swapArrayNum(_ array: inout [Int], _ k: Int, _ m: Int) {
-    let temp = array[k]
-    array[k] = array[m]
-    array[m] = temp
 }
 
 /*

@@ -37,6 +37,7 @@ for _ in 0..<8 {
 linkedListQueue.enQueue(item: "星期二")
 
 //MARK: - 循环队列
+print("===============循环队列=================")
 var loopQueue = LoopQueue<Int>(capcity: 5)
 for i in 1...10 {
     loopQueue.enQueue(item: i)
