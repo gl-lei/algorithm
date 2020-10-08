@@ -102,4 +102,31 @@
  - [编程实现查找两个字符串的最长公共子序列](./DynamicProgramming/LongestCommonSubsequence.swift)
  - [编程实现一个数据序列的最长递增子序列](./DynamicProgramming/LongestIncreasingSubsequence.swift)
  
- ## 未完待续...
+ ## 三、LeetCode练习
+
+ ### 数组和链表
+ - [三数之和](./LeetCode/015-三数之和/015.swift)
+- [求众数](./LeetCode/169-多数元素/169.swift)
+- [求缺失的第一个正数](./LeetCode/041-缺失的第一个正数/041.swift)
+- [环形链表](./LeetCode/141-环形链表/141.swift)
+- [合并K个排序链表](./LeetCode/023-合并K个升序链表/023.swif)
+ 
+ ### 栈、队列和递归
+ - [有效的括号](./LeetCode/020-有效的括号/020.swif)
+ - 最长有效的括号
+ - 逆波兰表达式求值
+ - 设计一个双端队列
+ - 滑动窗口最大值
+ - 爬楼梯
+ 
+ ### 排序和二分查找
+ 
+ ### 散列表和字符串
+ 
+ ### 二叉树和堆
+ 
+ ### 图
+ 
+ ### 贪心、分治、回溯和动态规划
+ 
+ ## 更多 LeetCode 题解请[点击](./LeetCode/LeetCode.md)

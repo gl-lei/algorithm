@@ -58,6 +58,14 @@ let solution015_1 = Solution015_1()
 let result1 = solution015_1.threeSum(testNums015)
 print(result1)
 
+print("\n============LeetCode020==============")
+let solution020 = Solution020()
+let testChArr = ["()", "()[]{}", "(]", "([)]", "{[]}"]
+for str in testChArr {
+    print(solution020.isValid(str), terminator: " ")
+}
+print("")
+
 print("\n============LeetCode023==============")
 let testLinkNode023 = Solution023.ListNode(1)
 testLinkNode023.next = Solution023.ListNode(4)
