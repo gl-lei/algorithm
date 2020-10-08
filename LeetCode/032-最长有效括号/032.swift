@@ -18,6 +18,6 @@ import Foundation
 
 class Solution032 {
     func longestValidParentheses(_ s: String) -> Int {
-        
+        return 0
     }
 }
