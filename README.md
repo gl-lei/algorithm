@@ -129,4 +129,22 @@
  
  ### 贪心、分治、回溯和动态规划
  
- ## 更多 LeetCode 题解请[点击](./LeetCode/LeetCode.md)
+ ### 更多 LeetCode 题解请[点击](./LeetCode/LeetCode.md)
+
+ ## 四、学习资源
+ ### 1. 可视化工具
+ - [VisuAlgo.net](https://visualgo.net/zh)：数据结构与算法动态可视化网站，网站是由 Steven Halim 博士推行建立，初衷是为了帮助新加坡国立大学的学生们，更好的理解数据结构与算法，并进一步强化对各项知识点的吸收；
+ - [旧金山大学数据结构与算法可视化网站](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html) ：见名知意，旧金山大学为学生提供的数据结构与算法在线可视化网站，可以直接在网页上面查看算法执行效果；
+
+ ### 2. Swift 数据结构与算法
+ - [swift-algorithm-club](https://github.com/raywenderlich/swift-algorithm-club)：[raywenderlich](https://www.raywenderlich.com/) 网站出品的 swift 数据结构与算法书籍答案，非常全面和具体。学习 iOS 的各位都十分清楚，[raywenderlich](https://www.raywenderlich.com/) 网站提供的知识非常靠谱，学起来准没错；
+ - [SwiftAlgorithms](https://github.com/thexande/SwiftAlgorithms)：针对 [swift-algorithm-club](https://github.com/raywenderlich/swift-algorithm-club) 编写的开源应用程序；
+
+### 3. LeetCode 相关
+ - [LeetCode-Swift](https://github.com/soapyigu/LeetCode-Swift)：Swift 编写的 LeetCode 题解，强大；
+ - [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)：图解 LeetCode 算法，使用 Java 语言编写；
+
+ ### 4. 其它语言数据结构与算法
+ - [数据结构与算法博客](https://www.cnblogs.com/skywang12345/p/3603935.html)：使用C、C++、Java 语言实现的常见数据结构与算法博客，原理讲的比较透彻，代码编写的比较经典，学习时可以参考下；
+ - [algorithms](https://github.com/nibnait/algorithms/blob/master/src/main/java/algorithm_practice/README.md)：使用 Java 语言编写的 《剑指offer》题解；
+ - [《编程之法：面试与算法心得》](https://github.com/julycoding/The-Art-Of-Programming-By-July)：书籍配套代码，七月在线科技创始人兼 CEO，CSDN 超人气博客"结构之法算法之道"作者 July 编写，质量有保证，可参考学习；
