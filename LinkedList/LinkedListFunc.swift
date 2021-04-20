@@ -15,12 +15,17 @@ import Foundation
 ///   - linkedListTwo: 第二个有序单链表
 /// - Returns: 合并有序的单链表
 func mergeLinkedList(linkedListOne: SinglyLinkedList, linkedListTwo: SinglyLinkedList) -> SinglyLinkedList {
-    let mergeLinkedList = SinglyLinkedList()
+    // 判断链表是否为空
     var p = linkedListOne.head, q = linkedListTwo.head
-    if p == nil || q == nil {
-        return mergeLinkedList
+    if p == nil {
+        return linkedListTwo
     }
     
+    if q == nil {
+        return linkedListOne
+    }
+    
+    let mergeLinkedList = SinglyLinkedList()
     while p != nil || q != nil {
         if p == nil {
             mergeLinkedList.addNode(q!.data)
