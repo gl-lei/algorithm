@@ -143,6 +143,7 @@
 ### 3. LeetCode 相关
  - [LeetCode-Swift](https://github.com/soapyigu/LeetCode-Swift)：Swift 编写的 LeetCode 题解，强大；
  - [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)：图解 LeetCode 算法，使用 Java 语言编写；
+ - [LeetCode刷题指南](https://github.com/youngyangyang04/leetcode-master): 完整的刷题计划，帮助大家少走弯路，循序渐进学算法；
 
  ### 4. 其它语言数据结构与算法
  - [数据结构与算法博客](https://www.cnblogs.com/skywang12345/p/3603935.html)：使用C、C++、Java 语言实现的常见数据结构与算法博客，原理讲的比较透彻，代码编写的比较经典，学习时可以参考下；
