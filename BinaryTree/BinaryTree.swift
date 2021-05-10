@@ -8,6 +8,14 @@
 
 import Foundation
 
+/// 树的遍历方式
+enum TreeOrderType {
+    case preOrder       // 前序遍历
+    case inOrder        // 中序遍历
+    case postOrder      // 后序遍历
+    case levelOrder     // 层级遍历
+}
+
 /// 树的结点结构
 class Node {
     /// 左子结点
@@ -26,12 +34,10 @@ class Node {
     }
 }
 
-/// 树的遍历方式
-enum TreeOrderType {
-    case preOrder       // 前序遍历
-    case inOrder        // 中序遍历
-    case postOrder      // 后续遍历
-    case levelOrder     // 层级遍历
+extension Node: Equatable {
+    static func == (lhs: Node, rhs: Node) -> Bool {
+        return lhs.data == rhs.data
+    }
 }
 
 /// 二叉树结构
@@ -66,18 +72,37 @@ class BinaryTree {
         Swift.print("二叉树的高度是：\(h) \(h1)")
     }
     
-    /// 遍历
-    func printTreeByPreOrder(_ type: TreeOrderType) {
-        switch type {
+    /// 递归遍历
+    func printTreeByRecur(_ orderType: TreeOrderType) {
+        switch orderType {
         case .preOrder:
-            Swift.print("前序遍历：", terminator:"")
+            Swift.print("递归前序遍历：", terminator:"")
             preOrder(node: root)
         case .inOrder:
-            Swift.print("中序遍历：", terminator:"")
+            Swift.print("递归中序遍历：", terminator:"")
             inOrder(node: root)
         case .postOrder:
-            Swift.print("后序遍历：", terminator:"")
+            Swift.print("递归后序遍历：", terminator:"")
             postOrder(node: root)
+        case .levelOrder:
+            Swift.print("层级遍历：", terminator:"")
+            levelOrder(node: root)
+        }
+        Swift.print("")
+    }
+    
+    /// 非递归遍历
+    func printTreeByNoRecur(_ orderType: TreeOrderType) {
+        switch orderType {
+        case .preOrder:
+            Swift.print("非递归前序遍历：", terminator: "")
+            preOrderByNoRecur(node: root)
+        case .inOrder:
+            Swift.print("非递归中序遍历：", terminator: "")
+            inOrderByNoRecur(node: root)
+        case .postOrder:
+            Swift.print("非递归后序遍历：", terminator: "")
+            postOrderByNoRecur(node: root)
         case .levelOrder:
             Swift.print("层级遍历：", terminator:"")
             levelOrder(node: root)
@@ -92,7 +117,7 @@ class BinaryTree {
             return
         }
         
-        var nodes = [Node?]()    // 结点队列
+        var nodes = [Node]()    // 结点队列
         var front = 0           // 队头
         var rear = 1            // 队尾
         var floor = 0           // 树的深度
@@ -101,13 +126,15 @@ class BinaryTree {
         nodes.append(root!)
         while !nodes.isEmpty {
             let node = nodes.remove(at: 0)
-            Swift.print("\(node?.data ?? "#") ", terminator:"")
+            Swift.print("\(node.data) ", terminator:"")
             front += 1
             
             // 加入子结点，不能同时为空
-            if node?.left != nil || node?.right != nil {
-                nodes.append(node?.left)
-                nodes.append(node?.right)
+            if node.left != nil {
+                nodes.append(node.left!)
+            }
+            if node.right != nil {
+                nodes.append(node.right!)
             }
             
             if front == rear {
@@ -117,7 +144,7 @@ class BinaryTree {
                 rear = nodes.count
                 floor += 1      // 层数+1
                 
-                if rear != 0 {
+                if (rear != 0) {
                     Swift.print("第\(floor+1)层：", terminator:"")
                 }
             }
@@ -213,6 +240,114 @@ extension BinaryTree {
         let leftH = treeHeight(node: node?.left)
         let rightH = treeHeight(node: node?.right)
         return max(leftH, rightH) + 1
+    }
+}
+
+/// 非递归遍历
+extension BinaryTree {
+    /// 非递归先序遍历
+    /// - Parameter node: 根结点
+    fileprivate func preOrderByNoRecur(node: Node?) {
+        if node == nil {
+            return
+        }
+        // 结点栈结构
+        var stackNodeArr = [Node]()
+        
+        // 将左子树结点入栈
+        var node = node
+        while node != nil {
+            // 入栈前打印
+            Swift.print(node!.data, terminator: " ")
+            stackNodeArr.append(node!)
+            node = node?.left
+        }
+        
+        // 回溯，将栈中的结点输出
+        while !stackNodeArr.isEmpty {
+            let topNode = stackNodeArr.removeLast()
+            var rightNode = topNode.right
+            
+            while rightNode != nil {
+                // 入栈前打印
+                Swift.print(rightNode!.data, terminator: " ")
+                stackNodeArr.append(rightNode!)
+                rightNode = rightNode?.left
+            }
+        }
+    }
+    
+    /// 非递归中序遍历
+    fileprivate func inOrderByNoRecur(node: Node?) {
+        if node == nil {
+            return
+        }
+        // 结点栈结构
+        var stackNodeArr = [Node]()
+        
+        // 左子树结点入栈
+        var node = node
+        while node != nil {
+            stackNodeArr.append(node!)
+            node = node?.left
+        }
+        
+        // 回溯遍历栈
+        while !stackNodeArr.isEmpty {
+            // 取出结点打印
+            let topNode = stackNodeArr.removeLast()
+            Swift.print(topNode.data, terminator: " ")
+            
+            // 取出右结点
+            var rightNode = topNode.right
+            while rightNode != nil {
+                stackNodeArr.append(rightNode!)
+                rightNode = rightNode?.left
+            }
+        }
+    }
+    
+    /// 后续遍历
+    fileprivate func postOrderByNoRecur(node: Node?) {
+        if node == nil {
+            return
+        }
+        // 结点栈结构
+        var stackNodeArr = [Node]()
+        
+        // 当前结点的前一个结点
+        var lastNode: Node? = nil
+        
+        // 左子树结点入栈
+        var node = node
+        while node != nil {
+            stackNodeArr.append(node!)
+            node = node?.left
+        }
+        
+        // 回溯栈结构
+        while !stackNodeArr.isEmpty {
+            let topNode = stackNodeArr.last!
+            // 出栈的条件改变了，三种情况需要进行出栈操作：
+            // 1.当前结点的前一个结点是左子结点，并且当前结点的右子结点为空，可以进行出栈
+            // 2.当前结点的前一个结点是右子结点，说明右子树遍历完毕，可以进行出栈
+            // 2.当前结点的左子结点和右子结点不存在，也就是当前结点为叶子结点，也可以进行出栈
+            if topNode.left == lastNode && topNode.right == nil ||
+                topNode.right == lastNode ||
+                topNode.left == nil && topNode.right == nil {
+                // 出栈
+                Swift.print(topNode.data, terminator: " ")
+                stackNodeArr.removeLast()
+                lastNode = topNode
+            } else {
+                // 将右子树加入
+                var rightNode = topNode.right
+                while rightNode != nil {
+                    stackNodeArr.append(rightNode!)
+                    rightNode = rightNode?.left
+                }
+            }
+        }
     }
     
     /// 求树的高度
