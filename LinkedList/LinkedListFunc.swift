@@ -57,6 +57,7 @@ func checkLinkedListRingNode(_ head: Node?) -> Bool {
         return false
     }
     
+    // 快慢指针，相交则说明有环
     while fast != nil {
         slow = slow?.next
         fast = fast?.next?.next
@@ -98,7 +99,7 @@ func findLinkedListRingNodePos(_ head: Node?) -> Int {
         
         // 再从头开始遍历，直到两个指针相遇
         fast = head
-        slow = slow?.next
+        slow = slow?.next       // 这个地方一定要注意
         while fast?.data != slow?.data {
             slow = slow?.next
             fast = fast?.next

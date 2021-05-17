@@ -9,7 +9,6 @@
 import Foundation
 
 class DynamicExpansionSet {
-    
     /// 底层存储数组
     var array: UnsafeMutablePointer<Int>
     
@@ -102,6 +101,7 @@ class DynamicExpansionSet {
     }
     
     deinit {
+        array.deinitialize(count: capcity)
         array.deallocate()
     }
 }

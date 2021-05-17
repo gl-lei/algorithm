@@ -42,6 +42,7 @@ class SinglyLinkedList {
     
     @discardableResult
     func deleteNode(_ data: Int) -> Bool {
+        // 链表是单向的，所以需要始终有一个前向指针
         var curNode = head
         var preNode = head
         // 链表是否为空
@@ -100,6 +101,19 @@ class SinglyLinkedList {
         head = p
     }
     
+    /// 递归反转
+    func reverse(_ node: Node?) -> Node? {
+        if node == nil || node?.next == nil {
+            return node
+        }
+        // 注意，始终返回尾结点
+        let newHead = reverse(node?.next)
+        // 防止形成环
+        node?.next?.next = node
+        node?.next = nil
+        return newHead
+    }
+    
     /// 求链表的中间结点(快慢指针)
     ///
     /// - Returns: 链表的中间结点
@@ -133,9 +147,12 @@ class SinglyLinkedList {
         
         var slow = head
         var fast = head
+        // 快指针先走K步
         for _ in 0..<lastK-1 {
             fast = fast?.next
         }
+        
+        // 快慢指针一起走，快指针走到头后慢指针位置则为倒数第K个结点
         while fast?.next != nil {
             slow = slow?.next
             fast = fast?.next
@@ -157,7 +174,3 @@ class SinglyLinkedList {
         }
     }
 }
-
-
-
-

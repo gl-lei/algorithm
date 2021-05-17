@@ -21,7 +21,7 @@ func mergeTwoSortedArray(arrOne: UnsafePointer<Int>, arrOneCount: Int, arrTwo: U
     
     var i = 0, j = 0
     for index in 0..<(arrOneCount + arrTwoCount) {
-        //判断i和j有没有到头
+        // 判断i和j有没有到头
         if i > arrOneCount-1 {
             newArray[index] = arrTwo[j]
             j += 1
@@ -43,6 +43,41 @@ func mergeTwoSortedArray(arrOne: UnsafePointer<Int>, arrOneCount: Int, arrTwo: U
     return UnsafePointer(newArray)
 }
 
+/// 合并两个有序数组
+/// - Parameters:
+///   - arr: 有序的第一个数组
+///   - otherArr: 有序的第二个数组
+/// - Returns: 有序的合并数组
+func mergeTwoSortedArray(_ arr: [Int], _ otherArr: [Int]) -> [Int] {
+    var i = 0, j = 0
+    var resultArr = [Int]()
+    while i < arr.count || j < otherArr.count {
+        if i == arr.count {
+            // arr 数组到头了，只需要添加 otherArr 中的元素
+            print(otherArr[j])
+            resultArr.append(otherArr[j])
+            j += 1
+        } else if j == otherArr.count {
+            // otherArr 数组到头了，只需要添加 arr 中的元素
+            print(arr[i])
+            resultArr.append(arr[i])
+            i += 1
+        } else {
+            // 比较两者大小
+            if arr[i] > otherArr[j] {
+                print(otherArr[j])
+                resultArr.append(otherArr[j])
+                j += 1
+            } else {
+                print(arr[i])
+                resultArr.append(arr[i])
+                i += 1
+            }
+        }
+    }
+    
+    return resultArr
+}
 
 /// 打印数组内容
 ///

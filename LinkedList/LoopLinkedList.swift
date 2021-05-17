@@ -17,10 +17,12 @@ class LoopLinkedList {
     func addNode(_ data: Int) {
         let node = Node(data: data, next: nil)
         guard let tailNode = self.tailNode() else {
+            // 空链表
             head = node
             node.next = head
             return
         }
+        // 非空链表
         tailNode.next = node
         node.next = head
     }

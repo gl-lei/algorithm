@@ -9,7 +9,6 @@
 import Foundation
 
 class DynamicExpansionArray {
-    
     /// 数组底层存储结构
     var array: UnsafeMutablePointer<Int>
     
@@ -26,6 +25,7 @@ class DynamicExpansionArray {
         size = 0
         self.capcity = capcity
         array = UnsafeMutablePointer<Int>.allocate(capacity: capcity)
+        array.initialize(repeating: Int.min, count: capcity)
     }
     
     /// 增加元素
@@ -35,6 +35,7 @@ class DynamicExpansionArray {
         if size >= capcity {
             let tempArray = array
             array = UnsafeMutablePointer<Int>.allocate(capacity: capcity * 2)
+            array.initialize(repeating: Int.min, count: capcity * 2)
             array.assign(from: tempArray, count: size)
             tempArray.deallocate()
             capcity *= 2
@@ -96,6 +97,7 @@ class DynamicExpansionArray {
     }
     
     deinit {
+        array.deinitialize(count: capcity)
         array.deallocate()
     }
 }
