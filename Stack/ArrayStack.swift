@@ -9,7 +9,6 @@
 import Foundation
 
 class ArrayStack<Element> {
-    
     /// 顺序栈底层结构
     var array: [Element]
     

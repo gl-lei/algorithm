@@ -10,6 +10,28 @@ import Foundation
 
 // 斐波那契数列 防止重复计算，防止堆栈溢出
 var info = [Int: Int]()
+func fibonacciSeriesRecur(n: Int) -> Int {
+    // 递归终止条件
+    if n < 0 {
+        return 0
+    }
+    let result = [0, 1]
+    if n < 2 {
+        return result[n]
+    }
+    
+    // 先从字典中获取（优化重复计算问题）
+    if let num = info[n] {
+        return num
+    }
+    
+    // 字典中如果没有的话，则计算结果
+    let sum = fibonacciSeriesRecur(n: n - 1) + fibonacciSeriesRecur(n: n - 2)
+    info[n] = sum
+    return sum
+}
+
+/// 迭代写法
 func fibonacciSeries(n: Int) -> Int {
     if n < 0 {
         return 0;
@@ -81,6 +103,10 @@ func permutation(_ array: inout [Int], _ k: Int, _ m: Int) {
  */
 
 /// 递归计算n个台阶的走法
+/// 解决思路：假设总共有10个台阶，在第9个台阶处我们假设有 f(9)种走法（也就是走到第9个台阶不同的步数），第8个台阶处有
+/// f(8)种走法，f(8)和f(9)是没有重复的走法的，因为它们的终点不同！！
+/// f(9) 走到第10个台阶的地方只能再走一步；f(8)走到第10个台阶的地方只能再走两步，为什么不能走一步呢？因为这样的话就会和
+/// f(9)的走法重复；另外，f(7)，f(6)...的走法都包含在 f(9) 和 f(8) 的走法种（绕不过去），所以 f(10) = f(9) + f(8)，也就是斐波那契数列
 ///
 /// - Parameter total: 台阶的总数
 /// - Returns: 总走法

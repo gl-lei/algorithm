@@ -9,7 +9,6 @@
 import Foundation
 
 class ArrayQueue<Element> {
-    
     /// 队列底层存储数组，这里做了优化，让其大小固定
     var array: [Element?]
     

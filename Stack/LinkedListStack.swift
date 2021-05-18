@@ -9,7 +9,6 @@
 import Foundation
 
 class LinkedListStack<Element> {
-    
     /// 定义链表结点
     class Node {
         var data: Element
