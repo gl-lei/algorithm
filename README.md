@@ -42,7 +42,7 @@
 ### 排序算法
 - [冒泡排序、插入排序、希尔排序、选择排序](./Sort/BubbleInsertionSelectionFunc.swift)
 - [归并排序](./Sort/MergeSortFunc.swift)、[快速排序](./Sort/QuickSort.swift)
-- [桶排序、计数排序、基数排序（未实现）](./Sort/LinearSort.swift)
+- [桶排序、计数排序、基数排序](./Sort/LinearSort.swift)
 - [编程实现O(n)时间复杂度内找到一组数据的第K大元素](./Sort/SortFunc.swift)
 
 ### 二分查找

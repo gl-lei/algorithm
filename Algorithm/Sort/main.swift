@@ -61,6 +61,14 @@ print("计数排序原始数据：\(countingArray)")
 let countingSortArray = countingSort(countingArray)
 print("计数排序的结果：\(countingSortArray)")
 
+print("\n")
+// 基数排序
+let radixArray = [53, 3, 542, 748, 14, 214, 154, 63, 616]
+print("基数排序原始数据：\(radixArray)")
+let radixSortArray = radixSort(radixArray, 3)
+print("基数排序的结果：\(radixSortArray)")
+
+print("\n")
 // 查找一组数据的第K大元素
 let kth = 3
 let kNum = findKBigElement(randomArray, kth: kth)

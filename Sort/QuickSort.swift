@@ -27,9 +27,9 @@ func quickSort(_ array: [Int]) -> [Int] {
 ///   - r: 数组最大下标
 func quickSortDecompose(_ array: inout [Int], low: Int, high: Int) {
     if low < high {
-        let pivotKey = partition(&array, low: low, high: high)
-        quickSortDecompose(&array, low: low, high: pivotKey-1)
-        quickSortDecompose(&array, low: pivotKey+1, high: high)
+        let key = partition(&array, low: low, high: high)
+        quickSortDecompose(&array, low: low, high: key - 1)
+        quickSortDecompose(&array, low: key + 1, high: high)
     }
 }
 
