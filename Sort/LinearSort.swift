@@ -9,7 +9,7 @@
 import Foundation
 
 /// 桶排序
-// 桶排序的时间复杂度为O(N)
+/// 桶排序的时间复杂度为O(N)
 /// 如果需要排序的数据有N个，我们把它们均匀的划分到M个桶里面，每个桶里面就有K=N/M个元素。
 /// 每个桶内部使用快速排序，时间复杂度为O(K*logK),M个桶排序的时间复杂度就是O(M*K*logK)，因为K=N/M，所以
 /// 整个桶排序的时间复杂度为：O(N*log(N/M))，当桶的个数接近数据个数N时，log(N/M)就是一个非常小的常量，所以
@@ -33,29 +33,30 @@ func bucketSort(_ array: [Double]) -> [Double] {
     }
     
     // 2.分桶
-    // 桶的区间划分（这里桶的数量与元素数量相同）
-    // 区间跨度 = (最大值 - 最小值) / (桶的数量)
-    // Int类型区域跨度以及数组下标求法：
-    //    跨度=(max-min)/bucketNum + 1
-    //    下标=(num-min)/跨度
-    // Double类型区域跨度以及数组下标求法：
-    //    跨度=(max-min)/Double(bucketNum)
-    //    下标=(num-min-1)/跨度
+    // 桶的区间划分
+    // 区间跨度 = ceil(最大值 - 最小值 + 1) / (桶的数量)
+    // 下标 = (num - min) / 区间跨度
     let bucketNum = array.count
-    let d = (max - min) / Double(bucketNum)
+    let d = ceil(max - min + 1) / Double(bucketNum)
     var bucketTotalArray = [[Double]]()
     for _ in 0..<bucketNum {
         let bucketArray = [Double]()
         bucketTotalArray.append(bucketArray)
     }
     
-    // 3.遍历原始数组，将元素放入对应的桶中，并进行排序
+    // 3.遍历原始数组，将元素放入对应的桶中
     for num in array {
-        let n = Int((num - min - 1) / d)
-        bucketInnerSort(&bucketTotalArray[n], num: num)
+        let bucketIndex = Int((num - min) / d)
+        bucketTotalArray[bucketIndex].append(num)
     }
     
-    // 4.将排序好的桶元素输出到一个数组中
+    // 4. 对每一个桶进行排序
+    for i in 0..<bucketNum {
+        bucketInnerSort(&bucketTotalArray[i])
+    }
+    print("桶的个数: \(bucketNum), 桶的内容: \(bucketTotalArray)")
+    
+    // 5.将排序好的桶元素输出到一个数组中
     var sortedArray = [Double]()
     for bucketArray in bucketTotalArray {
         sortedArray.append(contentsOf: bucketArray)
@@ -67,10 +68,8 @@ func bucketSort(_ array: [Double]) -> [Double] {
 /// 桶排序内部排序算法
 ///
 /// - Parameters:
-///   - array: 需要插入元素的桶数组
-///   - num: 需要插入的元素
-func bucketInnerSort(_ array: inout [Double], num: Double) {
-    array.append(num)
+///   - array: 需要排序的的桶
+func bucketInnerSort(_ array: inout [Double]) {
     array.sort()
 }
 

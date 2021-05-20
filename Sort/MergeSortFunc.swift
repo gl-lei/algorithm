@@ -50,7 +50,7 @@ func mergeSortDecompose(_ array: inout [Int], low: Int, high: Int) {
 func mergeArray(_ array: inout [Int], low: Int, mid: Int, high: Int) {
     var i = low, j = mid + 1, k = 0
     
-    // 临时数组，用来顺序存储两个模块中的数据，大小应为r-p+1
+    // 临时数组，用来顺序存储两个模块中的数据，大小应为high-low+1
     var tempArray = [Int](repeating: 0, count: high-low+1)
     while i <= mid && j <= high {
         if array[i] <= array[j] {

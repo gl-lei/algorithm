@@ -13,10 +13,10 @@ import Foundation
 /// 逆序度 = 满有序度 - 有序度
 func bubbleSort(_ array: [Int]) -> [Int] {
     var sortArray = array
-    for i in 0..<sortArray.count - 1 {
+    for i in 0..<sortArray.count {
         // 提前退出冒泡循环的标志位
         var flag = false
-        for j in 0..<sortArray.count - i - 1 {
+        for j in 0..<(sortArray.count - i - 1) {
             if sortArray[j] > sortArray[j+1] {
                 sortArray.swapAt(j, j+1)
                 flag = true
@@ -37,17 +37,13 @@ func insertionSort(_ array: [Int]) -> [Int] {
         // 要插入的数据(要排序的数据)
         let temp = sortArray[i]
         
-        var index = i
         // j从有序区的最后一个元素开始
-        for j in (0...i-1).reversed() {
-            // 如果数大于要插入的数据，则往后挪动
-            if sortArray[j] > temp {
-                sortArray[j+1] = sortArray[j]
-                // 记录要插入的位置
-                index = j
-            }
+        var j = i - 1
+        while j >= 0 && sortArray[j] > temp {
+            sortArray[j+1] = sortArray[j]
+            j -= 1
         }
-        sortArray[index] = temp
+        sortArray[j+1] = temp
     }
     return sortArray
 }
@@ -61,31 +57,30 @@ func insertionSort(_ array: [Int]) -> [Int] {
 func shellSort(_ array: [Int]) -> [Int] {
     var sortedArray = array
     // 增量，初始设置为数组的一半
-    var incrment = sortedArray.count
+    var increment = sortedArray.count
     
     // 开始进行排序
     repeat {
-        incrment = incrment / 2
-        if incrment == 0 {
-            incrment = 1
+        increment = increment / 2
+        if increment == 0 {
+            increment = 1
         }
         
         // 从无序区开始
-        for i in incrment..<sortedArray.count {
+        for i in increment..<sortedArray.count {
             // 待排序的数据
             let temp = sortedArray[i]
-            var index = i
             
-            // j从有序区的最后一个元素开始,stride(from:through:by:)方法为包括最后一个元素的值
-            for j in stride(from: i-incrment, through: 0, by: -incrment) {
-                if sortedArray[j] > temp {
-                    sortedArray[j+incrment] = sortedArray[j]
-                    index = j
-                }
+            // j指向有序区的最后一个元素
+            var j = i - increment
+            while j >= 0 && sortedArray[j] > temp {
+                sortedArray[j+increment] = sortedArray[j]
+                j -= increment
             }
-            sortedArray[index] = temp
+            
+            sortedArray[j+increment] = temp
         }
-    } while incrment > 1
+    } while increment > 1
     
     return sortedArray
 }
@@ -93,19 +88,18 @@ func shellSort(_ array: [Int]) -> [Int] {
 /// 选择排序 不稳定排序算法
 func selectionSort(_ array: [Int]) -> [Int] {
     var sortArray = array
-    for i in 0..<sortArray.count-1 {
-        
+    for i in 0..<sortArray.count {
         // 最小值下标
-        var minIndex = i
-        for j in i..<sortArray.count {
-            if sortArray[j] < sortArray[minIndex] {
-                minIndex = j
+        var min = i
+        for j in i+1..<sortArray.count {
+            if sortArray[min] > sortArray[j] {
+                min = j
             }
         }
         
         // 交换数据
-        if minIndex != i {
-            sortArray.swapAt(i, minIndex)
+        if min != i {
+            sortArray.swapAt(i, min)
         }
     }
     return sortArray
