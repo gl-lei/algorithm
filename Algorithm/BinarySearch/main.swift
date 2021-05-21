@@ -10,7 +10,7 @@ import Foundation
 
 print("=========简单二分查找=========")
 let sortedArray = [8, 11, 19, 23, 27, 33, 45, 55, 67, 98]
-let index = binarySearchWithSortedArray(sortedArray, value: 23)
+let index = binarySearch(sortedArray, value: 23)
 if index != -1 {
     print("在数组中查找到值为23的元素所对应的下标为: \(index)")
 } else {
@@ -34,6 +34,9 @@ print("查找第一个值等于6的元素下标为: \(firstIndex)")
 
 let lastIndex = vagueBinarySearchLastEqualValueWithSortedArray(binaryArray, value: 6)
 print("查找最后一个值等于6的元素下标为: \(lastIndex)")
+
+let lastIndex1 = vagueBinarySearchLastLessThanOrEqualValueWithSortedArray(binaryArray, value: 6)
+print("查找最后一个值小于等于6的元素下标为: \(lastIndex1)")
 
 print("=========循环有序数组查找=========")
 let loopSortArray = [3, 4, 5, 6, 7, 8, 9, 0, 1, 2]

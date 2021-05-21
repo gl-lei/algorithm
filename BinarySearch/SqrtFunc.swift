@@ -60,7 +60,7 @@ func sqrtWithCalculus(num: Int) -> Double {
     
     var n = 1.0
     var result = 1.0
-    while result < 0 || result >= 0.000001 {
+    while result < 0 || result > 0.000001 {
         n -= (n*n - Double(num)) / (2*n)
         result = Double(num) - n * n
     }

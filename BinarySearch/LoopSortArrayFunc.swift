@@ -78,7 +78,7 @@ func binarySearchLoopSortArrayTwo(_ loopSortArray: [Int], value: Int) -> Int {
         sortedArray[index] = loopSortArray[i]
     }
     
-    let findIndex = binarySearchWithSortedArray(sortedArray, value: value)
+    let findIndex = binarySearch(sortedArray, value: value)
     if (findIndex < 0) {
         return findIndex
     } else {
@@ -87,7 +87,7 @@ func binarySearchLoopSortArrayTwo(_ loopSortArray: [Int], value: Int) -> Int {
     }
 }
 
-/// 循环有序数组的性质：以数组中间点为分区，会将数组分成一个有序数组和一个循环有序数组
+/// 循环有序数组的性质：以数组任意点分区，会将数组分成一个有序数组和一个循环有序数组
 /// 如果首元素小于mid，说明前半部分是有序的，后半部分是循环有序数组；
 /// 如果首元素大于mid，说明前半部分是循环有序数组，后半部分是有序数组；
 /// 如果目标在有序数组范围内，使用二分查找；如果目标在循环有序数组中，设定数组边界后，继续查询

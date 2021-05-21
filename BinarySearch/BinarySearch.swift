@@ -14,13 +14,12 @@ import Foundation
 ///   - sortedArray: 有序数组
 ///   - value: 需要查找的数据
 /// - Returns: 查找到的数据的下标，未找到返回-1
-func binarySearchWithSortedArray(_ sortedArray: [Int], value: Int) -> Int {
-    let count = sortedArray.count
-    if count == 0 {
+func binarySearch(_ sortedArray: [Int], value: Int) -> Int {
+    if sortedArray.isEmpty {
         return -1
     }
     
-    var low = 0, high = count-1
+    var low = 0, high = sortedArray.count - 1
     while low <= high {
         let mid = (low + high) / 2
         if sortedArray[mid] == value {
@@ -41,7 +40,7 @@ func binarySearchWithSortedArray(_ sortedArray: [Int], value: Int) -> Int {
 ///   - sortedArray: 有序数组
 ///   - value: 需要查找的数据
 /// - Returns: 查找到的数据的下标，未找到返回-1
-func binarySearchWithSortedArrayRecursion(_ sortedArray: [Int], value: Int) -> Int {
+func binarySearchRecursion(_ sortedArray: [Int], value: Int) -> Int {
     return binarySearchWithLowHighInfo(sortedArray, value: value, low: 0, high: sortedArray.count-1)
 }
 

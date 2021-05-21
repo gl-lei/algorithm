@@ -96,7 +96,7 @@ func vagueBinarySearchLastLessThanOrEqualValueWithSortedArray(_ sortedArray: [In
         if sortedArray[mid] > value {
             high = mid - 1
         } else {
-            if mid == sortedArray.count-1 || sortedArray[mid+1] <= value {
+            if mid == sortedArray.count-1 || sortedArray[mid+1] > value {
                 return mid
             }
             low = mid + 1
