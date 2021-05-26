@@ -12,7 +12,6 @@ import Foundation
 /// 每一个node中都存储所有层级中的下一结点信息
 /// 跳表中存储的是正整数，并且存储的是不重复的数据
 class SkipList {
-    
     /// 跳表的最大层级
     private static let MaxLevel = 16
     
@@ -31,6 +30,9 @@ class SkipList {
         
         /// 所有层级的下一结点，比如forward[0]表示第1层的当前结点的下一结点，
         /// forward[1]表示第2层的当前结点的下一结点
+        /// p.forwards[i] 表示结点p的第i层的下一个结点
+        /// head.forwards[0]!.data 表示第一层的第一个结点元素值；head.forwards[0]!.forwards[0]!.data 表示第一层的第二个结点元素值
+        /// head.forwards[1]!.data 表示第二层的第一个结点元素值；
         var forwards = [Node?](repeating: nil, count: MaxLevel)
     }
     
