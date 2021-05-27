@@ -148,28 +148,35 @@ class HashTable<K: Hashable, V> {
         }
     }
     
-    /// 扩容，扩容为原来的2倍，并且
-    /// 查看详细分析：https://my.oschina.net/u/2307589/blog/1800587
+    /// 扩容，扩容为原来的2倍，详细说明搜索【HashMap底层实现原理】
     func resize() {
         Swift.print("散列表进行扩容操作")
         let oldTable = table
         let oldCapacity = capacity
+        
+        // 扩容为原来的两倍
         table = [Node<K, V>?](repeating: nil, count: capacity * 2)
         capacity *= 2
         
-        // 遍历整个散列表
+        // 遍历整个旧的散列表
         for (i, var node) in oldTable.enumerated() {
             if node == nil {
                 continue
             }
             
+            // 拉链如果只是单个结点，直接在新表中进行定位
             if node?.next == nil {
-                // 如果是单个结点，直接在新表中进行定位
                 table[node!.hash & (capacity-1)] = node
             } else {
-                // 如果是多个结点，则需要 rehash 操作
-                // 相同hash值得一个拉链上的数据，在新散列表中的位置分成两个位置，原位置和原位置 + capcity新位置
-                // 具体分析见：https://my.oschina.net/u/2307589/blog/1800587
+                // 如果是多个结点，则需要 rehash 操作（因为哈希表容量变了）
+                // 相同 hash 值在一个拉链上的数据，在新散列表中的位置分成两个位置，原位置和原位置 + capcity新位置，原理如下
+                // 数组长度变为原来的2倍，表现在二进制上就是多了一个高位参与数组下标确定。
+                // 此时，一个元素通过hash转换坐标的方法计算后，恰好出现一个现象：
+                // 最高位是0则坐标不变，最高位是1则坐标变为“10000+原坐标”，即“原长度+原坐标”。
+                // 因此，在扩容时，不需要重新计算元素的hash了，只需要判断最高位是1还是0就好了
+                // 具体原理参考 JDK8 的元素迁移，HashMap 的扩容机制
+                
+                // 同一条拉链上的数据分成两个位置，用两组链表来存储
                 var loHead: Node<K, V>? = nil, loTail: Node<K, V>? = nil
                 var hiHead: Node<K, V>? = nil, hiTail: Node<K, V>? = nil
                 var next: Node<K, V>?
@@ -177,6 +184,7 @@ class HashTable<K: Hashable, V> {
                 repeat {
                     next = node?.next
                     // 根据算法　node.hash & oldCap　判断节点位置　rehash　后是否发生改变
+                    // 只需要判断结点哈希值的最高位是0还是1即可
                     if (node!.hash & oldCapacity) == 0 {
                         // 在新散列表中，还是属于原来的位置表示是旧位置
                         if loTail == nil {

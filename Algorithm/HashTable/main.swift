@@ -52,12 +52,12 @@ table.print()
 print("====================LRU 缓存算法=====================")
 let lruHashTable = LRUBaseHashTable<String, Int>(capcity: 10)
 lruHashTable["沈阳市"] = 2210
-lruHashTable["康平县"] = 2210
-lruHashTable["辽中县"] = 2210
+//lruHashTable["康平县"] = 2210
+//lruHashTable["辽中县"] = 2210
 lruHashTable.print()
 
 print("======================删除头结点=======================")
-lruHashTable["沈阳市"] = nil
+lruHashTable.remove(for: "康平县")
 lruHashTable.print()
 
 print("======================删除尾结点=======================")

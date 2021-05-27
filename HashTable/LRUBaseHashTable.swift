@@ -63,7 +63,8 @@ class LRUBaseHashTable<K: Hashable, V> {
     
     init(capcity: Int) {
         cacheCapacity = capcity < DefaultCapcity ? DefaultCapcity : capcity
-        tableCapacity = Int(pow(2, floor(log2(Double(cacheCapacity)))))
+        // 这里需要保证空间为2的次方，保证哈希表能够正常计算哈希值
+        tableCapacity = Int(pow(2, ceil(log2(Double(cacheCapacity)))))
         table = [DNode<K, V>?](repeating: nil, count: tableCapacity)
     }
     
@@ -105,8 +106,7 @@ class LRUBaseHashTable<K: Hashable, V> {
             // 判断缓存是否已满
             if count > cacheCapacity {
                 // 缓存已满，需要将头结点删掉（最不经常访问的结点）
-                tableRemoveNode(for: head!.key)
-                linkedListRemove(head!)
+                remove(for: head!.key)
             }
         } else {
             // 结点存在，需要将结点移动到尾部
@@ -162,9 +162,22 @@ class LRUBaseHashTable<K: Hashable, V> {
 
 /// 散列表相关方法
 extension LRUBaseHashTable {
+    /// 计算 Key 的散列值
+    fileprivate func tableHash(key: K) -> Int {
+        // 高低位异或，计算出来的具有高位与低位的性质
+        let h: Int = key.hashValue
+        if MemoryLayout<Int>.size == 32 {
+            // 32位
+            return (h ^ (h >> 16))
+        } else {
+            // 64位
+            return (h ^ (h >> 32))
+        }
+    }
+    
     /// 根据 Key 获取结点的信息
     fileprivate func tableNode(for key: K) -> DNode<K, V>? {
-        // 利用 A % (2^n) = A & (2^n - 1) 原理计算要插入的位置，位运算效率更高
+        // 利用 A % (2^n) = A & (2^n - 1) 原理计算要插入的位置，不使用取余运算是因为位运算效率更高
         let index = tableHash(key: key) & (tableCapacity - 1)
         var dNode = table[index]
         while dNode != nil {
@@ -232,19 +245,6 @@ extension LRUBaseHashTable {
         }
         return nil
     }
-    
-    /// 计算 Key 的散列值
-    fileprivate func tableHash(key: K) -> Int {
-        // 高低位异或，计算出来的具有高位与低位的性质
-        let h: Int = key.hashValue
-        if MemoryLayout<Int>.size == 32 {
-            // 32位
-            return (h ^ (h >> 16))
-        } else {
-            // 64位
-            return (h ^ (h >> 32))
-        }
-    }
 }
 
 /// 双向链表相关的方法
@@ -263,9 +263,10 @@ extension LRUBaseHashTable {
         }
     }
     
-    /// 删除结点
+    /// 删除结点，注意此方法需要保证结点一定会存在，不能单独使用（已经在哈希表中进行了判断）
     /// 需要注意维护头结点和尾结点的指向
     fileprivate func linkedListRemove(_ node: DNode<K, V>) {
+        // 调用到这里说明结点存在于表中
         if head!.key == tail!.key {
             // 表示只有一个结点
             head = nil
