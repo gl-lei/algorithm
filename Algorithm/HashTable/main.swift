@@ -52,18 +52,17 @@ table.print()
 print("====================LRU 缓存算法=====================")
 let lruHashTable = LRUBaseHashTable<String, Int>(capcity: 10)
 lruHashTable["沈阳市"] = 2210
-//lruHashTable["康平县"] = 2210
-//lruHashTable["辽中县"] = 2210
+lruHashTable["康平县"] = 2210
+lruHashTable["辽中县"] = 2210
 lruHashTable.print()
 
 print("======================删除头结点=======================")
-lruHashTable.remove(for: "康平县")
-lruHashTable.print()
+lruHashTable.remove(for: "沈阳市")
+lruHashTable.print(true)
 
 print("======================删除尾结点=======================")
-lruHashTable["康平县"] = nil
 lruHashTable["辽中县"] = nil
-lruHashTable.print()
+lruHashTable.print(true)
 
 lruHashTable["新民市"] = 2210
 lruHashTable["大连市"] = 2220
@@ -74,11 +73,12 @@ lruHashTable["瓦房店市"] = 2224
 lruHashTable["长海县"] = 2225
 lruHashTable["鞍山市"] = 2230
 lruHashTable["台安县"] = 2231
-print("访问庄河市: \(lruHashTable["庄河市"]!)")
-print("访问长海县: \(lruHashTable["长海县"]!)")
-print("删除新民市、庄河市、北京市")
+print("=====================访问庄河市: \(lruHashTable["庄河市"]!)==================")
+lruHashTable.print(true)
+print("=====================访问长海县: \(lruHashTable["长海县"]!)==================")
+lruHashTable.print(true)
+print("=======================删除新民市、庄河市、北京市========================")
 lruHashTable.remove(for: "新民市")
 lruHashTable.remove(for: "庄河市")
 lruHashTable.remove(for: "北京市")
-
-lruHashTable.print()
+lruHashTable.print(true)
