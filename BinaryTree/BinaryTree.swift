@@ -244,6 +244,13 @@ extension BinaryTree {
 }
 
 /// 非递归遍历
+/// 二叉树的遍历所有的结点都会遍历两次，一次是入栈过程，一次是出栈过程；
+/// 先序遍历：在根结点入栈的时候进行打印，先左后右；
+/// 中序遍历：入栈过程不能打印，直到没有左子结点。出栈过程进行打印即可，先左后右；
+/// 后序遍历：入栈过程不能打印，出栈过程打印，但出栈过程打印需要有条件，必须确保右子结点遍历完成：
+/// 1. 当前结点的左子结点和右子结点不存在，出栈打印；
+/// 2. 当前结点的前一个结点是左子结点，并且右子结点不存在，出栈打印；
+/// 3. 当前结点的前一个结点是右子结点，出栈打印；（右子结点遍历完毕）
 extension BinaryTree {
     /// 非递归先序遍历
     /// - Parameter node: 根结点
@@ -254,7 +261,7 @@ extension BinaryTree {
         // 结点栈结构
         var stackNodeArr = [Node]()
         
-        // 将左子树结点入栈
+        // 将左子树结点入栈（把左子结点看作根结点）
         var node = node
         while node != nil {
             // 入栈前打印
@@ -268,6 +275,7 @@ extension BinaryTree {
             let topNode = stackNodeArr.removeLast()
             var rightNode = topNode.right
             
+            // 把 rightNode 看作根结点，重复上面的流程
             while rightNode != nil {
                 // 入栈前打印
                 Swift.print(rightNode!.data, terminator: " ")
@@ -285,7 +293,7 @@ extension BinaryTree {
         // 结点栈结构
         var stackNodeArr = [Node]()
         
-        // 左子树结点入栈
+        // 左子树结点入栈（根结点）
         var node = node
         while node != nil {
             stackNodeArr.append(node!)
