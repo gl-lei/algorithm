@@ -49,7 +49,8 @@ class Heap<T: Comparable> {
     }
     
     /// 插入数据
-    /// 当插入的数据超过容量时
+    /// 使用从下往上的堆化方法，插入的元素与父元素比较大小，交换...
+    /// 当插入的数据超过容量时，执行删除操作
     /// - 如果是大顶堆，则判断插入的数据是否比堆顶数据小，是则替换堆顶数据，重新进行堆化
     /// - 如果是小顶堆，则判断插入的数据是否比堆顶数据大，是则替换堆顶数据，重新进行堆化
     @discardableResult
@@ -86,7 +87,7 @@ class Heap<T: Comparable> {
         var pIndex = (i - 1) / 2
         switch type {
         case .max:
-            /// 大顶堆
+            /// 大顶堆，执行自底向上的堆化操作，当前结点不是堆化好的数据
             while pIndex >= 0 && arr[i]! > arr[pIndex]! {
                 // 交换结点位置
                 arr.swapAt(i, pIndex)
@@ -96,7 +97,7 @@ class Heap<T: Comparable> {
                 pIndex = (i - 1) / 2
             }
         case .min:
-            // 小顶堆
+            // 小顶堆，执行自底向上的堆化操作，当前结点不是堆化好的数据
             while pIndex >= 0 && arr[i]! < arr[pIndex]! {
                 arr.swapAt(i, pIndex)
                 i = pIndex
@@ -123,7 +124,7 @@ class Heap<T: Comparable> {
         return res
     }
     
-    /// 堆化
+    /// 自顶而下的方式进行堆化，适用于根结点数据被修改，子结点是堆化好的数据；
     /// - index: 需要堆化的元素的下标
     func heapify(index: Int) {
         var index = index

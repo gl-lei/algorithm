@@ -34,15 +34,16 @@ func heapSort(_ arr: inout [Int]) {
 /// 性质一：索引为i的左孩子的索引是 2*i+1
 /// 性质二：索引为i的右孩子的索引是 2*i+2
 /// 性质三：索引为I的父节点的索引是floor((i-1)/2)
+/// 性质四：叶子结点范围为 n/2 ~ n-1
 func buildHeap(_ arr: inout [Int]) {
-    // 从倒数非叶子结点开始调整，小于等于arr.count/2 - 1，或者是小于 arr.count/2
+    // 从非叶子结点倒序开始调整，小于等于arr.count/2 - 1，或者是小于 arr.count/2
     let index = arr.count/2 - 1
     for i in (0...index).reversed() {
         heapify(&arr, start: i, end: arr.count-1)
     }
 }
 
-/// 对元素进行堆化（大根堆）
+/// 对元素进行堆化（大根堆），采用自顶向下的方式进行堆化
 ///
 /// - Parameters:
 ///   - arr: 需要进行排序的数组

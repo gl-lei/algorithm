@@ -65,9 +65,11 @@ print("\n合并K个有序数组后排序结果：\(resultArr)")
 
 
 print("\n============求一组动态数据集合的最大Top K==============")
-let dynHeap = Heap<Int>(type: .min, capacity: 10)
+print("模拟动态数据: \(arr)")
+let k = 10
+let dynHeap = Heap<Int>(type: .min, capacity: k)
 for i in arr.flatMap({ $0 }) {
     dynHeap.insert(i)
 }
-print("动态数据数据集合的最大Top K结果(插入的数据)")
+print("动态数据数据集合的最大 Top \(k) 结果(插入的数据)")
 dynHeap.print()
