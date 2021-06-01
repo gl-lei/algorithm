@@ -86,7 +86,8 @@ func rkSearch(subString: String, mainString: String) -> Int? {
         // 字符a的ascii值
         let aAsciiValue = Character("a").asciiValue!
         
-        // 使用快捷计算公式：h[i] = (h[i-1] - 26^(m-1) * (S[i-1] - 'a')) * 26 + (s[i+m-1] - 'a')
+        // 使用快捷计算公式：h[i] = (h[i-1] - 26^(m-1) * (S[i-1] - 'a')) * 26 + (s[i+m-1] - 'a')，
+        // 其中m代表子串长度，i代表子串在主串中的起始位置；
         // 其中h[i]对应子串S[i-1...i+m-2]的哈希值，h[i]代表对应子串S[i...i+m-1]的哈希值，m代表子串的长度
         let preChHashValue = Int(mainString[mainString.index(before: curIndex)].asciiValue! - aAsciiValue + 1)
         let endChHashValue = Int(mainString[endIndex].asciiValue! - aAsciiValue + 1)
