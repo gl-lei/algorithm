@@ -51,7 +51,7 @@ func chessboardMinDistDP(chessboard: [[Int]]) -> Int {
 }
 
 
-// 动态规划求解棋盘最短路径问题(状态转移方程法)
+/// 动态规划求解棋盘最短路径问题(状态转移方程法)
 /// 状态转移方程，也就是迭代递推方式
 /// min_dist(i, j) = w[i][j] + min(min_dist(i, j-1), min(min_dist(i-1, j)))
 ///

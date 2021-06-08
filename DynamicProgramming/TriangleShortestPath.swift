@@ -135,12 +135,12 @@ private func recurPath(items:[Int], curIndex: Int, length: Int) {
 
 /// 根据杨辉三角的特性，通过下标求解当前元素所在的行数(从1开始)
 ///
-/// - Parameter index: 元素位置索引
+/// - Parameter index: 元素位置索引，从0开始
 /// - Returns: 当前元素所在的行数(从1开始)
 private func triangleRow(from index: Int) -> Int {
-    // 根据 n*(n-1)/2(n表示结点的下标，从0开始) 规律来求解出当前下标元素所在的行，
-    // 则相邻的下面两个元素则是 index+n 和 index+n+1
-    // 上面的元素是 index-n 和 index-n+1
+    // 根据 row*(row-1)/2 <= index (row表示结点所在的行，从1开始; index表示元素索引，从0开始;) 规律来求解出当前下标元素所在的行，
+    // 则相邻的下面两个元素则是 index+row 和 index+row+1
+    // 上面的元素是 index-row 和 index-row+1
     var i = 1
     while i * (i-1) <= index * 2 {
         i = i + 1
