@@ -77,12 +77,12 @@ for i in 0..<shoppingResult.price.count {
 }
 
 print("\n============动态规划杨辉三角问题==============")
-let triangleItems = [5, 7, 8, 2, 3, 4, 4, 9, 6, 1, 2, 7, 9, 4, 5]
+let triangleItems = [[5], [7, 8], [2, 3, 4], [4, 9, 6, 1], [2, 7, 9, 4, 5]]
 print("杨辉三角数组元素: \(triangleItems)")
-let resultPath = yanghuiTriangleShortestPath(triangleItems: triangleItems)
+let resultPath = yanghuiTriangleShortestPath(triangleItems)
 print("动态规划求解最短路径为: \(resultPath)")
 
-let resultPath1 = yanghuiTriangleShortestPath2(triangleItems: triangleItems)
+let resultPath1 = yanghuiTriangleShortestPath2(triangleItems)
 print("回溯算法求解最短路径为: \(resultPath1)")
 
 print("\n============动态规划棋盘问题==============")

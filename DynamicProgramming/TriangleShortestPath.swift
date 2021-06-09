@@ -17,133 +17,57 @@ import Foundation
 
 /// 动态规划求解杨辉三角最短路径，时间复杂度O(N)，空间复杂度O(N),N表示元素个数
 /// 利用杨辉三角的规律，可以降低空间复杂度
+/// [5]
+/// [7, 8]
+/// [2, 3, 4]
+/// [4, 9, 6, 1]
+/// [2, 7, 9, 4, 5]
 ///
 /// - Parameter triangleItems: 杨辉三角数据数组
 /// - Returns: 求解的最短路径
-func yanghuiTriangleShortestPath(triangleItems: [Int]) -> Int {
-    // 求解最后一个元素所在的行有几个元素，就申请多大的空间，注意可能个数会不满
-    // 最后一行的最大结点个数，也代表总共有几行
-    let maxCount = triangleRow(from: triangleItems.count-1)
-    // 最后一行的第一个结点下标(从0开始)
-    let endRowStartIndex = maxCount * (maxCount - 1) / 2
-    // 最后一行的结点个数
-    let trueCount = triangleItems.count - endRowStartIndex
+func yanghuiTriangleShortestPath(_ triangleItems: [[Int]]) -> Int {
+    // 使用动态规划的方式来解决，最小路径和和最大路径和比较适合使用自底向上的结构
+    // 递推公式：f(i,j) = min(f(i+1,j), f(i+1,j+1)) + value(i,j)，i表示层，j表示层中的列，
+    // f(i,j)表示i层j列的最小路径和，value(i,j) 表示i,j位置的值。
+    let count = triangleItems.count
+    var states = [Int](repeating: 0, count: count)
+    // 初始化最后一层的数据
+    for i in 0..<triangleItems[count-1].count {
+        states[i] = triangleItems[count-1][i]
+    }
     
-    // 状态数组，存储当前行所有结点的最短路径长度
-    var states = [Int](repeating: 0, count: trueCount)
-    
-    // 设置第一行结点的最短路径
-    states[0] = triangleItems[0]
-    
-    // 设置剩下行的最短路径
-    for row in 2...maxCount {
-        // 行的元素在数组中最小下标和最大下标
-        let startIndex = row * (row - 1) / 2
-        let endIndex = startIndex + row - 1
-        
-        // 防止杨辉三角不满的情况出现，只需要计算最后一行最大的元素个数的最短路径即可
-        let tureIndex = Swift.min(endIndex, startIndex + trueCount - 1)
-        
-        // 计算最短路径，一定要注意是逆序计算，否则会导致重复计算
-        for i in (startIndex...tureIndex).reversed() {
-            if i == startIndex {
-                // 如果是起始结点
-                states[i-startIndex] = states[0] + triangleItems[i]
-            } else if i == endIndex {
-                // 如果是终止结点
-                // row - 2 表示的是上一行的终止结点在states数组中的索引位置
-                states[i-startIndex] = states[row-2] + triangleItems[i]
-            } else {
-                // 中间的结点，需要判断上两个结点最短路径的大小
-                // 上一行的元素起始下标
-                let topStartIndex = startIndex - row + 1
-                
-                // 结点在states数组中的索引
-                let topLeftIndex = (i - row) - topStartIndex
-                let topRightIndex = topLeftIndex + 1
-                
-                // 取两者之间路径较小者
-                let minValue = Swift.min(states[topLeftIndex], states[topRightIndex])
-                states[i-startIndex] = minValue + triangleItems[i]
-            }
+    // 自底向上计算最小路径
+    for i in (0..<count-1).reversed() {
+        for j in 0..<triangleItems[i].count {
+            states[j] = Swift.min(states[j], states[j+1]) + triangleItems[i][j]
         }
     }
     
-    // 返回最短路径
-    var shortestPath = states[0]
-    
-    // 防止数组不满，需要注意最后一行中的结点个数
-    print("最后一行各个结点的最短路径: \(states)")
-    for i in 1..<trueCount {
-        if states[i] < shortestPath {
-            shortestPath = states[i]
-        }
-    }
-    return shortestPath
+    return states[0]
 }
 
 
 //MARK: - 回溯算法求解
 
-
-// 最短路径
-private var recurShortestPath = Int.max
-
-// 杨辉三角最后一行的最大下标，防止出现不满的情况
-private var endRowMaxEndIndex = 0
-
 /// 利用回溯算法求解杨辉三角最短路径问题
 ///
 /// - Parameter triangleItems: 杨辉三角数据数组
 /// - Returns: 最短路径
-func yanghuiTriangleShortestPath2(triangleItems: [Int]) -> Int {
-    // 最后一行的行数，从1开始
-    let rowNum = triangleRow(from: triangleItems.count-1)
-    endRowMaxEndIndex = rowNum * (rowNum - 1) / 2 + rowNum - 1
-    
-    // 递归计算
-    recurPath(items: triangleItems, curIndex: 0, length: 0)
-    return recurShortestPath
+func yanghuiTriangleShortestPath2(_ triangleItems: [[Int]]) -> Int {
+    return recurShortestPath(triangleItems, i: 0, j: 0)
 }
 
-/// 递归求解最短路径问题
-///
+/// 求解(i,j)的最短路径
 /// - Parameters:
 ///   - items: 杨辉三角数据数组
-///   - curIndex: 当前路径结点在杨辉三角数组中的下标
-///   - length: 当前结点路径长度
-private func recurPath(items:[Int], curIndex: Int, length: Int) {
-    // 已达到最终位置
-    if curIndex >= items.count {
-        // 结点下标必须要大于最后一行结点全满时的最大下标才可以
-        if length < recurShortestPath && curIndex > endRowMaxEndIndex {
-            recurShortestPath = length
-        }
-        return
+///   - i: 层下标
+///   - j: 列下标
+/// - Returns: i层j列的最短路径值
+private func recurShortestPath(_ items:[[Int]], i: Int, j: Int) -> Int {
+    if i == items.count - 1 {
+        return items[i][j]
     }
-    
-    // 选择左路径
-    let leftIndex = triangleRow(from: curIndex) + curIndex
-    recurPath(items: items, curIndex:leftIndex , length: length + items[curIndex])
-    
-    // 选择右路径
-    let rightIndex = leftIndex + 1
-    recurPath(items: items, curIndex: rightIndex, length: length + items[curIndex])
-}
-
-//MARK: - Private Methods
-
-/// 根据杨辉三角的特性，通过下标求解当前元素所在的行数(从1开始)
-///
-/// - Parameter index: 元素位置索引，从0开始
-/// - Returns: 当前元素所在的行数(从1开始)
-private func triangleRow(from index: Int) -> Int {
-    // 根据 row*(row-1)/2 <= index (row表示结点所在的行，从1开始; index表示元素索引，从0开始;) 规律来求解出当前下标元素所在的行，
-    // 则相邻的下面两个元素则是 index+row 和 index+row+1
-    // 上面的元素是 index-row 和 index-row+1
-    var i = 1
-    while i * (i-1) <= index * 2 {
-        i = i + 1
-    }
-    return i - 1
+    let leftValue = recurShortestPath(items, i: i+1, j: j)
+    let rightValue = recurShortestPath(items, i: i+1, j: j+1)
+    return Swift.min(leftValue, rightValue) + items[i][j]
 }
