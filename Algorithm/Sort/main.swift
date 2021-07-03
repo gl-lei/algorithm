@@ -32,7 +32,11 @@ print("选择排序结果：\(selectionSortArray)")
 
 // 归并排序
 let mergeSortArray = mergeSort(randomArray)
-print("归并排序结果：\(mergeSortArray)")
+print("归并排序(自顶向下)结果：\(mergeSortArray)")
+
+// 归并排序
+let mergeSortArray1 = mergeSort(randomArray)
+print("归并排序(自底向上)结果：\(mergeSortArray1)")
 
 // 快速排序
 let quickSortArray = quickSort(randomArray)

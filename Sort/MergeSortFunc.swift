@@ -9,6 +9,7 @@
 import Foundation
 
 /// 归并排序
+/// 归并排序有两种：自顶向下和自底向上
 /// 归并排序时间复杂度为O(N*logN),相当于完全二叉树，需要遍历的次数就是完全二叉树的深度
 /// 归并排序是稳定的排序算法
 ///
@@ -20,7 +21,7 @@ func mergeSort(_ array: [Int]) -> [Int] {
     return sortArray
 }
 
-/// 分解（分治思想）
+/// 自顶向下的排序方式，对分解（分治思想）
 ///
 /// - Parameters:
 ///   - array: 要排序的数组
@@ -38,6 +39,24 @@ func mergeSortDecompose(_ array: inout [Int], low: Int, high: Int) {
     
     // 将拆解完的数据合并到一起
     mergeArray(&array, low: low, mid: mid, high: high)
+}
+
+/// 自底向上的归并排序
+/// 分别以len = 1, len = 2, len = 4, len = 8，... 来调整数组
+/// - Parameter array: 待排序的数组
+/// - Returns: 已经排好序的数组
+func mergeSortFromBottom(_ array: [Int]) -> [Int] {
+    var array = array
+    var len = 1
+    while len < array.count {
+        for low in stride(from: 0, to: array.count-len, by: 2 * len) {
+            mergeArray(&array, low: low, mid: low + len - 1, high: Swift.min(low + 2 * len - 1, array.count))
+        }
+        
+        // 长度*2
+        len *= 2
+    }
+    return array
 }
 
 /// 合并两个小模块的数据

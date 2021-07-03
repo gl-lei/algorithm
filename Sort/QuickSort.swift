@@ -39,7 +39,7 @@ func quickSortDecompose(_ array: inout [Int], low: Int, high: Int) {
 ///   - array: 要排序的数组
 ///   - low: 数组最小下标
 ///   - high: 数组最大下标
-/// - Returns: 关键点pivotKey
+/// - Returns: 关键点pivotKey（下标）
 func partition(_ array: inout [Int], low: Int, high: Int) -> Int {
     var i = low, j = high
     let pivotKey = array[j]
