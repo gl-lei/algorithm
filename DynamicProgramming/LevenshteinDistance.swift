@@ -28,68 +28,47 @@ import Foundation
 ///   - bString: 第二个字符串
 /// - Returns: 莱文斯坦距离
 func lstDistanceDP(aString: String, bString: String) -> Int {
-    var states = [[Int]](repeating: [Int](repeating: 0, count: bString.count), count: aString.count)
-    // 初始化第一行 a[0...0]与b[0...j]的距离
-    for j in 0..<bString.count {
-        let iIndex = aString.startIndex
-        let jIndex = bString.index(bString.startIndex, offsetBy: j)
-        
-        if j == 0 {
-            // 如果j = 0，判断两者是否相等
-            if aString[iIndex] == bString[jIndex] {
-                states[0][0] = 0
-            } else {
-                states[0][0] = 1
-            }
-        } else {
-            // i字符已到达末尾，莱文斯坦距离为j
-            states[0][j] = j
-        }
+    if aString.count == 0 {
+        return bString.count
+    }
+    if bString.count == 0 {
+        return aString.count
+    }
+    let aChArr = aString.compactMap { $0 }, bChArr = bString.compactMap { $0 }
+    var states = [[Int]](repeating: [Int](repeating: 0, count: bChArr.count+1), count: aChArr.count+1)
+    // 初始化
+    for i in 0...aChArr.count {
+        states[i][0] = i
+    }
+    for j in 0...bChArr.count {
+        states[0][j] = j
     }
     
-    // 初始化第一列 a[0...i] 与 b[0...0] 的距离
-    for i in 0..<aString.count {
-        let iIndex = aString.index(aString.startIndex, offsetBy: i)
-        let jIndex = bString.startIndex
-        
-        if i == 0 {
-            // 如果i = 0，判断两者是否相等
-            if aString[iIndex] == bString[jIndex] {
-                states[0][0] = 0
-            } else {
-                states[0][0] = 1
-            }
-        } else {
-            // j字符已到达末尾，莱文斯坦距离为i
-            states[i][0] = i
-        }
-    }
-    
-    // 填充剩余的位置
-    for i in 1..<aString.count {
-        for j in 1..<bString.count {
-            let iIndex = aString.index(aString.startIndex, offsetBy: i)
-            let jIndex = bString.index(bString.startIndex, offsetBy: j)
+    // 计算其它数据
+    for i in 1...aChArr.count {
+        for j in 1...bChArr.count {
+            var dis1 = states[i-1][j-1]
+            let dis2 = states[i-1][j] + 1
+            let dis3 = states[i][j-1] + 1
             
-            if aString[iIndex] == bString[jIndex] {
-                states[i][j] = min(states[i-1][j]+1, states[i][j-1]+1, states[i-1][j-1])
-            } else {
-                states[i][j] = min(states[i-1][j]+1, states[i][j-1]+1, states[i-1][j-1]+1)
+            if aChArr[i-1] != bChArr[j-1] {
+                dis1 += 1
             }
+            states[i][j] = Swift.min(dis1, dis2, dis3)
         }
     }
     
     // 动态规划，莱文斯坦数组
     print("莱文斯坦状态数组=>")
-    for i in 0..<aString.count {
-        for j in 0..<bString.count {
+    for i in 0...aChArr.count {
+        for j in 0...bChArr.count {
             print("\(states[i][j]) ", terminator: "")
         }
         print("")
     }
     
     // 返回最终结果
-    return states[aString.count-1][bString.count-1]
+    return states[aChArr.count][bChArr.count]
 }
 
 // 莱文斯坦最小编辑距离

@@ -124,6 +124,9 @@ print("动态规划状态转移方程硬币数组: \(coinItems), 需要支付: \
 print("\n============动态规划莱文斯坦距离==============")
 var aString = "mitcmu", bString = "mtacnu"
 
+aString = "intention"
+bString = "execution"
+
 let minLstDistance = lstDistanceDP(aString: aString, bString: bString)
 let minLstDistance1 = lstDistance(aString: aString, bString: bString)
 print("\n动态规划方式计算字符串: \(aString)，字符串: \(bString) 莱文斯坦距离: \(minLstDistance)")
