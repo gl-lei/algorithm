@@ -365,38 +365,35 @@ extension BinaryTree {
             return 0
         }
         
-        // 层级开始下标
-        var front = 0
-        // 层级结束下标
-        var rear = 1
         // 高度
-        var floor = 0
+        var level = 0
         
         // 层级遍历辅助队列
         var nodes = [Node]()
         nodes.append(node!)
         while !nodes.isEmpty {
-            let node = nodes.remove(at: 0)
-            front += 1
+            level += 1
             
-            // 加入左子结点
-            if let leftNode = node.left {
-                nodes.append(leftNode)
-            }
-            
-            // 加入右子结点
-            if let rightNode = node.right {
-                nodes.append(rightNode)
-            }
-            
-            if front == rear {
-                // 表示遍历了一层
-                front = 0
-                rear = nodes.count
-                floor += 1
+            // 记录当前层级结点个数
+            var count = nodes.count
+            while count > 0 {
+                // 删除第一个结点
+                let node = nodes.removeFirst()
+                // 加入左子结点
+                if let leftNode = node.left {
+                    nodes.append(leftNode)
+                }
+                
+                // 加入右子结点
+                if let rightNode = node.right {
+                    nodes.append(rightNode)
+                }
+                
+                // 结点个数进行减1
+                count -= 1
             }
         }
-        return floor
+        return level
     }
 }
 
