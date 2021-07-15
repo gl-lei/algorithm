@@ -49,8 +49,9 @@ func mergeSortFromBottom(_ array: [Int]) -> [Int] {
     var array = array
     var len = 1
     while len < array.count {
-        for low in stride(from: 0, to: array.count-len, by: 2 * len) {
-            mergeArray(&array, low: low, mid: low + len - 1, high: Swift.min(low + 2 * len - 1, array.count))
+        // 注意，条件必须是小于 array.count - len，否则会越界
+        for low in stride(from: 0, to: array.count-len, by: 2*len) {
+            mergeArray(&array, low: low, mid: low+len-1, high: Swift.min(low+2*len-1, array.count-1))
         }
         
         // 长度*2
