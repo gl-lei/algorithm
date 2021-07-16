@@ -239,7 +239,7 @@ extension BinaryTree {
         }
         let leftH = treeHeight(node: node?.left)
         let rightH = treeHeight(node: node?.right)
-        return max(leftH, rightH) + 1
+        return Swift.max(leftH, rightH) + 1
     }
 }
 

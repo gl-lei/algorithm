@@ -14,9 +14,9 @@ import Foundation
 ///   - linkedListOne: 第一个有序单链表
 ///   - linkedListTwo: 第二个有序单链表
 /// - Returns: 合并有序的单链表
-func mergeLinkedList(linkedListOne: SinglyLinkedList, linkedListTwo: SinglyLinkedList) -> SinglyLinkedList {
+func mergeLinkedList(linkedListOne: Node?, linkedListTwo: Node?) -> Node? {
     // 判断链表是否为空
-    var p = linkedListOne.head, q = linkedListTwo.head
+    var p = linkedListOne, q = linkedListTwo
     if p == nil {
         return linkedListTwo
     }
@@ -25,25 +25,21 @@ func mergeLinkedList(linkedListOne: SinglyLinkedList, linkedListTwo: SinglyLinke
         return linkedListOne
     }
     
-    let mergeLinkedList = SinglyLinkedList()
-    while p != nil || q != nil {
-        if p == nil {
-            mergeLinkedList.addNode(q!.data)
-            q = q?.next
-        } else if q == nil {
-            mergeLinkedList.addNode(p!.data)
+    // 开始合并链表
+    let newHead = Node(data: 0, next: nil)
+    var temp: Node? = newHead
+    while p != nil && q != nil {
+        if p!.data <= q!.data {
+            temp?.next = p
             p = p?.next
         } else {
-            if p!.data > q!.data {
-                mergeLinkedList.addNode(q!.data)
-                q = q?.next
-            } else {
-                mergeLinkedList.addNode(p!.data)
-                p = p?.next
-            }
+            temp?.next = q
+            q = q?.next
         }
+        temp = temp?.next
     }
-    return mergeLinkedList
+    temp?.next = (p == nil ? q : p)
+    return newHead.next
 }
 
 /// 判断链表是否有环

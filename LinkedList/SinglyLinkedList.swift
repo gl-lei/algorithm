@@ -89,26 +89,30 @@ class SinglyLinkedList {
             return
         }
         
-        var p = head
-        var q = head?.next
+        // pre指针指向前一个结点、cur指针指向当前需要反转的结点
+        var pre = head
+        var cur = head?.next
         head?.next = nil
-        while q != nil {
-            let w = q?.next
-            q?.next = p
-            p = q
-            q = w
+        while cur != nil {
+            let next = cur?.next
+            cur?.next = pre
+            
+            // 进行下次循环
+            pre = cur
+            cur = next
         }
-        head = p
+        head = pre
     }
     
     /// 递归反转
+    @discardableResult
     func reverse(_ node: Node?) -> Node? {
         if node == nil || node?.next == nil {
             return node
         }
         // 注意，始终返回尾结点
         let newHead = reverse(node?.next)
-        // 防止形成环
+        // 防止形成环，例如1 -> 2 -> 3 <- 4 <- 5，当前 node 为 2，需要反转链表
         node?.next?.next = node
         node?.next = nil
         return newHead
@@ -123,10 +127,10 @@ class SinglyLinkedList {
         }
         
         var slow = head
-        var cur = head?.next
-        while cur != nil {
+        var fast = head
+        while fast?.next != nil && fast?.next?.next != nil {
             slow = slow?.next
-            cur = cur?.next?.next
+            fast = fast?.next?.next
         }
         return slow
     }
@@ -140,16 +144,17 @@ class SinglyLinkedList {
             return nil
         }
         
-        if lastK == 1 {
-            let tailNode = self.tailNode()
-            return tailNode
-        }
-        
+        // 使用快、慢指针来解决
         var slow = head
         var fast = head
         // 快指针先走K步
         for _ in 0..<lastK-1 {
             fast = fast?.next
+        }
+        
+        // 如果快指针走出去了，则表示K值过大，返回nil
+        if fast == nil {
+            return nil
         }
         
         // 快慢指针一起走，快指针走到头后慢指针位置则为倒数第K个结点
