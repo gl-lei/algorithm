@@ -25,19 +25,18 @@ array.remove(at: 1)
 array.print()
 
 print("\n=================动态扩容集合Set====================")
-var set = DynamicExpansionSet(capcity: 10)
-for i in 1..<20 {
-    set.add(num: i)
+var set = DynamicExpansionSet<Int>(capacity: 10)
+print("======添加1～20数字======")
+for i in 1...20 {
+    set.add(i)
 }
 set.print()
 
-set.add(num: 99)
-set.print()
+print("=====是否包含15=======")
+print("\(set.contain(15))")
 
-set.remove(num: 15)
-set.print()
-
-set.add(num: 87)
+print("=======删除15======")
+set.remove(15)
 set.print()
 
 print("\n=================合并两个有序数组====================")
