@@ -126,3 +126,6 @@ class Solution169_3 {
         return candidate
     }
 }
+
+// 2 3 4 2 1 2 2
+//
