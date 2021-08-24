@@ -106,14 +106,14 @@
  ## 三、LeetCode练习
 
  ### 数组和链表
- - [三数之和](./LeetCode/015-三数之和/015.swift)
-- [求众数](./LeetCode/169-多数元素/169.swift)
-- [求缺失的第一个正数](./LeetCode/041-缺失的第一个正数/041.swift)
-- [环形链表](./LeetCode/141-环形链表/141.swift)
-- [合并K个排序链表](./LeetCode/023-合并K个升序链表/023.swift)
+ - [三数之和](./LeetCode/015-三数之和.swift)
+- [求众数](./LeetCode/169-多数元素.swift)
+- [求缺失的第一个正数](./LeetCode/041-缺失的第一个正数.swift)
+- [环形链表](./LeetCode/141-环形链表.swift)
+- [合并K个排序链表](./LeetCode/023-合并K个升序链表.swift)
  
  ### 栈、队列和递归
- - [有效的括号](./LeetCode/020-有效的括号/020.swift)
+ - [有效的括号](./LeetCode/020-有效的括号.swift)
  - 最长有效的括号
  - 逆波兰表达式求值
  - 设计一个双端队列
@@ -130,7 +130,7 @@
  
  ### 贪心、分治、回溯和动态规划
  
- ### 更多 LeetCode 题解请[点击](./LeetCode/LeetCode.md)
+ ### 更多 LeetCode 题解请[点击](./LeetCode/README.md)
 
  ## 四、学习资源
  ### 1. 可视化工具
