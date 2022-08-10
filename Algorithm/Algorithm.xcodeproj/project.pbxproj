@@ -15,6 +15,7 @@
 		EA122BAE2293B8240009EBF7 /* VagueBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */; };
 		EA122BB022951B790009EBF7 /* LoopSortArrayFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */; };
 		EA12FAF622428A7300EF6D40 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA12FAF522428A7300EF6D40 /* Set.swift */; };
+		EA1A6C1F28A40DED00FFC252 /* 150-逆波兰表达式.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A6C1E28A40DED00FFC252 /* 150-逆波兰表达式.swift */; };
 		EA25D3AB223F806F00C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3AA223F806F00C72AA0 /* main.swift */; };
 		EA25D3B8224229C600C72AA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3B7224229C600C72AA0 /* main.swift */; };
 		EA25D3BD224229F500C72AA0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25D3BC224229F500C72AA0 /* Array.swift */; };
@@ -275,6 +276,7 @@
 		EA122BAD2293B8240009EBF7 /* VagueBinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VagueBinarySearch.swift; path = ../../BinarySearch/VagueBinarySearch.swift; sourceTree = "<group>"; };
 		EA122BAF22951B790009EBF7 /* LoopSortArrayFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoopSortArrayFunc.swift; path = ../../BinarySearch/LoopSortArrayFunc.swift; sourceTree = "<group>"; };
 		EA12FAF522428A7300EF6D40 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Set.swift; path = ../../Array/Set.swift; sourceTree = "<group>"; };
+		EA1A6C1E28A40DED00FFC252 /* 150-逆波兰表达式.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "150-逆波兰表达式.swift"; path = "../../LeetCode/150-逆波兰表达式.swift"; sourceTree = "<group>"; };
 		EA25D3A7223F806F00C72AA0 /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA25D3AA223F806F00C72AA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA25D3B5224229C600C72AA0 /* Array */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Array; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -703,6 +705,7 @@
 				EAF3FACA26D22E3F00B625BA /* 141-环形链表.swift */,
 				EAF3FAC726D22E3F00B625BA /* 169-多数元素.swift */,
 				EA89B92F248CBBFB003B8A57 /* main.swift */,
+				EA1A6C1E28A40DED00FFC252 /* 150-逆波兰表达式.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -1351,6 +1354,7 @@
 				EA89B930248CBBFB003B8A57 /* main.swift in Sources */,
 				EAF3FAD126D22E3F00B625BA /* 169-多数元素.swift in Sources */,
 				EAF3FACE26D22E3F00B625BA /* 032-最长有效括号.swift in Sources */,
+				EA1A6C1F28A40DED00FFC252 /* 150-逆波兰表达式.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

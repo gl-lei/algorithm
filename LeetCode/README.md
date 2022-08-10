@@ -12,4 +12,5 @@
 |032        |[最长有效括号](https://leetcode.cn/problems/longest-valid-parentheses/)|困难|[Swift](./032-最长有效括号.swift)
 |041        |[缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)|困难|[Swift](./041-缺失的第一个正数.swift)
 |141        |[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)|简单|[Swift](./141-环形链表.swift)
+|150        |[逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/)|中等|[Swift](./150-逆波兰表达式.swift)
 |169        |[多数元素](https://leetcode-cn.com/problems/majority-element)|简单|[Swift](./169-多数元素.swift)
