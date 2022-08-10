@@ -9,6 +9,7 @@
 |015        |[三数之和](https://leetcode-cn.com/problems/3sum)|中等|[Swift](./015-三数之和.swift)
 |020        |[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)|简单|[Swift](./020-有效的括号.swift)
 |023        |[合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)|困难|[Swift](./023-合并K个升序链表.swift)
+|032        |[最长有效括号](https://leetcode.cn/problems/longest-valid-parentheses/)|困难|[Swift](./032-最长有效括号.swift)
 |041        |[缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/)|困难|[Swift](./041-缺失的第一个正数.swift)
 |141        |[环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)|简单|[Swift](./141-环形链表.swift)
 |169        |[多数元素](https://leetcode-cn.com/problems/majority-element)|简单|[Swift](./169-多数元素.swift)

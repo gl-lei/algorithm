@@ -91,6 +91,13 @@ while linkNode != nil {
 }
 print("")
 
+print("\n============LeetCode32==============")
+let testStrArr032 = ["(()", ")()())"]
+for str in testStrArr032 {
+    let ans = Solution032().longestValidParentheses(str)
+    print("\"\(str)\"最长有效括号长度为: \(ans)")
+}
+
 print("\n============LeetCode041==============")
 let testNums041 = [[1, 2, 0], [3, 4, -1, 1], [7, 8, 9, 11, 12]]
 let solution041 = Solution041()
@@ -136,3 +143,5 @@ for nums in testNums169 {
     print(solution169.majorityElement(nums), solution169_1.majorityElement(nums),
           solution169_2.majorityElement(nums), solution169_3.majorityElement(nums))
 }
+
+

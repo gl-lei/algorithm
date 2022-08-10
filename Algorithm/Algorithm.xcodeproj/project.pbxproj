@@ -330,7 +330,7 @@
 		EA99B85D229ED82700A6AAF8 /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA99B85F229ED82700A6AAF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EA99B864229ED83F00A6AAF8 /* SkipList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkipList.swift; path = ../../SkipList/SkipList.swift; sourceTree = "<group>"; };
-		EAAB57782528634F006A59F1 /* LeetCode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LeetCode.md; path = ../../LeetCode/LeetCode.md; sourceTree = "<group>"; };
+		EAAB57782528634F006A59F1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../LeetCode/README.md; sourceTree = "<group>"; };
 		EAAC7F4424C08BD30099FBF4 /* DivideAndConquer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DivideAndConquer; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAC7F4624C08BD30099FBF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAAC7F4D24C08C3C0099FBF4 /* DivideAndConquer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DivideAndConquer.swift; path = ../../DivideAndConquer/DivideAndConquer.swift; sourceTree = "<group>"; };
@@ -691,7 +691,7 @@
 		EA89B92E248CBBFB003B8A57 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
-				EAAB57782528634F006A59F1 /* LeetCode.md */,
+				EAAB57782528634F006A59F1 /* README.md */,
 				EAF3FAC926D22E3F00B625BA /* 001-两数之和.swift */,
 				EAF3FACD26D22E3F00B625BA /* 002-两数相加.swift */,
 				EAF3FAC626D22E3F00B625BA /* 003-无重复字符的最长子串.swift */,
